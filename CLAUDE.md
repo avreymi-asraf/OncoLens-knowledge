@@ -67,6 +67,7 @@ Full templates: `.claude/skills/ingest/templates.md`.
    Use `kind: generative` for "interesting angle" links that do not claim the same causality.
 7. **Consolidation is structural only.** Merging duplicates and fixing links is fine; rewriting claims is not.
 8. **The human pushes.** Commit when work passes `kb.py check`; never push, never use `--no-verify`.
+9. **No new branch per fix.** Commit small fixes on the current branch. Create a new branch only when the human explicitly asks for one.
 
 ## Workflows
 

@@ -9,3 +9,8 @@ Append-only. One line per operation.
 - 2026-11-02 23:18 | verify | claims/tool-observation-tokens-are-off-policy-and-masked-from-the-grpo-loss -> pass | stated, masked typically
 - 2026-11-02 23:18 | verify | claims/tool-use-vanishes-during-rl-without-suitable-reward-design -> pass | directly stated
 - 2026-11-02 23:18 | ingest | VERLTOOL TOWARDS HOLISTIC AGENTIC | 6 claims, 0 updated, 0 mechanisms
+- 2026-11-02 23:19 | verify | claims/a-small-model-can-typically-teach-itself-multi-hop-tasks-in-dspy-and-a-larger-teacher-only-adds-robustness -> pass | Source states this nearly verbatim
+- 2026-11-02 23:19 | verify | claims/an-unoptimized-two-module-multi-hop-program-on-llama-3-1-8b-reaches-only-31-percent-top5-recall-on-hover -> pass | 31.3% metric shown; 3-hop/unoptimized/top5 are context-plausible, table has top5_recall
+- 2026-11-02 23:19 | verify | claims/joint-prompt-optimization-with-miprov2-roughly-doubles-multi-hop-retrieval-recall-from-31-to-59-percent -> pass | 59.11 vs ~30%; joint optimization stated; MIPROv2 not in quote but fine
+- 2026-11-02 23:19 | verify | claims/optimized-query-generator-decomposes-a-multi-hop-claim-by-asking-for-the-first-unknown-entity-when-notes-are-empty -> pass | Empty notes yield query about first unknown entity (script author)
+- 2026-11-02 23:19 | ingest | multi-hop-rag-dspy | 4 claims, 0 updated, 0 mechanisms

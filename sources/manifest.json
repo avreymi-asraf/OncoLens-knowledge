@@ -26,6 +26,7 @@
     "text": "sources/text/multi-hop-rag-dspy.md",
     "sha256": "743f32244f4c0269a1fa37f23013fd2d4045eaa962ce65d6e3f8d84a3703e7ce",
     "added": "2026-11-02",
-    "ingested": false
+    "ingested": true,
+    "ingested_on": "2026-11-02"
   }
 }

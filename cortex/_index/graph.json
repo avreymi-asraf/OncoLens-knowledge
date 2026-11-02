@@ -1,16 +1,40 @@
 {
  "nodes": {
+  "claims/a-small-model-can-typically-teach-itself-multi-hop-tasks-in-dspy-and-a-larger-teacher-only-adds-robustness": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "DSPy teacher LM GPT-4o invoked few times for small student LM; teacher not strictly necessary, gives robustness to initial optimizer configuration.",
+   "title": "A small model can typically teach itself tasks like multi-hop retrieval in DSPy, with a larger teacher serving mainly as insurance against a poor initial configuration."
+  },
   "claims/a-unified-tool-server-framework-reaches-task-specific-baseline-performance-across-six-agentic-rl-domains": {
    "type": "claim",
    "status": "proposed",
    "description": "VerlTool competitive performance math search SQL visual reasoning SWE GAIA unified framework",
    "title": "Models trained in one unified framework (VERLTOOL) match or exceed task-specific agentic RL baselines across six tool-use domains, e.g. 45.9% average on knowledge QA versus Search-R1."
   },
+  "claims/an-unoptimized-two-module-multi-hop-program-on-llama-3-1-8b-reaches-only-31-percent-top5-recall-on-hover": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "DSPy multi-hop retrieval baseline, Hop module, query generation plus note appending, BM25S over Wikipedia 2017 abstracts, HoVer 3-hop, top-5 recall about 31% with Llama-3.1-8B.",
+   "title": "An unoptimized two-module multi-hop retrieval program on Llama-3.1-8B reaches only about 31% top-5 recall on 3-hop HoVer claims."
+  },
   "claims/asynchronous-per-trajectory-rollout-speeds-up-agentic-rl-rollouts-by-1-2-to-2x": {
    "type": "claim",
    "status": "proposed",
    "description": "async rollout, synchronous batch, tool call latency, GPU idle bubbles, speedup, VerlTool agentic RL",
    "title": "Letting each trajectory call the tool server independently (asynchronous rollout) instead of batch-synchronously speeds up rollouts by about 1.2x to 2x depending on the task."
+  },
+  "claims/joint-prompt-optimization-with-miprov2-roughly-doubles-multi-hop-retrieval-recall-from-31-to-59-percent": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "MIPROv2 jointly optimizing the query-generation and note-appending prompts, GPT-4o teacher, Llama-3.1-8B, top5_recall 31% to 59%, about 35 minutes and 5 dollars.",
+   "title": "Jointly optimizing the two prompts of a multi-hop retrieval program with MIPROv2 roughly doubles top-5 recall from about 31% to about 59%."
+  },
+  "claims/optimized-query-generator-decomposes-a-multi-hop-claim-by-asking-for-the-first-unknown-entity-when-notes-are-empty": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "Optimized DSPy hop query generator with empty notes issues a sub-question for the missing bridge entity (author of Up Against It), query decomposition per hop.",
+   "title": "With empty notes, the optimized hop query generator asks only for the first missing bridge entity of a multi-hop claim rather than querying the whole claim."
   },
   "claims/tokenizing-actions-and-observations-separately-keeps-multi-turn-rollouts-token-consistent": {
    "type": "claim",
@@ -41,6 +65,12 @@
    "status": "active",
    "description": "ARLT, agentic RL with tool use, multi-turn RLVR with tool observations, trajectory of actions and observation tokens",
    "title": "Agentic Reinforcement Learning with Tool use (ARLT)"
+  },
+  "concepts/multi-hop-retrieval-with-note-accumulation": {
+   "type": "concept",
+   "status": "active",
+   "description": "Multi-hop retrieval loop, iterative query generation, retrieve, append notes and titles; DSPy Hop module, HoVer fact-checking, top-5 recall.",
+   "title": "Multi-hop retrieval with note accumulation"
   }
  },
  "sources": {
@@ -57,11 +87,17 @@
    "raw": "sources/raw/build-a-custom-rag-agent-with-langgraph-docs-by-langchain/build-a-custom-rag-agent-with-langgraph-docs-by-langchain.md"
   },
   "multi-hop-rag-dspy": {
-   "ingested": false,
+   "ingested": true,
    "raw": "sources/raw/multi-hop-rag-dspy/multi-hop-rag-dspy.md"
   }
  },
  "edges": [
+  {
+   "from": "claims/a-small-model-can-typically-teach-itself-multi-hop-tasks-in-dspy-and-a-larger-teacher-only-adds-robustness",
+   "pred": "derived_from",
+   "to": "sources/multi-hop-rag-dspy",
+   "note": "tutorial setup section"
+  },
   {
    "from": "claims/a-unified-tool-server-framework-reaches-task-specific-baseline-performance-across-six-agentic-rl-domains",
    "pred": "derived_from",
@@ -69,10 +105,34 @@
    "note": "Section 4.2; authors' own results, not independently replicated"
   },
   {
+   "from": "claims/an-unoptimized-two-module-multi-hop-program-on-llama-3-1-8b-reaches-only-31-percent-top5-recall-on-hover",
+   "pred": "derived_from",
+   "to": "sources/multi-hop-rag-dspy",
+   "note": "baseline evaluation of Hop() on the dev set"
+  },
+  {
    "from": "claims/asynchronous-per-trajectory-rollout-speeds-up-agentic-rl-rollouts-by-1-2-to-2x",
    "pred": "derived_from",
    "to": "sources/VERLTOOL TOWARDS HOLISTIC AGENTIC",
    "note": "Table 2: Math-TIR, SQL, DeepSearch on 8 H100 GPUs"
+  },
+  {
+   "from": "claims/joint-prompt-optimization-with-miprov2-roughly-doubles-multi-hop-retrieval-recall-from-31-to-59-percent",
+   "pred": "derived_from",
+   "to": "sources/multi-hop-rag-dspy",
+   "note": "after optimization the dev average was 59.11 (59.1%)"
+  },
+  {
+   "from": "claims/joint-prompt-optimization-with-miprov2-roughly-doubles-multi-hop-retrieval-recall-from-31-to-59-percent",
+   "pred": "derived_from",
+   "to": "sources/multi-hop-rag-dspy",
+   "note": "cost of the optimization run"
+  },
+  {
+   "from": "claims/optimized-query-generator-decomposes-a-multi-hop-claim-by-asking-for-the-first-unknown-entity-when-notes-are-empty",
+   "pred": "derived_from",
+   "to": "sources/multi-hop-rag-dspy",
+   "note": "generated query in the inspected history, notes were N/A"
   },
   {
    "from": "claims/tokenizing-actions-and-observations-separately-keeps-multi-turn-rollouts-token-consistent",
@@ -103,6 +163,12 @@
    "pred": "derived_from",
    "to": "sources/VERLTOOL TOWARDS HOLISTIC AGENTIC",
    "note": "the trajectory can be written asτ={a 0, o0, . . . , an−1, on−1, an}"
+  },
+  {
+   "from": "concepts/multi-hop-retrieval-with-note-accumulation",
+   "pred": "derived_from",
+   "to": "sources/multi-hop-rag-dspy",
+   "note": "It will do this via two sub-modules: `generate_query` and `append_notes`."
   }
  ]
 }

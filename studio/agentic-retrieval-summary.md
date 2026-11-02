@@ -8,7 +8,7 @@ The four articles we read share one idea: a language model works better when it 
 
 ## 1. Why plain RAG falls short (Hugging Face: *Agentic RAG*)
 
-Standard retrieval-augmented generation (RAG) retrieves documents once. If that retrieval is poor, the answer is poor too. A second problem: a user's question is phrased as a question, while the documents that answer it are written as statements, so searching with the raw question can miss them. The article gives the model a retriever tool and lets it write its own queries, in affirmative form and in several varied versions and search again. On a question set about Hugging Face documentation, the agent scored 86.9% against 73.1% for standard RAG (36% with no knowledge base). We note one caveat: the two setups used different models.
+Standard retrieval-augmented generation (RAG) retrieves documents once. If that retrieval is poor, the answer is poor too. A second problem: a user's question is phrased as a question, while the documents that answer it are written as statements, so searching with the raw question can miss them. The article gives the model a retriever tool and lets it write its own queries (as statements, in several varied versions) and search again. On a question set about Hugging Face documentation, the agent scored 86.9% against 73.1% for standard RAG (36% with no knowledge base). We note one caveat: the two setups used different models.
 
 ## 2. An agent that checks its own work (LangChain: *Custom RAG agent with LangGraph*)
 

@@ -19,7 +19,8 @@
     "text": "sources/text/build-a-custom-rag-agent-with-langgraph-docs-by-langchain.md",
     "sha256": "c6fb25410e44c647a4e10fb8d5875dff35a8d99ae87411e9c430dbb01962a561",
     "added": "2026-11-02",
-    "ingested": false
+    "ingested": true,
+    "ingested_on": "2026-11-02"
   },
   "multi-hop-rag-dspy": {
     "raw": "sources/raw/multi-hop-rag-dspy/multi-hop-rag-dspy.md",

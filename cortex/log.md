@@ -18,3 +18,4 @@ Append-only. One line per operation.
 - 2026-11-02 23:20 | verify | claims/retrieved-text-should-be-treated-as-data-only-in-grader-and-generator-prompts -> partial | Only generator prompt shown; grader prompt not in context
 - 2026-11-02 23:20 | verify | claims/rewriting-the-question-and-retrying-retrieval-lets-an-agent-recover-from-a-weak-first-retrieval -> pass | Directly stated
 - 2026-11-02 23:20 | verify | claims/the-model-deciding-whether-to-call-the-retriever-makes-rag-agentic-rather-than-a-fixed-pipeline -> pass | Directly stated
+- 2026-11-02 23:20 | ingest | build-a-custom-rag-agent-with-langgraph-docs-by-langchain | 4 claims, 0 updated, 0 mechanisms

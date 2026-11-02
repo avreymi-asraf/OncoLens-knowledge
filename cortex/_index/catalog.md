@@ -30,8 +30,8 @@ One line per node: link, status, description. Read this first; then search, nav,
 
 ## questions (0)
 
-## sources (4, not yet ingested: 2)
+## sources (4, not yet ingested: 1)
 - [[sources/VERLTOOL TOWARDS HOLISTIC AGENTIC]] ingested - sources/raw/VERLTOOL TOWARDS HOLISTIC AGENTIC.pdf
 - [[sources/agentic-rag-turbocharge-your-rag-with-query-reformulation-and-self-query]] NOT INGESTED - sources/raw/agentic-rag-turbocharge-your-rag-with-query-reformulation-and-self-query/agentic-rag-turbocharge-your-rag-with-query-reformulation-and-self-query.md
-- [[sources/build-a-custom-rag-agent-with-langgraph-docs-by-langchain]] NOT INGESTED - sources/raw/build-a-custom-rag-agent-with-langgraph-docs-by-langchain/build-a-custom-rag-agent-with-langgraph-docs-by-langchain.md
+- [[sources/build-a-custom-rag-agent-with-langgraph-docs-by-langchain]] ingested - sources/raw/build-a-custom-rag-agent-with-langgraph-docs-by-langchain/build-a-custom-rag-agent-with-langgraph-docs-by-langchain.md
 - [[sources/multi-hop-rag-dspy]] ingested - sources/raw/multi-hop-rag-dspy/multi-hop-rag-dspy.md

@@ -14,3 +14,7 @@ Append-only. One line per operation.
 - 2026-11-02 23:19 | verify | claims/joint-prompt-optimization-with-miprov2-roughly-doubles-multi-hop-retrieval-recall-from-31-to-59-percent -> pass | 59.11 vs ~30%; joint optimization stated; MIPROv2 not in quote but fine
 - 2026-11-02 23:19 | verify | claims/optimized-query-generator-decomposes-a-multi-hop-claim-by-asking-for-the-first-unknown-entity-when-notes-are-empty -> pass | Empty notes yield query about first unknown entity (script author)
 - 2026-11-02 23:19 | ingest | multi-hop-rag-dspy | 4 claims, 0 updated, 0 mechanisms
+- 2026-11-02 23:20 | verify | claims/a-relevance-grader-after-retrieval-routes-the-agent-to-answer-or-to-question-rewrite -> partial | Routing supported; LLM grader and binary score not in quote/context
+- 2026-11-02 23:20 | verify | claims/retrieved-text-should-be-treated-as-data-only-in-grader-and-generator-prompts -> partial | Only generator prompt shown; grader prompt not in context
+- 2026-11-02 23:20 | verify | claims/rewriting-the-question-and-retrying-retrieval-lets-an-agent-recover-from-a-weak-first-retrieval -> pass | Directly stated
+- 2026-11-02 23:20 | verify | claims/the-model-deciding-whether-to-call-the-retriever-makes-rag-agentic-rather-than-a-fixed-pipeline -> pass | Directly stated

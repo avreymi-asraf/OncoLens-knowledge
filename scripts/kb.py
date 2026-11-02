@@ -210,14 +210,44 @@ def extract_text(p: Path) -> str:
     raise SystemExit(f"cannot extract {rel(p)}: unsupported extension '{ext}' (convert it to .md first)")
 
 
+TEXT_EXTS = {".md", ".markdown", ".txt", ".rst", ".html", ".htm", ".pdf", ".csv", ".json", ".srt", ".vtt"}
+
+
+def folder_main_file(d: Path) -> Path | None:
+    """A folder source (e.g. a saved web page) has one main document; the rest are assets.
+    Main = the document named after the folder, else the only document at the folder's top level."""
+    docs = [p for p in d.iterdir() if p.is_file() and not p.name.startswith(".") and p.suffix.lower() in TEXT_EXTS]
+    named = [p for p in docs if p.stem.lower() == d.name.lower()]
+    if len(named) == 1:
+        return named[0]
+    if len(docs) == 1:
+        return docs[0]
+    return None
+
+
 def raw_files() -> list[Path]:
+    """One path per source: plain files in sources/raw/, plus the main document of each folder."""
     if not SRC_RAW.exists():
         return []
-    return sorted(p for p in SRC_RAW.iterdir() if p.is_file() and not p.name.startswith("."))
+    out = []
+    for p in SRC_RAW.iterdir():
+        if p.name.startswith(".") or ":" in p.name:  # skip dotfiles and Windows Zone.Identifier streams
+            continue
+        if p.is_file():
+            out.append(p)
+        elif p.is_dir():
+            main = folder_main_file(p)
+            if main is None:
+                print(f"warning: skipped folder {rel(p)}: no single main document "
+                      f"(name it {p.name}.md or keep one document at its top level)", file=sys.stderr)
+            else:
+                out.append(main)
+    return sorted(out)
 
 
 def source_id(p: Path) -> str:
-    return p.stem
+    # A folder source is named after its folder; a plain file after its stem.
+    return p.parent.name if p.parent != SRC_RAW else p.stem
 
 
 def cmd_register(args=None, quiet=False) -> list[str]:

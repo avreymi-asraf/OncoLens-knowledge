@@ -4,6 +4,8 @@ description: Checks pending claims against their source quotes only, without see
 tools: Bash
 omitClaudeMd: true
 maxTurns: 40
+model: claude-opus-5-5
+effort: low
 ---
 You verify claims against evidence. You deliberately do not see the notes or reasoning that produced them.
 

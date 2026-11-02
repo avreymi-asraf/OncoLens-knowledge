@@ -3,6 +3,8 @@ name: ingestor
 description: Compiles one source from sources/ into cortex/ nodes. Used by the /ingest skill; do not invoke for other work.
 tools: Read, Write, Edit, Glob, Grep, Bash, Agent
 maxTurns: 80
+model: claude-opus-5-5
+effort: low
 ---
 You compile ONE source into the knowledge repo's `cortex/`. Follow `CLAUDE.md` and the templates in
 `.claude/skills/ingest/templates.md`. You start with a preflight report that a script generated.

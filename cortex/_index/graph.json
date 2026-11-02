@@ -1,5 +1,48 @@
 {
- "nodes": {},
+ "nodes": {
+  "claims/a-unified-tool-server-framework-reaches-task-specific-baseline-performance-across-six-agentic-rl-domains": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "VerlTool competitive performance math search SQL visual reasoning SWE GAIA unified framework",
+   "title": "Models trained in one unified framework (VERLTOOL) match or exceed task-specific agentic RL baselines across six tool-use domains, e.g. 45.9% average on knowledge QA versus Search-R1."
+  },
+  "claims/asynchronous-per-trajectory-rollout-speeds-up-agentic-rl-rollouts-by-1-2-to-2x": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "async rollout, synchronous batch, tool call latency, GPU idle bubbles, speedup, VerlTool agentic RL",
+   "title": "Letting each trajectory call the tool server independently (asynchronous rollout) instead of batch-synchronously speeds up rollouts by about 1.2x to 2x depending on the task."
+  },
+  "claims/tokenizing-actions-and-observations-separately-keeps-multi-turn-rollouts-token-consistent": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "tokenization, concatenation, token prefix consistency, on-policy, multi-turn rollout, Qwen2.5 tokenizer",
+   "title": "Tokenizing LLM action strings and tool observation strings separately and appending token lists avoids boundary-merging mismatches that joint tokenization of the concatenated string can cause."
+  },
+  "claims/tool-call-frequency-during-rl-falls-for-memorizable-tool-outputs-and-rises-for-unmemorizable-ones": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "SQL fewer tool calls, DeepSearch more tool calls, memorization, tool utility, agentic RL dynamics",
+   "title": "During RL training, tool call counts fall when tool outputs can be memorized (SQL execution results) and rise when they cannot (information-rich search results)."
+  },
+  "claims/tool-observation-tokens-are-off-policy-and-masked-from-the-grpo-loss": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "observation tokens, off-policy, loss masking, GRPO, multi-turn tool use RL, training stability",
+   "title": "In agentic RL with tool use, tool observation tokens are off-policy for the policy being optimized and are therefore masked out of the policy-optimization loss."
+  },
+  "claims/tool-use-vanishes-during-rl-without-suitable-reward-design": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "tool call frequency collapse, reward design, initialization, agentic RL, visual reasoning",
+   "title": "Models do not spontaneously develop effective tool use in RL without appropriate reward design, and tool action frequency can decay to zero within a few RL steps."
+  },
+  "concepts/agentic-reinforcement-learning-with-tool-use": {
+   "type": "concept",
+   "status": "active",
+   "description": "ARLT, agentic RL with tool use, multi-turn RLVR with tool observations, trajectory of actions and observation tokens",
+   "title": "Agentic Reinforcement Learning with Tool use (ARLT)"
+  }
+ },
  "sources": {
   "VERLTOOL TOWARDS HOLISTIC AGENTIC": {
    "ingested": false,
@@ -18,5 +61,48 @@
    "raw": "sources/raw/multi-hop-rag-dspy/multi-hop-rag-dspy.md"
   }
  },
- "edges": []
+ "edges": [
+  {
+   "from": "claims/a-unified-tool-server-framework-reaches-task-specific-baseline-performance-across-six-agentic-rl-domains",
+   "pred": "derived_from",
+   "to": "sources/VERLTOOL TOWARDS HOLISTIC AGENTIC",
+   "note": "Section 4.2; authors' own results, not independently replicated"
+  },
+  {
+   "from": "claims/asynchronous-per-trajectory-rollout-speeds-up-agentic-rl-rollouts-by-1-2-to-2x",
+   "pred": "derived_from",
+   "to": "sources/VERLTOOL TOWARDS HOLISTIC AGENTIC",
+   "note": "Table 2: Math-TIR, SQL, DeepSearch on 8 H100 GPUs"
+  },
+  {
+   "from": "claims/tokenizing-actions-and-observations-separately-keeps-multi-turn-rollouts-token-consistent",
+   "pred": "derived_from",
+   "to": "sources/VERLTOOL TOWARDS HOLISTIC AGENTIC",
+   "note": "Section 3.3, Figure 4"
+  },
+  {
+   "from": "claims/tool-call-frequency-during-rl-falls-for-memorizable-tool-outputs-and-rises-for-unmemorizable-ones",
+   "pred": "derived_from",
+   "to": "sources/VERLTOOL TOWARDS HOLISTIC AGENTIC",
+   "note": "Section 4.2; the DeepSearch contrast follows in the next lines"
+  },
+  {
+   "from": "claims/tool-observation-tokens-are-off-policy-and-masked-from-the-grpo-loss",
+   "pred": "derived_from",
+   "to": "sources/VERLTOOL TOWARDS HOLISTIC AGENTIC",
+   "note": "Section 3.2"
+  },
+  {
+   "from": "claims/tool-use-vanishes-during-rl-without-suitable-reward-design",
+   "pred": "derived_from",
+   "to": "sources/VERLTOOL TOWARDS HOLISTIC AGENTIC",
+   "note": "Section 4.2, Dynamics of Tool Usage"
+  },
+  {
+   "from": "concepts/agentic-reinforcement-learning-with-tool-use",
+   "pred": "derived_from",
+   "to": "sources/VERLTOOL TOWARDS HOLISTIC AGENTIC",
+   "note": "the trajectory can be written asτ={a 0, o0, . . . , an−1, on−1, an}"
+  }
+ ]
 }

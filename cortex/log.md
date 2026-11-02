@@ -19,3 +19,9 @@ Append-only. One line per operation.
 - 2026-11-02 23:20 | verify | claims/rewriting-the-question-and-retrying-retrieval-lets-an-agent-recover-from-a-weak-first-retrieval -> pass | Directly stated
 - 2026-11-02 23:20 | verify | claims/the-model-deciding-whether-to-call-the-retriever-makes-rag-agentic-rather-than-a-fixed-pipeline -> pass | Directly stated
 - 2026-11-02 23:20 | ingest | build-a-custom-rag-agent-with-langgraph-docs-by-langchain | 4 claims, 0 updated, 0 mechanisms
+- 2026-11-02 23:25 | verify | claims/a-rag-agent-formulates-its-own-retrieval-query-and-re-retrieves-recovering-hyde-and-self-query-behaviour -> pass | Source states agent formulates query, critiques to re-retrieve, recovering HyDE and Self-Query
+- 2026-11-02 23:25 | verify | claims/agentic-rag-scored-86-9-percent-versus-73-1-percent-for-standard-rag-on-an-llm-judged-hugging-face-docs-qa-set -> partial | Scores 86.9/73.1/36 supported; 'Hugging Face documentation' dataset not shown in cited contexts
+- 2026-11-02 23:25 | verify | claims/the-retriever-tool-prompt-tells-the-agent-to-query-in-affirmative-form-with-several-semantically-different-queries -> pass | Tool description and prompt state both instructions verbatim
+- 2026-11-02 23:25 | verify | claims/using-the-user-question-as-the-similarity-reference-can-miss-answer-documents-written-in-affirmative-form -> pass | Direct restatement of source
+- 2026-11-02 23:25 | verify | claims/vanilla-rag-performs-only-one-retrieval-step-so-bad-retrieval-yields-bad-generation -> pass | Direct restatement of source
+- 2026-11-02 23:25 | ingest | agentic-rag-turbocharge-your-rag-with-query-reformulation-and-self-query | 5 claims, 0 updated, 0 mechanisms

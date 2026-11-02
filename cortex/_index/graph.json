@@ -1,5 +1,11 @@
 {
  "nodes": {
+  "claims/a-rag-agent-formulates-its-own-retrieval-query-and-re-retrieves-recovering-hyde-and-self-query-behaviour": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "RAG agent with retriever tool, query reformulation, HyDE, Self-Query, re-retrieval, smolagents ToolCallingAgent",
+   "title": "An agent armed with a retriever tool formulates its own retrieval query and critiques results to re-retrieve, naively recovering advanced RAG techniques like HyDE and Self-Query."
+  },
   "claims/a-relevance-grader-after-retrieval-routes-the-agent-to-answer-or-to-question-rewrite": {
    "type": "claim",
    "status": "proposed",
@@ -17,6 +23,12 @@
    "status": "proposed",
    "description": "VerlTool competitive performance math search SQL visual reasoning SWE GAIA unified framework",
    "title": "Models trained in one unified framework (VERLTOOL) match or exceed task-specific agentic RL baselines across six tool-use domains, e.g. 45.9% average on knowledge QA versus Search-R1."
+  },
+  "claims/agentic-rag-scored-86-9-percent-versus-73-1-percent-for-standard-rag-on-an-llm-judged-hugging-face-docs-qa-set": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "agentic RAG vs standard RAG evaluation, LLM judge, 86.9% vs 73.1%, no-knowledge-base baseline 36%, huggingface_doc_qa_eval",
+   "title": "On an LLM-judged QA set over Hugging Face documentation, agentic RAG scored 86.9% versus 73.1% for standard RAG, and an LLM without the knowledge base scored 36%."
   },
   "claims/an-unoptimized-two-module-multi-hop-program-on-llama-3-1-8b-reaches-only-31-percent-top5-recall-on-hover": {
    "type": "claim",
@@ -60,6 +72,12 @@
    "description": "agentic RAG, retriever as tool, bind_tools, model decides to retrieve or answer directly, LangGraph",
    "title": "Letting the model decide whether to call the retriever tool, instead of always retrieving, is what makes a RAG system agentic rather than a fixed retrieve-then-generate pipeline."
   },
+  "claims/the-retriever-tool-prompt-tells-the-agent-to-query-in-affirmative-form-with-several-semantically-different-queries": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "retriever tool description, affirmative-form queries not questions, multiple diverse queries, prompt engineering for agentic RAG",
+   "title": "The Hugging Face agentic RAG cookbook instructs the agent to write retrieval queries as affirmative sentences rather than questions and to call the retriever several times with semantically different queries."
+  },
   "claims/tokenizing-actions-and-observations-separately-keeps-multi-turn-rollouts-token-consistent": {
    "type": "claim",
    "status": "proposed",
@@ -83,6 +101,18 @@
    "status": "proposed",
    "description": "tool call frequency collapse, reward design, initialization, agentic RL, visual reasoning",
    "title": "Models do not spontaneously develop effective tool use in RL without appropriate reward design, and tool action frequency can decay to zero within a few RL steps."
+  },
+  "claims/using-the-user-question-as-the-similarity-reference-can-miss-answer-documents-written-in-affirmative-form": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "query-document mismatch, question vs affirmative voice, semantic similarity reference, HyDE motivation, query reformulation",
+   "title": "Using the user question as the semantic-similarity reference is suboptimal because answer documents are often in affirmative voice and get downgraded relative to interrogative documents."
+  },
+  "claims/vanilla-rag-performs-only-one-retrieval-step-so-bad-retrieval-yields-bad-generation": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "vanilla RAG limitation, single retrieval step, retrieval failure propagates to generation, no retry",
+   "title": "Vanilla RAG performs only one retrieval step, so when retrieval results are bad the generated answer is bad too."
   },
   "concepts/agentic-rag-retrieve-grade-rewrite-loop": {
    "type": "concept",
@@ -109,7 +139,7 @@
    "raw": "sources/raw/VERLTOOL TOWARDS HOLISTIC AGENTIC.pdf"
   },
   "agentic-rag-turbocharge-your-rag-with-query-reformulation-and-self-query": {
-   "ingested": false,
+   "ingested": true,
    "raw": "sources/raw/agentic-rag-turbocharge-your-rag-with-query-reformulation-and-self-query/agentic-rag-turbocharge-your-rag-with-query-reformulation-and-self-query.md"
   },
   "build-a-custom-rag-agent-with-langgraph-docs-by-langchain": {
@@ -122,6 +152,30 @@
   }
  },
  "edges": [
+  {
+   "from": "claims/a-rag-agent-formulates-its-own-retrieval-query-and-re-retrieves-recovering-hyde-and-self-query-behaviour",
+   "pred": "derived_from",
+   "to": "sources/agentic-rag-turbocharge-your-rag-with-query-reformulation-and-self-query",
+   "note": "This agent will: ✅ Formulate the query itself and ✅ Critique to re-retrieve if needed."
+  },
+  {
+   "from": "claims/a-rag-agent-formulates-its-own-retrieval-query-and-re-retrieves-recovering-hyde-and-self-query-behaviour",
+   "pred": "derived_from",
+   "to": "sources/agentic-rag-turbocharge-your-rag-with-query-reformulation-and-self-query",
+   "note": "the agent formulates itself a reference sentence that can be closer to the targeted documents, as in [HyDE]"
+  },
+  {
+   "from": "claims/a-rag-agent-formulates-its-own-retrieval-query-and-re-retrieves-recovering-hyde-and-self-query-behaviour",
+   "pred": "relates_to",
+   "to": "claims/the-model-deciding-whether-to-call-the-retriever-makes-rag-agentic-rather-than-a-fixed-pipeline",
+   "note": "both define agentic RAG as giving the model control over the retriever tool"
+  },
+  {
+   "from": "claims/a-rag-agent-formulates-its-own-retrieval-query-and-re-retrieves-recovering-hyde-and-self-query-behaviour",
+   "pred": "relates_to",
+   "to": "concepts/agentic-rag-retrieve-grade-rewrite-loop",
+   "note": "same retrieve-critique-rewrite pattern, here implicit in a ReAct agent rather than an explicit graph"
+  },
   {
    "from": "claims/a-relevance-grader-after-retrieval-routes-the-agent-to-answer-or-to-question-rewrite",
    "pred": "derived_from",
@@ -139,6 +193,30 @@
    "pred": "derived_from",
    "to": "sources/VERLTOOL TOWARDS HOLISTIC AGENTIC",
    "note": "Section 4.2; authors' own results, not independently replicated"
+  },
+  {
+   "from": "claims/agentic-rag-scored-86-9-percent-versus-73-1-percent-for-standard-rag-on-an-llm-judged-hugging-face-docs-qa-set",
+   "pred": "derived_from",
+   "to": "sources/agentic-rag-turbocharge-your-rag-with-query-reformulation-and-self-query",
+   "note": "Average score for agentic RAG: 86.9%"
+  },
+  {
+   "from": "claims/agentic-rag-scored-86-9-percent-versus-73-1-percent-for-standard-rag-on-an-llm-judged-hugging-face-docs-qa-set",
+   "pred": "derived_from",
+   "to": "sources/agentic-rag-turbocharge-your-rag-with-query-reformulation-and-self-query",
+   "note": "(For a baseline, using Llama-3-70B without the knowledge base got 36%)"
+  },
+  {
+   "from": "claims/agentic-rag-scored-86-9-percent-versus-73-1-percent-for-standard-rag-on-an-llm-judged-hugging-face-docs-qa-set",
+   "pred": "derived_from",
+   "to": "sources/agentic-rag-turbocharge-your-rag-with-query-reformulation-and-self-query",
+   "note": "reader_llm = InferenceClient(\"Qwen/Qwen2.5-72B-Instruct\")"
+  },
+  {
+   "from": "claims/agentic-rag-scored-86-9-percent-versus-73-1-percent-for-standard-rag-on-an-llm-judged-hugging-face-docs-qa-set",
+   "pred": "supports",
+   "to": "claims/a-rag-agent-formulates-its-own-retrieval-query-and-re-retrieves-recovering-hyde-and-self-query-behaviour",
+   "note": "reported gain of the agent setup over single-step RAG"
   },
   {
    "from": "claims/an-unoptimized-two-module-multi-hop-program-on-llama-3-1-8b-reaches-only-31-percent-top5-recall-on-hover",
@@ -189,6 +267,24 @@
    "note": "That choice is what makes the system agentic rather than a fixed retrieve-then-generate pipeline: retrieval runs only when the model requests it."
   },
   {
+   "from": "claims/the-retriever-tool-prompt-tells-the-agent-to-query-in-affirmative-form-with-several-semantically-different-queries",
+   "pred": "derived_from",
+   "to": "sources/agentic-rag-turbocharge-your-rag-with-query-reformulation-and-self-query",
+   "note": "Use the affirmative form rather than a question."
+  },
+  {
+   "from": "claims/the-retriever-tool-prompt-tells-the-agent-to-query-in-affirmative-form-with-several-semantically-different-queries",
+   "pred": "derived_from",
+   "to": "sources/agentic-rag-turbocharge-your-rag-with-query-reformulation-and-self-query",
+   "note": "Make sure to have covered the question completely by calling the retriever tool several times with semantically different queries."
+  },
+  {
+   "from": "claims/the-retriever-tool-prompt-tells-the-agent-to-query-in-affirmative-form-with-several-semantically-different-queries",
+   "pred": "supports",
+   "to": "claims/using-the-user-question-as-the-similarity-reference-can-miss-answer-documents-written-in-affirmative-form",
+   "note": "the prompt is the practical response to the question-vs-affirmative mismatch"
+  },
+  {
    "from": "claims/tokenizing-actions-and-observations-separately-keeps-multi-turn-rollouts-token-consistent",
    "pred": "derived_from",
    "to": "sources/VERLTOOL TOWARDS HOLISTIC AGENTIC",
@@ -211,6 +307,24 @@
    "pred": "derived_from",
    "to": "sources/VERLTOOL TOWARDS HOLISTIC AGENTIC",
    "note": "Section 4.2, Dynamics of Tool Usage"
+  },
+  {
+   "from": "claims/using-the-user-question-as-the-similarity-reference-can-miss-answer-documents-written-in-affirmative-form",
+   "pred": "derived_from",
+   "to": "sources/agentic-rag-turbocharge-your-rag-with-query-reformulation-and-self-query",
+   "note": "the user query will often be a question and the document containing the true answer will be in affirmative voice, so its similarity score will be downgraded compared to other source documents in the interrogative form"
+  },
+  {
+   "from": "claims/vanilla-rag-performs-only-one-retrieval-step-so-bad-retrieval-yields-bad-generation",
+   "pred": "derived_from",
+   "to": "sources/agentic-rag-turbocharge-your-rag-with-query-reformulation-and-self-query",
+   "note": "It **performs only one retrieval step**: if the results are bad, the generation in turn will be bad."
+  },
+  {
+   "from": "claims/vanilla-rag-performs-only-one-retrieval-step-so-bad-retrieval-yields-bad-generation",
+   "pred": "relates_to",
+   "to": "claims/rewriting-the-question-and-retrying-retrieval-lets-an-agent-recover-from-a-weak-first-retrieval",
+   "note": "the retry loop addresses exactly this single-step failure mode"
   },
   {
    "from": "concepts/agentic-rag-retrieve-grade-rewrite-loop",

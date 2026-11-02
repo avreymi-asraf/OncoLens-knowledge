@@ -12,7 +12,8 @@
     "text": "sources/text/agentic-rag-turbocharge-your-rag-with-query-reformulation-and-self-query.md",
     "sha256": "d8dd00c7847bbe4788cf71fc4dc92563a23c63e4417aa0b17595ebd72a631a88",
     "added": "2026-11-02",
-    "ingested": false
+    "ingested": true,
+    "ingested_on": "2026-11-02"
   },
   "build-a-custom-rag-agent-with-langgraph-docs-by-langchain": {
     "raw": "sources/raw/build-a-custom-rag-agent-with-langgraph-docs-by-langchain/build-a-custom-rag-agent-with-langgraph-docs-by-langchain.md",

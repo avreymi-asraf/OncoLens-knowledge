@@ -1,0 +1,10 @@
+# Rebuilt on demand by kb.py
+cortex/_index/search.db
+cortex/_index/search.db-journal
+cortex/_index/.stop-attempts
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
+.claude/settings.local.json
+.venv/

@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+# The hard gate: nothing enters history unless kb.py check passes.
+set -e
+ROOT="$(git rev-parse --show-toplevel)"
+cd "$ROOT"
+
+if ! command -v uv >/dev/null 2>&1; then
+  echo "pre-commit: uv is required (https://docs.astral.sh/uv/). Commit refused." >&2
+  exit 1
+fi
+KB="uv run --quiet --locked scripts/kb.py"
+
+# 1. Raw sources are immutable: no modification, deletion or rename of a committed file.
+changed=$(git diff --cached --name-only --diff-filter=MDR -- sources/raw sources/text || true)
+if [ -n "$changed" ]; then
+  echo "pre-commit: sources are immutable; these committed files were changed or removed:" >&2
+  echo "$changed" | sed 's/^/  - /' >&2
+  echo "Add a new file instead (a new version gets a new name)." >&2
+  exit 1
+fi
+
+# 2. Register new raw files (hash + text extraction), then validate everything.
+$KB register >/dev/null
+$KB check
+
+# 3. Rebuild the index and include it (and any newly registered sources) in this commit.
+$KB index >/dev/null
+git add sources/manifest.json sources/text cortex/_index/catalog.md cortex/_index/graph.json
+[ -f cortex/_index/search-misses.log ] && git add cortex/_index/search-misses.log
+exit 0

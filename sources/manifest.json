@@ -4,7 +4,8 @@
     "text": "sources/text/VERLTOOL TOWARDS HOLISTIC AGENTIC.md",
     "sha256": "f9d1c0789b7325a05a94453f1641e5e5e489e08b329585722b70f3c92c26026e",
     "added": "2026-11-02",
-    "ingested": false
+    "ingested": true,
+    "ingested_on": "2026-11-02"
   },
   "agentic-rag-turbocharge-your-rag-with-query-reformulation-and-self-query": {
     "raw": "sources/raw/agentic-rag-turbocharge-your-rag-with-query-reformulation-and-self-query/agentic-rag-turbocharge-your-rag-with-query-reformulation-and-self-query.md",

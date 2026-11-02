@@ -45,7 +45,7 @@
  },
  "sources": {
   "VERLTOOL TOWARDS HOLISTIC AGENTIC": {
-   "ingested": false,
+   "ingested": true,
    "raw": "sources/raw/VERLTOOL TOWARDS HOLISTIC AGENTIC.pdf"
   },
   "agentic-rag-turbocharge-your-rag-with-query-reformulation-and-self-query": {

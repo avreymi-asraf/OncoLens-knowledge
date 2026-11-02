@@ -8,3 +8,4 @@ Append-only. One line per operation.
 - 2026-11-02 23:18 | verify | claims/tool-call-frequency-during-rl-falls-for-memorizable-tool-outputs-and-rises-for-unmemorizable-ones -> partial | SQL decrease via memorizing shown; rise for search not in context
 - 2026-11-02 23:18 | verify | claims/tool-observation-tokens-are-off-policy-and-masked-from-the-grpo-loss -> pass | stated, masked typically
 - 2026-11-02 23:18 | verify | claims/tool-use-vanishes-during-rl-without-suitable-reward-design -> pass | directly stated
+- 2026-11-02 23:18 | ingest | VERLTOOL TOWARDS HOLISTIC AGENTIC | 6 claims, 0 updated, 0 mechanisms

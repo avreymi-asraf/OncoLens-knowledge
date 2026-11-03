@@ -66,6 +66,54 @@
    "description": "astabench version pin, inspect_ai 0.3.114, Inspect AstaBench coupling, override-dependencies",
    "title": "astabench 0.5.2 pins inspect_ai 0.3.114, and solvers that need a different version must use uv override-dependencies."
   },
+  "claims/astabench-coding-tasks-require-the-provided-sandbox-and-python-session-tool-for-accurate-scoring": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "AstaBench SUPER, CORE-bench, DiscoveryBench, python_session tool, SandboxJupyter, sandbox files, trajectory tracking, scoring requirements",
+   "title": "AstaBench coding and data tasks may require the provided sandbox and stateful python_session tool for accurate scores: SUPER tracks trajectories through it, CORE-bench scores a result file written in the sandbox, and DiscoveryBench reads files from the sandbox."
+  },
+  "claims/astabench-decouples-solve-and-score-for-solvers-that-cannot-share-its-inspect-ai-version": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "eval_then_score.sh, decoupled solve score, cross-version inspect_ai, frozen scorer project solvers/scorer, --no-score",
+   "title": "For solvers that cannot share astabench's inspect_ai version, AstaBench offers a decoupled flow that solves with --no-score and then scores in a separately pinned scorer project."
+  },
+  "claims/astabench-eval-records-the-git-sha-and-fails-on-uncommitted-changes-unless-ignore-git": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "astabench eval reproducibility, git sha in logs, uncommitted changes, --ignore-git, wrapper around inspect eval-set, --split",
+   "title": "astabench eval, a wrapper around inspect eval-set, records the git sha in logs and fails on uncommitted changes unless --ignore-git is set."
+  },
+  "claims/astabench-leaderboard-classifies-submissions-by-tool-usage-and-openness": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "AstaBench leaderboard submission, toolset categories Standard Custom Interface Custom, openness categories open source open weights closed API UI",
+   "title": "AstaBench leaderboard submissions are classified by tool usage (Standard, Custom Interface, Custom) and by openness (open/closed source and weights, API-only, UI-only)."
+  },
+  "claims/astabench-literature-search-tools-are-date-and-corpus-restricted-to-keep-rubrics-valid": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "AstaBench literature tasks, standardized search tools, date restriction, corpus restriction, rubric validity, alternative search tools lower scores",
+   "title": "AstaBench literature tasks provide search tools with date and corpus restrictions so task rubrics stay valid as new papers are published, and using alternative search tools may lower scores."
+  },
+  "claims/astabench-max-samples-should-not-exceed-cpu-cores-to-avoid-to-thread-deadlocks": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "AstaBench parallelism, --max-samples, CPU cores, asyncio.to_thread ThreadPool deadlock, INSPECT_DOCKER_CLI_CONCURRENCY 2N, ASTA_TOOL_KEY rate limit 8 samples",
+   "title": "AstaBench advises --max-samples no greater than CPU cores (about 8 for literature tasks, saturating the ~4 req/s Asta tool rate limit) and INSPECT_DOCKER_CLI_CONCURRENCY of at least twice that, to avoid deadlocks."
+  },
+  "claims/astabench-measures-solver-cost-as-well-as-accuracy-so-all-model-usage-must-be-logged": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "AstaBench cost logging, accuracy and cost, model usage tracking, record_model_usage_with_inspect, bridge, AsyncOpenAI",
+   "title": "AstaBench measures a solver's cost as well as its accuracy, so solvers must ensure all model usage is logged (automatically via InspectAI model calls, or manually with record_model_usage_with_inspect)."
+  },
+  "claims/astabench-provides-over-2400-examples-across-11-benchmarks": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "AstaBench size, 2400 examples, 11 benchmarks, literature search, code execution, data analysis, end-to-end discovery",
+   "title": "AstaBench provides over 2,400 examples across 11 benchmarks spanning literature search, code execution, data analysis and end-to-end discovery."
+  },
   "claims/asynchronous-per-trajectory-rollout-speeds-up-agentic-rl-rollouts-by-1-2-to-2x": {
    "type": "claim",
    "status": "proposed",
@@ -282,6 +330,12 @@
    "description": "ARLT, agentic RL with tool use, multi-turn RLVR with tool observations, trajectory of actions and observation tokens",
    "title": "Agentic Reinforcement Learning with Tool use (ARLT)"
   },
+  "concepts/astabench": {
+   "type": "concept",
+   "status": "active",
+   "description": "AstaBench, Allen AI benchmark suite for scientific research agents, 11 benchmarks, 2400 examples, InspectAI, leaderboard, cost, lit/code/data/discovery",
+   "title": "AstaBench"
+  },
   "concepts/code-action-agent": {
    "type": "concept",
    "status": "active",
@@ -337,7 +391,7 @@
    "raw": "sources/raw/github-allenai-agent-baselines-·-github-20261103165019.md"
   },
   "github-allenai-asta-bench-·-github-20261103165041": {
-   "ingested": false,
+   "ingested": true,
    "raw": "sources/raw/github-allenai-asta-bench-·-github-20261103165041.md"
   },
   "multi-hop-rag-dspy": {
@@ -501,6 +555,144 @@
    "pred": "relates_to",
    "to": "concepts/agent-baselines-astabench-solvers",
    "note": "Inspect/AstaBench coupling"
+  },
+  {
+   "from": "claims/astabench-coding-tasks-require-the-provided-sandbox-and-python-session-tool-for-accurate-scoring",
+   "pred": "derived_from",
+   "to": "sources/github-allenai-asta-bench-·-github-20261103165041",
+   "note": "SUPER requires using either the provided `python_session` tool or the `SandboxJupyter` environment to accurately track and score agent trajectories."
+  },
+  {
+   "from": "claims/astabench-coding-tasks-require-the-provided-sandbox-and-python-session-tool-for-accurate-scoring",
+   "pred": "derived_from",
+   "to": "sources/github-allenai-asta-bench-·-github-20261103165041",
+   "note": "CORE-bench requires the agent to write its results as a file in the sandbox for scoring"
+  },
+  {
+   "from": "claims/astabench-coding-tasks-require-the-provided-sandbox-and-python-session-tool-for-accurate-scoring",
+   "pred": "derived_from",
+   "to": "sources/github-allenai-asta-bench-·-github-20261103165041",
+   "note": "DiscoveryBench requires the agent to read files from the sandbox for analysis"
+  },
+  {
+   "from": "claims/astabench-coding-tasks-require-the-provided-sandbox-and-python-session-tool-for-accurate-scoring",
+   "pred": "relates_to",
+   "to": "concepts/astabench",
+   "note": "task-specific scoring constraints"
+  },
+  {
+   "from": "claims/astabench-decouples-solve-and-score-for-solvers-that-cannot-share-its-inspect-ai-version",
+   "pred": "derived_from",
+   "to": "sources/github-allenai-asta-bench-·-github-20261103165041",
+   "note": "For solver environments that cannot share the same `inspect_ai` version as `astabench`, use:"
+  },
+  {
+   "from": "claims/astabench-decouples-solve-and-score-for-solvers-that-cannot-share-its-inspect-ai-version",
+   "pred": "derived_from",
+   "to": "sources/github-allenai-asta-bench-·-github-20261103165041",
+   "note": "The scorer project is pinned independently in [solvers/scorer/pyproject.toml](https://github.com/allenai/asta-bench/blob/main/solvers/scorer/pyproject.toml)."
+  },
+  {
+   "from": "claims/astabench-decouples-solve-and-score-for-solvers-that-cannot-share-its-inspect-ai-version",
+   "pred": "relates_to",
+   "to": "claims/astabench-0-5-2-pins-inspect-ai-0-3-114",
+   "note": "alternative to uv override-dependencies for diverging inspect_ai versions"
+  },
+  {
+   "from": "claims/astabench-decouples-solve-and-score-for-solvers-that-cannot-share-its-inspect-ai-version",
+   "pred": "relates_to",
+   "to": "concepts/astabench",
+   "note": "cross-version workflow"
+  },
+  {
+   "from": "claims/astabench-eval-records-the-git-sha-and-fails-on-uncommitted-changes-unless-ignore-git",
+   "pred": "derived_from",
+   "to": "sources/github-allenai-asta-bench-·-github-20261103165041",
+   "note": "By default, for reproducibility, the git sha will be recorded in the logs, and the command will fail if there are uncommitted changes."
+  },
+  {
+   "from": "claims/astabench-eval-records-the-git-sha-and-fails-on-uncommitted-changes-unless-ignore-git",
+   "pred": "relates_to",
+   "to": "concepts/astabench",
+   "note": "reproducibility"
+  },
+  {
+   "from": "claims/astabench-leaderboard-classifies-submissions-by-tool-usage-and-openness",
+   "pred": "derived_from",
+   "to": "sources/github-allenai-asta-bench-·-github-20261103165041",
+   "note": "- **Standard**: Uses only predefined tools from the evaluation environment (as defined in Inspect's `state.tools`)"
+  },
+  {
+   "from": "claims/astabench-leaderboard-classifies-submissions-by-tool-usage-and-openness",
+   "pred": "derived_from",
+   "to": "sources/github-allenai-asta-bench-·-github-20261103165041",
+   "note": "- **Closed source & UI only**: No access to code or API; UI access only"
+  },
+  {
+   "from": "claims/astabench-leaderboard-classifies-submissions-by-tool-usage-and-openness",
+   "pred": "relates_to",
+   "to": "concepts/astabench",
+   "note": "leaderboard metadata"
+  },
+  {
+   "from": "claims/astabench-literature-search-tools-are-date-and-corpus-restricted-to-keep-rubrics-valid",
+   "pred": "derived_from",
+   "to": "sources/github-allenai-asta-bench-·-github-20261103165041",
+   "note": "Literature tasks provide standardized search tools; these come with date and corpus restrictions to ensure validity of task rubrics even as new papers are published over time. Solvers may use alternative search tools, but this may result in lower scores even if they return relevant papers."
+  },
+  {
+   "from": "claims/astabench-literature-search-tools-are-date-and-corpus-restricted-to-keep-rubrics-valid",
+   "pred": "relates_to",
+   "to": "concepts/astabench",
+   "note": "tool standardization for fair comparison"
+  },
+  {
+   "from": "claims/astabench-max-samples-should-not-exceed-cpu-cores-to-avoid-to-thread-deadlocks",
+   "pred": "derived_from",
+   "to": "sources/github-allenai-asta-bench-·-github-20261103165041",
+   "note": "this is why we suggest setting `--max-samples` no greater than the number of CPU cores."
+  },
+  {
+   "from": "claims/astabench-max-samples-should-not-exceed-cpu-cores-to-avoid-to-thread-deadlocks",
+   "pred": "derived_from",
+   "to": "sources/github-allenai-asta-bench-·-github-20261103165041",
+   "note": "For literature tasks with fast LLMs, it should be no greater than roughly `--max-samples=8`, which is empirically what we found to saturate the default `ASTA_TOOL_KEY` rate limit of roughly 4 requests per second for MCP tools."
+  },
+  {
+   "from": "claims/astabench-max-samples-should-not-exceed-cpu-cores-to-avoid-to-thread-deadlocks",
+   "pred": "relates_to",
+   "to": "concepts/astabench",
+   "note": "operational guidance"
+  },
+  {
+   "from": "claims/astabench-max-samples-should-not-exceed-cpu-cores-to-avoid-to-thread-deadlocks",
+   "pred": "relates_to",
+   "to": "concepts/code-action-agent",
+   "note": "SandboxToolManager code agents need INSPECT_DOCKER_CLI_CONCURRENCY of at least N+1, ideally 2N"
+  },
+  {
+   "from": "claims/astabench-measures-solver-cost-as-well-as-accuracy-so-all-model-usage-must-be-logged",
+   "pred": "derived_from",
+   "to": "sources/github-allenai-asta-bench-·-github-20261103165041",
+   "note": "A key part of AstaBench's design philosophy is measuring not only the accuracy of a solver, but also the cost of running it. Thus, it is crucial that solvers ensure all model usages are correctly logged."
+  },
+  {
+   "from": "claims/astabench-measures-solver-cost-as-well-as-accuracy-so-all-model-usage-must-be-logged",
+   "pred": "relates_to",
+   "to": "concepts/astabench",
+   "note": "design philosophy: accuracy plus cost"
+  },
+  {
+   "from": "claims/astabench-provides-over-2400-examples-across-11-benchmarks",
+   "pred": "derived_from",
+   "to": "sources/github-allenai-asta-bench-·-github-20261103165041",
+   "note": "It provides over 2,400 examples across [11 benchmarks](https://github.com/allenai/asta-bench#available-tasks) that test the full spectrum of research skills, from literature search and code execution to data analysis and end-to-end discovery."
+  },
+  {
+   "from": "claims/astabench-provides-over-2400-examples-across-11-benchmarks",
+   "pred": "relates_to",
+   "to": "concepts/astabench",
+   "note": "suite scope"
   },
   {
    "from": "claims/asynchronous-per-trajectory-rollout-speeds-up-agentic-rl-rollouts-by-1-2-to-2x",
@@ -835,6 +1027,12 @@
   {
    "from": "concepts/agent-baselines-astabench-solvers",
    "pred": "relates_to",
+   "to": "concepts/astabench",
+   "note": "the benchmark suite these solvers are run on"
+  },
+  {
+   "from": "concepts/agent-baselines-astabench-solvers",
+   "pred": "relates_to",
    "to": "concepts/code-action-agent",
    "note": "the smolagents coder baseline"
   },
@@ -861,6 +1059,30 @@
    "pred": "derived_from",
    "to": "sources/VERLTOOL TOWARDS HOLISTIC AGENTIC",
    "note": "the trajectory can be written asτ={a 0, o0, . . . , an−1, on−1, an}"
+  },
+  {
+   "from": "concepts/astabench",
+   "pred": "derived_from",
+   "to": "sources/github-allenai-asta-bench-·-github-20261103165041",
+   "note": "AstaBench is an evaluation framework for measuring the scientific research abilities of AI agents."
+  },
+  {
+   "from": "concepts/astabench",
+   "pred": "derived_from",
+   "to": "sources/github-allenai-asta-bench-·-github-20261103165041",
+   "note": "AstaBench includes a comprehensive suite of evaluation tasks across four main categories:"
+  },
+  {
+   "from": "concepts/astabench",
+   "pred": "relates_to",
+   "to": "concepts/agent-baselines-astabench-solvers",
+   "note": "the baseline solvers evaluated on this suite"
+  },
+  {
+   "from": "concepts/astabench",
+   "pred": "relates_to",
+   "to": "concepts/react-tool-calling-agent-loop",
+   "note": "the README's example full-suite run uses InspectAI's builtin ReAct agent"
   },
   {
    "from": "concepts/code-action-agent",

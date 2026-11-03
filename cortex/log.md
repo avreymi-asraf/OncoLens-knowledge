@@ -54,3 +54,13 @@ Append-only. One line per operation.
 - 2026-11-03 15:18 | verify | claims/asta-v0-routes-each-task-to-a-specialized-agent-based-on-the-detected-task-type -> pass | Directly stated
 - 2026-11-03 15:18 | verify | claims/astabench-0-5-2-pins-inspect-ai-0-3-114 -> pass | Pin and override-dependencies guidance directly stated
 - 2026-11-03 15:18 | verify | claims/dvc-repro-does-not-rerun-a-stage-when-solver-or-scorer-code-changes-without-its-cmd-changing -> pass | Source says such changes require manual force, with --force --downstream example
+- 2026-11-03 15:19 | ingest | github-allenai-asta-bench-·-github-20261103165041 | 8 claims, 1 updated, 0 mechanisms
+- 2026-11-03 15:19 | ingest | GAVE UP after 5 failed checks; nothing committed
+- 2026-11-03 15:19 | verify | claims/astabench-coding-tasks-require-the-provided-sandbox-and-python-session-tool-for-accurate-scoring -> pass | All three sub-requirements stated verbatim
+- 2026-11-03 15:19 | verify | claims/astabench-decouples-solve-and-score-for-solvers-that-cannot-share-its-inspect-ai-version -> pass | Wrapper runs --no-score then scores in independently pinned scorer
+- 2026-11-03 15:19 | verify | claims/astabench-eval-records-the-git-sha-and-fails-on-uncommitted-changes-unless-ignore-git -> pass | Stated directly
+- 2026-11-03 15:19 | verify | claims/astabench-leaderboard-classifies-submissions-by-tool-usage-and-openness -> partial | Openness list fully shown; 'Custom' toolset category not visible in context
+- 2026-11-03 15:19 | verify | claims/astabench-literature-search-tools-are-date-and-corpus-restricted-to-keep-rubrics-valid -> pass | Verbatim
+- 2026-11-03 15:19 | verify | claims/astabench-max-samples-should-not-exceed-cpu-cores-to-avoid-to-thread-deadlocks -> pass | Rule of thumb plus deadlock rationale stated
+- 2026-11-03 15:19 | verify | claims/astabench-measures-solver-cost-as-well-as-accuracy-so-all-model-usage-must-be-logged -> partial | Cost/logging and automatic Inspect logging supported; record_model_usage_with_inspect not in context
+- 2026-11-03 15:19 | verify | claims/astabench-provides-over-2400-examples-across-11-benchmarks -> pass | Verbatim

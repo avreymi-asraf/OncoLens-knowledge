@@ -60,7 +60,8 @@
     "text": "sources/text/github-allenai-asta-bench-·-github-20261103165041.md",
     "sha256": "65af8b13238325c957f91fb1af17af6bbf677b6a89af0ea7a2bf8ce2641bfd7e",
     "added": "2026-11-03",
-    "ingested": false
+    "ingested": true,
+    "ingested_on": "2026-11-03"
   },
   "multi-hop-rag-dspy": {
     "raw": "sources/raw/multi-hop-rag-dspy/multi-hop-rag-dspy.md",

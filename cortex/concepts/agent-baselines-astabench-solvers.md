@@ -15,3 +15,5 @@ An Allen AI repository of baseline agent implementations reported in AstaBench, 
   - the basic general baseline in the repo
 - relates_to::[[concepts/code-action-agent]]
   - the smolagents coder baseline
+- relates_to::[[concepts/astabench]]
+  - the benchmark suite these solvers are run on

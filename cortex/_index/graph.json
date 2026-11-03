@@ -30,6 +30,12 @@
    "description": "F1+ reward, action-level penalty, no search penalty, no answer penalty, reward shaping, stability, deep research agent",
    "title": "Adding small penalties for omitting the search or answer action to the F1 reward removes the answer-refusal collapse and lets F1-based training surpass the EM baseline."
   },
+  "claims/agent-baselines-uses-one-uv-sub-project-per-solver-to-avoid-dependency-conflicts-and-make-runs-reproducible": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "per-solver uv sub-projects, lockfiles, dependency isolation, inspect_ai version conflicts, reproducibility, agent-baselines",
+   "title": "The agent-baselines repo gives each solver its own uv sub-project and lockfile to avoid cross-solver dependency conflicts (notably inspect_ai versions) and to make runs reproducible per solver."
+  },
   "claims/agentic-rag-scored-86-9-percent-versus-73-1-percent-for-standard-rag-on-an-llm-judged-hugging-face-docs-qa-set": {
    "type": "claim",
    "status": "proposed",
@@ -42,11 +48,35 @@
    "description": "DSPy multi-hop retrieval baseline, Hop module, query generation plus note appending, BM25S over Wikipedia 2017 abstracts, HoVer 3-hop, top-5 recall about 31% with Llama-3.1-8B.",
    "title": "An unoptimized two-module multi-hop retrieval program on Llama-3.1-8B reaches only about 31% top-5 recall on 3-hop HoVer claims."
   },
+  "claims/asta-scholarqa-and-paper-finder-baselines-are-variants-of-the-systems-behind-asta-summarize-literature-and-find-papers": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "Asta ScholarQA SQA, Asta Paper Finder, production systems, Asta Summarize Literature, Asta Find Papers, retrieval and reranking",
+   "title": "The Asta ScholarQA and Asta Paper Finder baselines are variants of the production systems behind Asta Summarize Literature and Asta Find Papers respectively."
+  },
+  "claims/asta-v0-routes-each-task-to-a-specialized-agent-based-on-the-detected-task-type": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "Asta-v0 router agent, task-type detection, dispatch to specialized sub-agents, orchestrator, AstaBench",
+   "title": "Asta-v0 is a routing agent that dispatches each task to a specialized agent based on the detected task type."
+  },
+  "claims/astabench-0-5-2-pins-inspect-ai-0-3-114": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "astabench version pin, inspect_ai 0.3.114, Inspect AstaBench coupling, override-dependencies",
+   "title": "astabench 0.5.2 pins inspect_ai 0.3.114, and solvers that need a different version must use uv override-dependencies."
+  },
   "claims/asynchronous-per-trajectory-rollout-speeds-up-agentic-rl-rollouts-by-1-2-to-2x": {
    "type": "claim",
    "status": "proposed",
    "description": "async rollout, synchronous batch, tool call latency, GPU idle bubbles, speedup, VerlTool agentic RL",
    "title": "Letting each trajectory call the tool server independently (asynchronous rollout) instead of batch-synchronously speeds up rollouts by about 1.2x to 2x depending on the task."
+  },
+  "claims/dvc-repro-does-not-rerun-a-stage-when-solver-or-scorer-code-changes-without-its-cmd-changing": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "dvc repro caching, stale eval results, force rerun, score_sqa --force --downstream, dvc.lock hash, SQA release runs",
+   "title": "In the agent-baselines SQA dvc pipeline, a code change to a solver or scorer that leaves the stage cmd unchanged does not trigger a rerun, so the stage must be forced (e.g. with --force --downstream)."
   },
   "claims/f1-reward-training-collapses-through-answer-avoidance-and-underperforms-em": {
    "type": "claim",
@@ -234,6 +264,12 @@
    "description": "vanilla RAG limitation, single retrieval step, retrieval failure propagates to generation, no retry",
    "title": "Vanilla RAG performs only one retrieval step, so when retrieval results are bad the generated answer is bad too."
   },
+  "concepts/agent-baselines-astabench-solvers": {
+   "type": "concept",
+   "status": "active",
+   "description": "allenai agent-baselines repo, AstaBench baseline agents, InspectAI solvers, astabench eval, ReAct, smolagents, Asta science agents, STORM, FutureHouse",
+   "title": "agent-baselines (AstaBench baseline solvers)"
+  },
   "concepts/agentic-rag-retrieve-grade-rewrite-loop": {
    "type": "concept",
    "status": "active",
@@ -246,11 +282,23 @@
    "description": "ARLT, agentic RL with tool use, multi-turn RLVR with tool observations, trajectory of actions and observation tokens",
    "title": "Agentic Reinforcement Learning with Tool use (ARLT)"
   },
+  "concepts/code-action-agent": {
+   "type": "concept",
+   "status": "active",
+   "description": "code agent, CodeAgent, code actions, agent writes Python instead of JSON tool calls, smolagents, sandboxed execution",
+   "title": "Code-action agent"
+  },
   "concepts/multi-hop-retrieval-with-note-accumulation": {
    "type": "concept",
    "status": "active",
    "description": "Multi-hop retrieval loop, iterative query generation, retrieve, append notes and titles; DSPy Hop module, HoVer fact-checking, top-5 recall.",
    "title": "Multi-hop retrieval with note accumulation"
+  },
+  "concepts/react-tool-calling-agent-loop": {
+   "type": "concept",
+   "status": "active",
+   "description": "ReAct agent, LLM tool-calling in a loop, reason-act loop, max_steps budget, basic agent baseline",
+   "title": "ReAct tool-calling agent loop"
   },
   "tensions/does-instruct-initialization-beat-base-initialization-for-rl-with-search": {
    "type": "tension",
@@ -285,7 +333,7 @@
    "raw": "sources/raw/build-a-custom-rag-agent-with-langgraph-docs-by-langchain/build-a-custom-rag-agent-with-langgraph-docs-by-langchain.md"
   },
   "github-allenai-agent-baselines-·-github-20261103165019": {
-   "ingested": false,
+   "ingested": true,
    "raw": "sources/raw/github-allenai-agent-baselines-·-github-20261103165019.md"
   },
   "github-allenai-asta-bench-·-github-20261103165041": {
@@ -353,6 +401,30 @@
    "note": "both report that action omission (tool use or answering) emerges under outcome-only rewards and is countered by reward design"
   },
   {
+   "from": "claims/agent-baselines-uses-one-uv-sub-project-per-solver-to-avoid-dependency-conflicts-and-make-runs-reproducible",
+   "pred": "derived_from",
+   "to": "sources/github-allenai-agent-baselines-·-github-20261103165019",
+   "note": "This repo uses **one uv sub-project per solver**"
+  },
+  {
+   "from": "claims/agent-baselines-uses-one-uv-sub-project-per-solver-to-avoid-dependency-conflicts-and-make-runs-reproducible",
+   "pred": "derived_from",
+   "to": "sources/github-allenai-agent-baselines-·-github-20261103165019",
+   "note": "Avoid dependency conflicts across solvers (especially different `inspect_ai` needs)."
+  },
+  {
+   "from": "claims/agent-baselines-uses-one-uv-sub-project-per-solver-to-avoid-dependency-conflicts-and-make-runs-reproducible",
+   "pred": "derived_from",
+   "to": "sources/github-allenai-agent-baselines-·-github-20261103165019",
+   "note": "Make runs reproducible per solver via lockfiles."
+  },
+  {
+   "from": "claims/agent-baselines-uses-one-uv-sub-project-per-solver-to-avoid-dependency-conflicts-and-make-runs-reproducible",
+   "pred": "relates_to",
+   "to": "concepts/agent-baselines-astabench-solvers",
+   "note": "repo structure"
+  },
+  {
    "from": "claims/agentic-rag-scored-86-9-percent-versus-73-1-percent-for-standard-rag-on-an-llm-judged-hugging-face-docs-qa-set",
    "pred": "derived_from",
    "to": "sources/agentic-rag-turbocharge-your-rag-with-query-reformulation-and-self-query",
@@ -383,10 +455,70 @@
    "note": "baseline evaluation of Hop() on the dev set"
   },
   {
+   "from": "claims/asta-scholarqa-and-paper-finder-baselines-are-variants-of-the-systems-behind-asta-summarize-literature-and-find-papers",
+   "pred": "derived_from",
+   "to": "sources/github-allenai-agent-baselines-·-github-20261103165019",
+   "note": "Long-form question answering system with retrieval and reranking, designed for the SQA task. This is a variant of the system that powers [Asta Summarize Literature](https://asta.allen.ai/synthesize)."
+  },
+  {
+   "from": "claims/asta-scholarqa-and-paper-finder-baselines-are-variants-of-the-systems-behind-asta-summarize-literature-and-find-papers",
+   "pred": "derived_from",
+   "to": "sources/github-allenai-agent-baselines-·-github-20261103165019",
+   "note": "Agent for paper search and recommendation, designed for the PaperFinder task. This is a variant of the system that powers [Asta Find Papers](https://asta.allen.ai/discover)."
+  },
+  {
+   "from": "claims/asta-scholarqa-and-paper-finder-baselines-are-variants-of-the-systems-behind-asta-summarize-literature-and-find-papers",
+   "pred": "relates_to",
+   "to": "concepts/agent-baselines-astabench-solvers",
+   "note": "Asta science agents"
+  },
+  {
+   "from": "claims/asta-v0-routes-each-task-to-a-specialized-agent-based-on-the-detected-task-type",
+   "pred": "derived_from",
+   "to": "sources/github-allenai-agent-baselines-·-github-20261103165019",
+   "note": "an agent that routes tasks to specialized agents based on the detected task type."
+  },
+  {
+   "from": "claims/asta-v0-routes-each-task-to-a-specialized-agent-based-on-the-detected-task-type",
+   "pred": "relates_to",
+   "to": "concepts/agent-baselines-astabench-solvers",
+   "note": "one of the Asta science agents"
+  },
+  {
+   "from": "claims/astabench-0-5-2-pins-inspect-ai-0-3-114",
+   "pred": "derived_from",
+   "to": "sources/github-allenai-agent-baselines-·-github-20261103165019",
+   "note": "`astabench==0.5.2` pins `inspect_ai==0.3.114`."
+  },
+  {
+   "from": "claims/astabench-0-5-2-pins-inspect-ai-0-3-114",
+   "pred": "derived_from",
+   "to": "sources/github-allenai-agent-baselines-·-github-20261103165019",
+   "note": "To diverge per-solver, use uv `override-dependencies`."
+  },
+  {
+   "from": "claims/astabench-0-5-2-pins-inspect-ai-0-3-114",
+   "pred": "relates_to",
+   "to": "concepts/agent-baselines-astabench-solvers",
+   "note": "Inspect/AstaBench coupling"
+  },
+  {
    "from": "claims/asynchronous-per-trajectory-rollout-speeds-up-agentic-rl-rollouts-by-1-2-to-2x",
    "pred": "derived_from",
    "to": "sources/VERLTOOL TOWARDS HOLISTIC AGENTIC",
    "note": "Table 2: Math-TIR, SQL, DeepSearch on 8 H100 GPUs"
+  },
+  {
+   "from": "claims/dvc-repro-does-not-rerun-a-stage-when-solver-or-scorer-code-changes-without-its-cmd-changing",
+   "pred": "derived_from",
+   "to": "sources/github-allenai-agent-baselines-·-github-20261103165019",
+   "note": "Sometimes we need to manually force a stage to run since the code for a stage can change (for example a bugfix or improvement to a solver or scorer) without the `cmd` for that stage changing."
+  },
+  {
+   "from": "claims/dvc-repro-does-not-rerun-a-stage-when-solver-or-scorer-code-changes-without-its-cmd-changing",
+   "pred": "derived_from",
+   "to": "sources/github-allenai-agent-baselines-·-github-20261103165019",
+   "note": "Any of the `dependencies` changed. (This is determined by comparing the hash with the hash stored in `dvc.lock`)"
   },
   {
    "from": "claims/f1-reward-training-collapses-through-answer-avoidance-and-underperforms-em",
@@ -695,6 +827,24 @@
    "note": "the retry loop addresses exactly this single-step failure mode"
   },
   {
+   "from": "concepts/agent-baselines-astabench-solvers",
+   "pred": "derived_from",
+   "to": "sources/github-allenai-agent-baselines-·-github-20261103165019",
+   "note": "These agents are implemented as InspectAI solvers and can be run on the AstaBench suit with the `astabench eval` command."
+  },
+  {
+   "from": "concepts/agent-baselines-astabench-solvers",
+   "pred": "relates_to",
+   "to": "concepts/code-action-agent",
+   "note": "the smolagents coder baseline"
+  },
+  {
+   "from": "concepts/agent-baselines-astabench-solvers",
+   "pred": "relates_to",
+   "to": "concepts/react-tool-calling-agent-loop",
+   "note": "the basic general baseline in the repo"
+  },
+  {
    "from": "concepts/agentic-rag-retrieve-grade-rewrite-loop",
    "pred": "derived_from",
    "to": "sources/build-a-custom-rag-agent-with-langgraph-docs-by-langchain",
@@ -713,10 +863,28 @@
    "note": "the trajectory can be written asτ={a 0, o0, . . . , an−1, on−1, an}"
   },
   {
+   "from": "concepts/code-action-agent",
+   "pred": "derived_from",
+   "to": "sources/github-allenai-agent-baselines-·-github-20261103165019",
+   "note": "which takes actions by writing Python code rather than using JSON tool-calling. Requires a sandbox and uses `SandboxToolManager` to access tools from sandboxed code."
+  },
+  {
+   "from": "concepts/code-action-agent",
+   "pred": "relates_to",
+   "to": "claims/a-rag-agent-formulates-its-own-retrieval-query-and-re-retrieves-recovering-hyde-and-self-query-behaviour",
+   "note": "both use smolagents; that claim uses the JSON ToolCallingAgent, this concept is the CodeAgent alternative"
+  },
+  {
    "from": "concepts/multi-hop-retrieval-with-note-accumulation",
    "pred": "derived_from",
    "to": "sources/multi-hop-rag-dspy",
    "note": "It will do this via two sub-modules: `generate_query` and `append_notes`."
+  },
+  {
+   "from": "concepts/react-tool-calling-agent-loop",
+   "pred": "derived_from",
+   "to": "sources/github-allenai-agent-baselines-·-github-20261103165019",
+   "note": "a simple ReAct implementation that uses LLM tool-calling in a loop. It supports all [AstaBench tool options](https://github.com/allenai/asta-bench?tab=readme-ov-file#tools-and-utilities) and configurable `max_steps`."
   },
   {
    "from": "tensions/does-instruct-initialization-beat-base-initialization-for-rl-with-search",

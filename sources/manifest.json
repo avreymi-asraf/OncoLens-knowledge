@@ -52,7 +52,8 @@
     "text": "sources/text/github-allenai-agent-baselines-·-github-20261103165019.md",
     "sha256": "598c31667bac484ce9103541989342b91b1e901faeb0bb0adb27700a86054820",
     "added": "2026-11-03",
-    "ingested": false
+    "ingested": true,
+    "ingested_on": "2026-11-03"
   },
   "github-allenai-asta-bench-·-github-20261103165041": {
     "raw": "sources/raw/github-allenai-asta-bench-·-github-20261103165041.md",

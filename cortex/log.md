@@ -48,3 +48,9 @@ Append-only. One line per operation.
 - 2026-11-03 15:16 | verify | claims/search-r1-response-length-first-drops-then-rises-as-the-model-learns-to-call-search-more -> pass | Sec 5.3 early/later stage trends match
 - 2026-11-03 15:16 | verify | claims/search-r1-retrieved-token-loss-masking-raises-average-em-from-0-343-to-0-431 -> pass | Table 4 avg 0.431 vs 0.343, Qwen2.5-7b-base PPO
 - 2026-11-03 15:16 | verify | claims/search-r1-uses-an-exact-match-outcome-reward-with-no-format-reward-or-neural-reward-model -> pass | Sec 3.4: outcome-only EM reward, no format or neural RM
+- 2026-11-03 15:17 | ingest | github-allenai-agent-baselines-·-github-20261103165019 | 5 claims, 0 updated, 0 mechanisms
+- 2026-11-03 15:18 | verify | claims/agent-baselines-uses-one-uv-sub-project-per-solver-to-avoid-dependency-conflicts-and-make-runs-reproducible -> pass | Source states per-solver uv sub-projects with lockfiles, for conflicts and reproducibility
+- 2026-11-03 15:18 | verify | claims/asta-scholarqa-and-paper-finder-baselines-are-variants-of-the-systems-behind-asta-summarize-literature-and-find-papers -> pass | Both described as variants of systems powering those products
+- 2026-11-03 15:18 | verify | claims/asta-v0-routes-each-task-to-a-specialized-agent-based-on-the-detected-task-type -> pass | Directly stated
+- 2026-11-03 15:18 | verify | claims/astabench-0-5-2-pins-inspect-ai-0-3-114 -> pass | Pin and override-dependencies guidance directly stated
+- 2026-11-03 15:18 | verify | claims/dvc-repro-does-not-rerun-a-stage-when-solver-or-scorer-code-changes-without-its-cmd-changing -> pass | Source says such changes require manual force, with --force --downstream example

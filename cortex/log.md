@@ -41,3 +41,10 @@ Append-only. One line per operation.
 - 2026-11-03 15:15 | verify | claims/research-trains-llms-to-interleave-search-with-reasoning-via-grpo-without-supervised-reasoning-data -> pass | Directly stated
 - 2026-11-03 15:15 | verify | claims/rl-from-instruction-tuned-models-outperforms-rl-from-base-models-in-research -> pass | Directly stated, consistent across benchmarks and sizes
 - 2026-11-03 15:15 | verify | claims/search-call-count-and-response-length-grow-during-research-rl-training -> pass | Both trends directly stated
+- 2026-11-03 15:16 | ingest | Search-R1 Training LLMs to Reason and Leverage Search | 6 claims, 0 updated, 0 mechanisms
+- 2026-11-03 15:16 | verify | claims/grpo-converges-faster-than-ppo-in-search-r1-but-suffers-reward-collapse-while-ppo-stays-stable -> pass | Sec 5.1 states all three points
+- 2026-11-03 15:16 | verify | claims/search-r1-improves-over-rag-baselines-by-24-percent-at-7b-and-20-percent-at-3b -> partial | Source says 'strong baseline methods', not RAG baselines specifically
+- 2026-11-03 15:16 | verify | claims/search-r1-instruct-models-converge-faster-but-reach-similar-final-reward-to-base-models -> pass | Sec 5.2 states this directly
+- 2026-11-03 15:16 | verify | claims/search-r1-response-length-first-drops-then-rises-as-the-model-learns-to-call-search-more -> pass | Sec 5.3 early/later stage trends match
+- 2026-11-03 15:16 | verify | claims/search-r1-retrieved-token-loss-masking-raises-average-em-from-0-343-to-0-431 -> pass | Table 4 avg 0.431 vs 0.343, Qwen2.5-7b-base PPO
+- 2026-11-03 15:16 | verify | claims/search-r1-uses-an-exact-match-outcome-reward-with-no-format-reward-or-neural-reward-model -> pass | Sec 3.4: outcome-only EM reward, no format or neural RM

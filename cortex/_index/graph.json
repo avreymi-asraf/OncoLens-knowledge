@@ -60,6 +60,12 @@
    "description": "Fast Thinking vs Slow Thinking prompt template, think tags, Search-R1, deep research RL stability, accuracy",
    "title": "In Search-R1 RL training, a Fast Thinking template that outputs search and answer decisions directly trains more stably and scores higher than the Slow Thinking template with explicit think tags."
   },
+  "claims/grpo-converges-faster-than-ppo-in-search-r1-but-suffers-reward-collapse-while-ppo-stays-stable": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "PPO vs GRPO, convergence speed, reward collapse, training stability, critic warm-up, Search-R1",
+   "title": "In Search-R1 training, GRPO converges faster than PPO but can suffer reward collapse after many steps, while PPO stays stable and both reach comparable final reward."
+  },
   "claims/joint-prompt-optimization-with-miprov2-roughly-doubles-multi-hop-retrieval-recall-from-31-to-59-percent": {
    "type": "claim",
    "status": "proposed",
@@ -138,11 +144,41 @@
    "description": "number of search operations, response length, training dynamics, tool call growth, ReSearch, multi-hop",
    "title": "During ReSearch RL training, the average number of search operations per rollout grows consistently and response length generally increases."
   },
+  "claims/search-r1-improves-over-rag-baselines-by-24-percent-at-7b-and-20-percent-at-3b": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "Search-R1 main results, average relative improvement, RAG baselines, seven QA datasets, Qwen2.5-7B 3B, EM",
+   "title": "Search-R1 achieves 24% (Qwen2.5-7B) and 20% (Qwen2.5-3B) average relative improvement over RAG baselines across seven QA datasets."
+  },
+  "claims/search-r1-instruct-models-converge-faster-but-reach-similar-final-reward-to-base-models": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "base vs instruct initialization, convergence speed, final reward parity, Qwen2.5 3B 7B, Search-R1, RL closes gap",
+   "title": "In Search-R1, instruction-tuned models converge faster and start higher than base models, but final training reward of both is highly similar."
+  },
   "claims/search-r1-plus-plus-raises-search-r1-average-accuracy-on-qa-benchmarks": {
    "type": "claim",
    "status": "proposed",
    "description": "Search-R1++ baseline, Fast Thinking, REINFORCE, F1+ reward, Qwen2.5-7B, Qwen2.5-3B, QA benchmarks",
    "title": "Search-R1++, combining the Fast Thinking template, REINFORCE and penalty-augmented F1 reward, raises Search-R1 average accuracy from 0.403 to 0.442 on Qwen2.5-7B and from 0.289 to 0.331 on Qwen2.5-3B."
+  },
+  "claims/search-r1-response-length-first-drops-then-rises-as-the-model-learns-to-call-search-more": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "response length dynamics, decrease-increase-stabilize, valid search calls grow, training dynamics, Search-R1 Qwen2.5-7B base",
+   "title": "During Search-R1 training on Qwen2.5-7B base, response length first drops sharply for about 100 steps and then rises as the model learns to call search more often."
+  },
+  "claims/search-r1-retrieved-token-loss-masking-raises-average-em-from-0-343-to-0-431": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "retrieved token loss masking ablation, observation masking, Search-R1, PPO, Qwen2.5-7B base, EM 0.431 vs 0.343",
+   "title": "In Search-R1 with PPO on Qwen2.5-7B base, masking retrieved tokens from the loss raises average EM over seven QA datasets from 0.343 to 0.431."
+  },
+  "claims/search-r1-uses-an-exact-match-outcome-reward-with-no-format-reward-or-neural-reward-model": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "outcome-based reward, exact match EM reward, no format reward, no neural reward model, rule-based, Search-R1",
+   "title": "Search-R1 trains with a rule-based outcome reward equal to exact match of the final answer, without format rewards or a neural reward model."
   },
   "claims/slow-thinking-training-collapse-coincides-with-runaway-empty-think-tag-generation": {
    "type": "claim",
@@ -215,6 +251,12 @@
    "status": "active",
    "description": "Multi-hop retrieval loop, iterative query generation, retrieve, append notes and titles; DSPy Hop module, HoVer fact-checking, top-5 recall.",
    "title": "Multi-hop retrieval with note accumulation"
+  },
+  "tensions/does-instruct-initialization-beat-base-initialization-for-rl-with-search": {
+   "type": "tension",
+   "status": "open",
+   "description": "base vs instruct starting checkpoint for search RL; ReSearch says instruct better, Search-R1 says final reward similar",
+   "title": "Does starting RL-with-search from an instruction-tuned model give better final performance than starting from a base model?"
   }
  },
  "sources": {
@@ -227,7 +269,7 @@
    "raw": "sources/raw/ReSearch Learning to Reason with Search for LLMs.pdf"
   },
   "Search-R1 Training LLMs to Reason and Leverage Search": {
-   "ingested": false,
+   "ingested": true,
    "raw": "sources/raw/Search-R1 Training LLMs to Reason and Leverage Search.pdf"
   },
   "VERLTOOL TOWARDS HOLISTIC AGENTIC": {
@@ -363,6 +405,18 @@
    "pred": "derived_from",
    "to": "sources/How to Train Your Deep Research Agent",
    "note": "simply switching to the Fast Thinking template yields"
+  },
+  {
+   "from": "claims/grpo-converges-faster-than-ppo-in-search-r1-but-suffers-reward-collapse-while-ppo-stays-stable",
+   "pred": "derived_from",
+   "to": "sources/Search-R1 Training LLMs to Reason and Leverage Search",
+   "note": "section 5.1"
+  },
+  {
+   "from": "claims/grpo-converges-faster-than-ppo-in-search-r1-but-suffers-reward-collapse-while-ppo-stays-stable",
+   "pred": "supports",
+   "to": "claims/reinforce-outperforms-ppo-and-grpo-for-search-r1-training-with-fewer-search-actions",
+   "note": "independent original-paper evidence for the \"GRPO least stable\" part only; REINFORCE was not tested"
   },
   {
    "from": "claims/joint-prompt-optimization-with-miprov2-roughly-doubles-multi-hop-retrieval-recall-from-31-to-59-percent",
@@ -503,10 +557,64 @@
    "note": "search results on multi-hop QA are not memorizable, and search calls rise"
   },
   {
+   "from": "claims/search-r1-improves-over-rag-baselines-by-24-percent-at-7b-and-20-percent-at-3b",
+   "pred": "derived_from",
+   "to": "sources/Search-R1 Training LLMs to Reason and Leverage Search",
+   "note": "section 4.4, Table 2"
+  },
+  {
+   "from": "claims/search-r1-improves-over-rag-baselines-by-24-percent-at-7b-and-20-percent-at-3b",
+   "pred": "relates_to",
+   "to": "claims/research-beats-iterative-rag-baselines-on-multi-hop-qa-by-about-15-points-on-average",
+   "note": "comparable result from a concurrent method"
+  },
+  {
+   "from": "claims/search-r1-instruct-models-converge-faster-but-reach-similar-final-reward-to-base-models",
+   "pred": "derived_from",
+   "to": "sources/Search-R1 Training LLMs to Reason and Leverage Search",
+   "note": "section 5.2"
+  },
+  {
    "from": "claims/search-r1-plus-plus-raises-search-r1-average-accuracy-on-qa-benchmarks",
    "pred": "derived_from",
    "to": "sources/How to Train Your Deep Research Agent",
    "note": "Search-R1++substantially outperforms the Search-R1 baseline, raising the average accuracy"
+  },
+  {
+   "from": "claims/search-r1-response-length-first-drops-then-rises-as-the-model-learns-to-call-search-more",
+   "pred": "derived_from",
+   "to": "sources/Search-R1 Training LLMs to Reason and Leverage Search",
+   "note": "section 5.3"
+  },
+  {
+   "from": "claims/search-r1-retrieved-token-loss-masking-raises-average-em-from-0-343-to-0-431",
+   "pred": "derived_from",
+   "to": "sources/Search-R1 Training LLMs to Reason and Leverage Search",
+   "note": "Table 4, section 5.4"
+  },
+  {
+   "from": "claims/search-r1-retrieved-token-loss-masking-raises-average-em-from-0-343-to-0-431",
+   "pred": "relates_to",
+   "to": "claims/research-masks-retrieval-result-tokens-from-the-grpo-loss",
+   "note": "ReSearch uses the same masking without reporting an ablation"
+  },
+  {
+   "from": "claims/search-r1-retrieved-token-loss-masking-raises-average-em-from-0-343-to-0-431",
+   "pred": "supports",
+   "to": "claims/tool-observation-tokens-are-off-policy-and-masked-from-the-grpo-loss",
+   "note": "independent source with an ablation showing masking environment tokens helps"
+  },
+  {
+   "from": "claims/search-r1-uses-an-exact-match-outcome-reward-with-no-format-reward-or-neural-reward-model",
+   "pred": "derived_from",
+   "to": "sources/Search-R1 Training LLMs to Reason and Leverage Search",
+   "note": "section 3.4"
+  },
+  {
+   "from": "claims/search-r1-uses-an-exact-match-outcome-reward-with-no-format-reward-or-neural-reward-model",
+   "pred": "relates_to",
+   "to": "claims/research-reward-is-answer-f1-with-a-0-1-floor-for-correct-format",
+   "note": "ReSearch instead uses F1 plus a format floor"
   },
   {
    "from": "claims/slow-thinking-training-collapse-coincides-with-runaway-empty-think-tag-generation",
@@ -609,6 +717,18 @@
    "pred": "derived_from",
    "to": "sources/multi-hop-rag-dspy",
    "note": "It will do this via two sub-modules: `generate_query` and `append_notes`."
+  },
+  {
+   "from": "tensions/does-instruct-initialization-beat-base-initialization-for-rl-with-search",
+   "pred": "contradicts",
+   "to": "claims/search-r1-instruct-models-converge-faster-but-reach-similar-final-reward-to-base-models",
+   "note": "side B: parity after training (Search-R1, PPO/GRPO, 3B/7B, training reward); differences in algorithm, scale and metric may explain it"
+  },
+  {
+   "from": "tensions/does-instruct-initialization-beat-base-initialization-for-rl-with-search",
+   "pred": "supports",
+   "to": "claims/rl-from-instruction-tuned-models-outperforms-rl-from-base-models-in-research",
+   "note": "side A: instruct better at end (ReSearch, GRPO, 7B/32B, evaluation metrics)"
   }
  ]
 }

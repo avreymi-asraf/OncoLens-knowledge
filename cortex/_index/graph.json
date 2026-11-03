@@ -134,6 +134,18 @@
   }
  },
  "sources": {
+  "How to Train Your Deep Research Agent": {
+   "ingested": false,
+   "raw": "sources/raw/How to Train Your Deep Research Agent.pdf"
+  },
+  "ReSearch Learning to Reason with Search for LLMs": {
+   "ingested": false,
+   "raw": "sources/raw/ReSearch Learning to Reason with Search for LLMs.pdf"
+  },
+  "Search-R1 Training LLMs to Reason and Leverage Search": {
+   "ingested": false,
+   "raw": "sources/raw/Search-R1 Training LLMs to Reason and Leverage Search.pdf"
+  },
   "VERLTOOL TOWARDS HOLISTIC AGENTIC": {
    "ingested": true,
    "raw": "sources/raw/VERLTOOL TOWARDS HOLISTIC AGENTIC.pdf"
@@ -145,6 +157,14 @@
   "build-a-custom-rag-agent-with-langgraph-docs-by-langchain": {
    "ingested": true,
    "raw": "sources/raw/build-a-custom-rag-agent-with-langgraph-docs-by-langchain/build-a-custom-rag-agent-with-langgraph-docs-by-langchain.md"
+  },
+  "github-allenai-agent-baselines-·-github-20261103165019": {
+   "ingested": false,
+   "raw": "sources/raw/github-allenai-agent-baselines-·-github-20261103165019.md"
+  },
+  "github-allenai-asta-bench-·-github-20261103165041": {
+   "ingested": false,
+   "raw": "sources/raw/github-allenai-asta-bench-·-github-20261103165041.md"
   },
   "multi-hop-rag-dspy": {
    "ingested": true,

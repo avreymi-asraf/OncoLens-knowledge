@@ -35,8 +35,13 @@ One line per node: link, status, description. Read this first; then search, nav,
 
 ## questions (0)
 
-## sources (4, not yet ingested: 0)
+## sources (9, not yet ingested: 5)
+- [[sources/How to Train Your Deep Research Agent]] NOT INGESTED - sources/raw/How to Train Your Deep Research Agent.pdf
+- [[sources/ReSearch Learning to Reason with Search for LLMs]] NOT INGESTED - sources/raw/ReSearch Learning to Reason with Search for LLMs.pdf
+- [[sources/Search-R1 Training LLMs to Reason and Leverage Search]] NOT INGESTED - sources/raw/Search-R1 Training LLMs to Reason and Leverage Search.pdf
 - [[sources/VERLTOOL TOWARDS HOLISTIC AGENTIC]] ingested - sources/raw/VERLTOOL TOWARDS HOLISTIC AGENTIC.pdf
 - [[sources/agentic-rag-turbocharge-your-rag-with-query-reformulation-and-self-query]] ingested - sources/raw/agentic-rag-turbocharge-your-rag-with-query-reformulation-and-self-query/agentic-rag-turbocharge-your-rag-with-query-reformulation-and-self-query.md
 - [[sources/build-a-custom-rag-agent-with-langgraph-docs-by-langchain]] ingested - sources/raw/build-a-custom-rag-agent-with-langgraph-docs-by-langchain/build-a-custom-rag-agent-with-langgraph-docs-by-langchain.md
+- [[sources/github-allenai-agent-baselines-·-github-20261103165019]] NOT INGESTED - sources/raw/github-allenai-agent-baselines-·-github-20261103165019.md
+- [[sources/github-allenai-asta-bench-·-github-20261103165041]] NOT INGESTED - sources/raw/github-allenai-asta-bench-·-github-20261103165041.md
 - [[sources/multi-hop-rag-dspy]] ingested - sources/raw/multi-hop-rag-dspy/multi-hop-rag-dspy.md

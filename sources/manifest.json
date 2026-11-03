@@ -1,4 +1,25 @@
 {
+  "How to Train Your Deep Research Agent": {
+    "raw": "sources/raw/How to Train Your Deep Research Agent.pdf",
+    "text": "sources/text/How to Train Your Deep Research Agent.md",
+    "sha256": "5c0f33a894fb59dff5476ed85d9a3210dae6481844acc2835514b8ba7750f4a9",
+    "added": "2026-11-03",
+    "ingested": false
+  },
+  "ReSearch Learning to Reason with Search for LLMs": {
+    "raw": "sources/raw/ReSearch Learning to Reason with Search for LLMs.pdf",
+    "text": "sources/text/ReSearch Learning to Reason with Search for LLMs.md",
+    "sha256": "da4253ff2df6e5fd931cdf66d9daa6b3a55cf7b757a71c4dc7ca4df755ba8e5d",
+    "added": "2026-11-03",
+    "ingested": false
+  },
+  "Search-R1 Training LLMs to Reason and Leverage Search": {
+    "raw": "sources/raw/Search-R1 Training LLMs to Reason and Leverage Search.pdf",
+    "text": "sources/text/Search-R1 Training LLMs to Reason and Leverage Search.md",
+    "sha256": "524306de91f80d7755c43f8daad11eb463832762ba1debe0f37788bdbb3a6a0d",
+    "added": "2026-11-03",
+    "ingested": false
+  },
   "VERLTOOL TOWARDS HOLISTIC AGENTIC": {
     "raw": "sources/raw/VERLTOOL TOWARDS HOLISTIC AGENTIC.pdf",
     "text": "sources/text/VERLTOOL TOWARDS HOLISTIC AGENTIC.md",
@@ -22,6 +43,20 @@
     "added": "2026-11-02",
     "ingested": true,
     "ingested_on": "2026-11-02"
+  },
+  "github-allenai-agent-baselines-·-github-20261103165019": {
+    "raw": "sources/raw/github-allenai-agent-baselines-·-github-20261103165019.md",
+    "text": "sources/text/github-allenai-agent-baselines-·-github-20261103165019.md",
+    "sha256": "598c31667bac484ce9103541989342b91b1e901faeb0bb0adb27700a86054820",
+    "added": "2026-11-03",
+    "ingested": false
+  },
+  "github-allenai-asta-bench-·-github-20261103165041": {
+    "raw": "sources/raw/github-allenai-asta-bench-·-github-20261103165041.md",
+    "text": "sources/text/github-allenai-asta-bench-·-github-20261103165041.md",
+    "sha256": "65af8b13238325c957f91fb1af17af6bbf677b6a89af0ea7a2bf8ce2641bfd7e",
+    "added": "2026-11-03",
+    "ingested": false
   },
   "multi-hop-rag-dspy": {
     "raw": "sources/raw/multi-hop-rag-dspy/multi-hop-rag-dspy.md",

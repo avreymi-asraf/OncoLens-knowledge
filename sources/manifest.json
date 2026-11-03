@@ -12,7 +12,8 @@
     "text": "sources/text/ReSearch Learning to Reason with Search for LLMs.md",
     "sha256": "da4253ff2df6e5fd931cdf66d9daa6b3a55cf7b757a71c4dc7ca4df755ba8e5d",
     "added": "2026-11-03",
-    "ingested": false
+    "ingested": true,
+    "ingested_on": "2026-11-03"
   },
   "Search-R1 Training LLMs to Reason and Leverage Search": {
     "raw": "sources/raw/Search-R1 Training LLMs to Reason and Leverage Search.pdf",

@@ -32,3 +32,12 @@ Append-only. One line per operation.
 - 2026-11-03 15:14 | verify | claims/reinforce-outperforms-ppo-and-grpo-for-search-r1-training-with-fewer-search-actions -> partial | Cited abstract says REINFORCE beats PPO only; GRPO comparison limited to stability
 - 2026-11-03 15:14 | verify | claims/search-r1-plus-plus-raises-search-r1-average-accuracy-on-qa-benchmarks -> pass | Intro states recipe and exact numbers
 - 2026-11-03 15:14 | verify | claims/slow-thinking-training-collapse-coincides-with-runaway-empty-think-tag-generation -> pass | Surge of think tags, empty blocks, r=0.431 in 10 steps before collapse
+- 2026-11-03 15:15 | ingest | ReSearch Learning to Reason with Search for LLMs | 8 claims, 0 updated, 0 mechanisms
+- 2026-11-03 15:15 | verify | claims/research-beats-iterative-rag-baselines-on-multi-hop-qa-by-about-15-points-on-average -> partial | Numbers match, but source says 'best baseline'; 'prompt-based multi-step RAG' not stated in context
+- 2026-11-03 15:15 | verify | claims/research-masks-retrieval-result-tokens-from-the-grpo-loss -> pass | Source states retrieval results masked; only thinking and search query tokens considered
+- 2026-11-03 15:15 | verify | claims/research-reward-is-answer-f1-with-a-0-1-floor-for-correct-format -> pass | Eq. 2 matches exactly
+- 2026-11-03 15:15 | verify | claims/research-rl-elicits-reflection-and-self-correction-without-predefined-heuristics -> pass | Contribution statement plus case study of query reformulation
+- 2026-11-03 15:15 | verify | claims/research-trained-only-on-musique-generalizes-to-other-multi-hop-qa-benchmarks -> pass | Directly stated
+- 2026-11-03 15:15 | verify | claims/research-trains-llms-to-interleave-search-with-reasoning-via-grpo-without-supervised-reasoning-data -> pass | Directly stated
+- 2026-11-03 15:15 | verify | claims/rl-from-instruction-tuned-models-outperforms-rl-from-base-models-in-research -> pass | Directly stated, consistent across benchmarks and sizes
+- 2026-11-03 15:15 | verify | claims/search-call-count-and-response-length-grow-during-research-rl-training -> pass | Both trends directly stated

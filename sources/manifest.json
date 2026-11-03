@@ -4,7 +4,8 @@
     "text": "sources/text/How to Train Your Deep Research Agent.md",
     "sha256": "5c0f33a894fb59dff5476ed85d9a3210dae6481844acc2835514b8ba7750f4a9",
     "added": "2026-11-03",
-    "ingested": false
+    "ingested": true,
+    "ingested_on": "2026-11-03"
   },
   "ReSearch Learning to Reason with Search for LLMs": {
     "raw": "sources/raw/ReSearch Learning to Reason with Search for LLMs.pdf",

@@ -24,6 +24,12 @@
    "description": "VerlTool competitive performance math search SQL visual reasoning SWE GAIA unified framework",
    "title": "Models trained in one unified framework (VERLTOOL) match or exceed task-specific agentic RL baselines across six tool-use domains, e.g. 45.9% average on knowledge QA versus Search-R1."
   },
+  "claims/action-level-penalties-for-missing-search-or-answer-stabilize-f1-training-and-surpass-em": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "F1+ reward, action-level penalty, no search penalty, no answer penalty, reward shaping, stability, deep research agent",
+   "title": "Adding small penalties for omitting the search or answer action to the F1 reward removes the answer-refusal collapse and lets F1-based training surpass the EM baseline."
+  },
   "claims/agentic-rag-scored-86-9-percent-versus-73-1-percent-for-standard-rag-on-an-llm-judged-hugging-face-docs-qa-set": {
    "type": "claim",
    "status": "proposed",
@@ -42,6 +48,18 @@
    "description": "async rollout, synchronous batch, tool call latency, GPU idle bubbles, speedup, VerlTool agentic RL",
    "title": "Letting each trajectory call the tool server independently (asynchronous rollout) instead of batch-synchronously speeds up rollouts by about 1.2x to 2x depending on the task."
   },
+  "claims/f1-reward-training-collapses-through-answer-avoidance-and-underperforms-em": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "F1 vs exact match EM reward, answer avoidance, answer rate drop, outcome reward, training collapse, deep research RL",
+   "title": "Training a search agent with an F1 outcome reward collapses through answer avoidance and ends below EM-reward training, because withholding an answer earns the same zero reward as a wrong answer."
+  },
+  "claims/fast-thinking-prompt-template-trains-more-stably-and-scores-higher-than-slow-thinking-in-search-r1": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "Fast Thinking vs Slow Thinking prompt template, think tags, Search-R1, deep research RL stability, accuracy",
+   "title": "In Search-R1 RL training, a Fast Thinking template that outputs search and answer decisions directly trains more stably and scores higher than the Slow Thinking template with explicit think tags."
+  },
   "claims/joint-prompt-optimization-with-miprov2-roughly-doubles-multi-hop-retrieval-recall-from-31-to-59-percent": {
    "type": "claim",
    "status": "proposed",
@@ -54,6 +72,12 @@
    "description": "Optimized DSPy hop query generator with empty notes issues a sub-question for the missing bridge entity (author of Up Against It), query decomposition per hop.",
    "title": "With empty notes, the optimized hop query generator asks only for the first missing bridge entity of a multi-hop claim rather than querying the whole claim."
   },
+  "claims/reinforce-outperforms-ppo-and-grpo-for-search-r1-training-with-fewer-search-actions": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "REINFORCE vs PPO vs GRPO, policy optimization comparison, stability, search action count, Search-R1, deep research",
+   "title": "In Search-R1 training, REINFORCE reaches better accuracy than PPO and GRPO with fewer search actions, while GRPO is the least stable of the three."
+  },
   "claims/retrieved-text-should-be-treated-as-data-only-in-grader-and-generator-prompts": {
    "type": "claim",
    "status": "proposed",
@@ -65,6 +89,18 @@
    "status": "proposed",
    "description": "query rewriting, retry loop, retrieval failure recovery, hallucination avoidance, agentic RAG",
    "title": "A rewrite-and-retry loop that returns control to the query-generation node lets a RAG agent recover from a weak first retrieval instead of stopping or hallucinating an answer."
+  },
+  "claims/search-r1-plus-plus-raises-search-r1-average-accuracy-on-qa-benchmarks": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "Search-R1++ baseline, Fast Thinking, REINFORCE, F1+ reward, Qwen2.5-7B, Qwen2.5-3B, QA benchmarks",
+   "title": "Search-R1++, combining the Fast Thinking template, REINFORCE and penalty-augmented F1 reward, raises Search-R1 average accuracy from 0.403 to 0.442 on Qwen2.5-7B and from 0.289 to 0.331 on Qwen2.5-3B."
+  },
+  "claims/slow-thinking-training-collapse-coincides-with-runaway-empty-think-tag-generation": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "Slow Thinking collapse, empty think blocks, reasoning length growth, credit assignment shortcut, PPO, Search-R1",
+   "title": "Training collapse under the Slow Thinking template coincides with a surge of empty think blocks, whose count correlates positively with reward just before collapse."
   },
   "claims/the-model-deciding-whether-to-call-the-retriever-makes-rag-agentic-rather-than-a-fixed-pipeline": {
    "type": "claim",
@@ -135,7 +171,7 @@
  },
  "sources": {
   "How to Train Your Deep Research Agent": {
-   "ingested": false,
+   "ingested": true,
    "raw": "sources/raw/How to Train Your Deep Research Agent.pdf"
   },
   "ReSearch Learning to Reason with Search for LLMs": {
@@ -215,6 +251,18 @@
    "note": "Section 4.2; authors' own results, not independently replicated"
   },
   {
+   "from": "claims/action-level-penalties-for-missing-search-or-answer-stabilize-f1-training-and-surpass-em",
+   "pred": "derived_from",
+   "to": "sources/How to Train Your Deep Research Agent",
+   "note": "the F1-based"
+  },
+  {
+   "from": "claims/action-level-penalties-for-missing-search-or-answer-stabilize-f1-training-and-surpass-em",
+   "pred": "relates_to",
+   "to": "claims/tool-use-vanishes-during-rl-without-suitable-reward-design",
+   "note": "both report that action omission (tool use or answering) emerges under outcome-only rewards and is countered by reward design"
+  },
+  {
    "from": "claims/agentic-rag-scored-86-9-percent-versus-73-1-percent-for-standard-rag-on-an-llm-judged-hugging-face-docs-qa-set",
    "pred": "derived_from",
    "to": "sources/agentic-rag-turbocharge-your-rag-with-query-reformulation-and-self-query",
@@ -251,6 +299,24 @@
    "note": "Table 2: Math-TIR, SQL, DeepSearch on 8 H100 GPUs"
   },
   {
+   "from": "claims/f1-reward-training-collapses-through-answer-avoidance-and-underperforms-em",
+   "pred": "derived_from",
+   "to": "sources/How to Train Your Deep Research Agent",
+   "note": "Since missing an answer receives the same zero reward as an incorrect one,"
+  },
+  {
+   "from": "claims/f1-reward-training-collapses-through-answer-avoidance-and-underperforms-em",
+   "pred": "derived_from",
+   "to": "sources/How to Train Your Deep Research Agent",
+   "note": "the model trained with the"
+  },
+  {
+   "from": "claims/fast-thinking-prompt-template-trains-more-stably-and-scores-higher-than-slow-thinking-in-search-r1",
+   "pred": "derived_from",
+   "to": "sources/How to Train Your Deep Research Agent",
+   "note": "simply switching to the Fast Thinking template yields"
+  },
+  {
    "from": "claims/joint-prompt-optimization-with-miprov2-roughly-doubles-multi-hop-retrieval-recall-from-31-to-59-percent",
    "pred": "derived_from",
    "to": "sources/multi-hop-rag-dspy",
@@ -269,6 +335,12 @@
    "note": "generated query in the inspected history, notes were N/A"
   },
   {
+   "from": "claims/reinforce-outperforms-ppo-and-grpo-for-search-r1-training-with-fewer-search-actions",
+   "pred": "derived_from",
+   "to": "sources/How to Train Your Deep Research Agent",
+   "note": "REINFORCE outperforms PPO while requiring fewer search"
+  },
+  {
    "from": "claims/retrieved-text-should-be-treated-as-data-only-in-grader-and-generator-prompts",
    "pred": "derived_from",
    "to": "sources/build-a-custom-rag-agent-with-langgraph-docs-by-langchain",
@@ -279,6 +351,24 @@
    "pred": "derived_from",
    "to": "sources/build-a-custom-rag-agent-with-langgraph-docs-by-langchain",
    "note": "This retry loop is how the agent recovers from a weak first retrieval instead of stopping or hallucinating an answer."
+  },
+  {
+   "from": "claims/search-r1-plus-plus-raises-search-r1-average-accuracy-on-qa-benchmarks",
+   "pred": "derived_from",
+   "to": "sources/How to Train Your Deep Research Agent",
+   "note": "Search-R1++substantially outperforms the Search-R1 baseline, raising the average accuracy"
+  },
+  {
+   "from": "claims/slow-thinking-training-collapse-coincides-with-runaway-empty-think-tag-generation",
+   "pred": "derived_from",
+   "to": "sources/How to Train Your Deep Research Agent",
+   "note": "degenerates into repeatedly outputting empty <think></think> blocks, which crowd"
+  },
+  {
+   "from": "claims/slow-thinking-training-collapse-coincides-with-runaway-empty-think-tag-generation",
+   "pred": "derived_from",
+   "to": "sources/How to Train Your Deep Research Agent",
+   "note": "The collapsing run exhibits a moderate positive correlation of 0.4310, compared to a"
   },
   {
    "from": "claims/the-model-deciding-whether-to-call-the-retriever-makes-rag-agentic-rather-than-a-fixed-pipeline",

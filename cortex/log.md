@@ -25,3 +25,10 @@ Append-only. One line per operation.
 - 2026-11-02 23:25 | verify | claims/using-the-user-question-as-the-similarity-reference-can-miss-answer-documents-written-in-affirmative-form -> pass | Direct restatement of source
 - 2026-11-02 23:25 | verify | claims/vanilla-rag-performs-only-one-retrieval-step-so-bad-retrieval-yields-bad-generation -> pass | Direct restatement of source
 - 2026-11-02 23:25 | ingest | agentic-rag-turbocharge-your-rag-with-query-reformulation-and-self-query | 5 claims, 0 updated, 0 mechanisms
+- 2026-11-03 15:13 | ingest | How to Train Your Deep Research Agent | 6 claims, 0 updated, 0 mechanisms
+- 2026-11-03 15:14 | verify | claims/action-level-penalties-for-missing-search-or-answer-stabilize-f1-training-and-surpass-em -> pass | Sec 4.4 states penalties eliminate answer refusal and surpass EM
+- 2026-11-03 15:14 | verify | claims/f1-reward-training-collapses-through-answer-avoidance-and-underperforms-em -> pass | Sec 4.3 and Tables 2-3 state collapse via answer avoidance, zero-reward cause, EM outperforms
+- 2026-11-03 15:14 | verify | claims/fast-thinking-prompt-template-trains-more-stably-and-scores-higher-than-slow-thinking-in-search-r1 -> partial | Context supports higher accuracy; stability and template mechanics (direct output, think tags) not stated in cited context
+- 2026-11-03 15:14 | verify | claims/reinforce-outperforms-ppo-and-grpo-for-search-r1-training-with-fewer-search-actions -> partial | Cited abstract says REINFORCE beats PPO only; GRPO comparison limited to stability
+- 2026-11-03 15:14 | verify | claims/search-r1-plus-plus-raises-search-r1-average-accuracy-on-qa-benchmarks -> pass | Intro states recipe and exact numbers
+- 2026-11-03 15:14 | verify | claims/slow-thinking-training-collapse-coincides-with-runaway-empty-think-tag-generation -> pass | Surge of think tags, empty blocks, r=0.431 in 10 steps before collapse

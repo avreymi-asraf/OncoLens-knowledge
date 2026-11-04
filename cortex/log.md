@@ -108,3 +108,13 @@ Append-only. One line per operation.
 - 2026-11-04 12:30 | verify | claims/mixing-in-other-patients-documents-sharply-lowers-accuracy-for-most-models-on-longhealth -> partial | 27% and only two improved supported; 93%/82% absolute figures not in context (only +9/+1 pp)
 - 2026-11-04 12:30 | verify | claims/most-models-lose-accuracy-on-longhealth-as-prompt-length-grows-from-4k-to-16k-tokens -> pass | Nine of 16k-capable models declined 4k->16k
 - 2026-11-04 12:30 | ingest | LongHealth - A Question Answering Benchmark with Long Clinical Documents | 6 claims, 0 updated, 0 mechanisms
+- 2026-11-04 12:31 | verify | claims/cross-validation-across-sources-yields-34-percent-higher-success-than-self-verification -> partial | 34.2% stated, but no self-verification baseline named in source
+- 2026-11-04 12:31 | verify | claims/kisa-difficulty-calibration-regenerates-questions-that-o3-or-gpt-4-answer-above-50-percent -> pass | Source states regeneration if o3 or GPT-4 exceeds 50% accuracy
+- 2026-11-04 12:31 | verify | claims/masked-trajectory-guidance-hides-path-entities-behind-placeholders-so-o3-must-retrieve-them-with-tools -> pass | Source describes Entity A placeholders fed to o3 to avoid leaking tool-retrievable info
+- 2026-11-04 12:31 | verify | claims/medresearcher-r1-32b-scores-27-5-of-50-on-medbrowsecomp-above-o3-deepresearch -> partial | Scores match, but 32B model size not stated in context
+- 2026-11-04 12:31 | verify | claims/medresearcher-r1-mixes-guided-and-exploratory-trajectories-at-a-7-to-3-ratio -> pass | 7:3 Dguided:Dexplore mix and over-reliance rationale stated
+- 2026-11-04 12:31 | verify | claims/medresearcher-r1-sft-masks-tool-output-tokens-from-the-loss -> partial | Context only distinguishes token types; loss masking not shown (objective truncated)
+- 2026-11-04 12:31 | verify | claims/removing-medical-tools-drops-medresearcher-r1-xbench-deepsearch-from-54-0-to-40-0 -> pass | Source: medical tools improve XBench 40.0 to 54.0
+- 2026-11-04 12:31 | verify | claims/restricting-kisa-to-common-entities-drops-medbrowsecomp-from-27-5-to-23-0 -> pass | Source: common entities drop MedBrowseComp 27.5 to 23.0
+- 2026-11-04 12:31 | verify | claims/rl-only-training-without-sft-fails-on-medbrowsecomp-while-sft-only-reaches-25-5 -> pass | Source: SFT 25.5/50, RL alone 12.0/50, sparse rewards
+- 2026-11-04 12:31 | ingest | MedResearcher-R1 | 9 claims, 0 updated, 0 mechanisms

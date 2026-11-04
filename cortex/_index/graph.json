@@ -168,6 +168,12 @@
    "description": "CLIN, continual learning agent, reflection, memory of lessons, rapid task adaptation, self-improvement across trials",
    "title": "CLIN agents reflect on each attempt at a task and store lessons in memory, so performance improves the more times the task is tried."
   },
+  "claims/cross-validation-across-sources-yields-34-percent-higher-success-than-self-verification": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "cross-validation from different sources vs self-verification baseline, 34.2% higher success rate on complex multi-hop reasoning, verification step in agent loop",
+   "title": "Agent trajectories that cross-validate information across different sources achieve a 34.2% higher success rate on complex multi-hop tasks than a self-verification baseline."
+  },
   "claims/deep-dxsearch-assistance-raised-physician-diagnostic-accuracy-from-45-6-to-69-1-percent-on-150-real-world-cases": {
    "type": "claim",
    "status": "proposed",
@@ -234,6 +240,12 @@
    "description": "MIPROv2 jointly optimizing the query-generation and note-appending prompts, GPT-4o teacher, Llama-3.1-8B, top5_recall 31% to 59%, about 35 minutes and 5 dollars.",
    "title": "Jointly optimizing the two prompts of a multi-hop retrieval program with MIPROv2 roughly doubles top-5 recall from about 31% to about 59%."
   },
+  "claims/kisa-difficulty-calibration-regenerates-questions-that-o3-or-gpt-4-answer-above-50-percent": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "adaptive difficulty calibration, filter synthetic questions with OpenAI-o3 and GPT-4, regenerate if accuracy above 50%, synthetic QA hardness",
+   "title": "KISA regenerates any synthetic question that OpenAI-o3 or GPT-4 answers with more than 50% accuracy, to keep questions hard."
+  },
   "claims/large-and-evolving-tool-pools-with-complex-documentation-motivate-tool-retrieval": {
    "type": "claim",
    "status": "proposed",
@@ -288,6 +300,30 @@
    "description": "MARG multi-agent review generation, scientific paper review, critique and enhance ideas, multiple LLM agents, aspects",
    "title": "MARG (2024) generates reviews of scientific papers using multiple LLM agents, each focusing on reviewing different aspects."
   },
+  "claims/masked-trajectory-guidance-hides-path-entities-behind-placeholders-so-o3-must-retrieve-them-with-tools": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "Masked Trajectory Guidance MTG, entity masking Entity A placeholders, avoid answer leakage, o3 with tools generates SFT trajectories with tool calls",
+   "title": "Masked Trajectory Guidance replaces knowledge-graph path entities with placeholders like \"Entity A\" in the guidance given to o3, so that tool-retrievable information is not leaked into the generated SFT trajectories."
+  },
+  "claims/medresearcher-r1-32b-scores-27-5-of-50-on-medbrowsecomp-above-o3-deepresearch": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "MedResearcher-R1-32B SOTA on MedBrowseComp 27.5/50 vs o3 deepresearch 25.5, Gemini-2.5-pro deepsearch 24.5; medical deep research agent benchmark",
+   "title": "MedResearcher-R1-32B scores 27.5/50 on MedBrowseComp, above o3-deepresearch (25.5) and Gemini-2.5-Pro-deepsearch (24.5)."
+  },
+  "claims/medresearcher-r1-mixes-guided-and-exploratory-trajectories-at-a-7-to-3-ratio": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "SFT data mix D_guided vs D_explore 7:3 ratio, masked guidance vs question-only trajectories, avoid overfitting longest reasoning paths",
+   "title": "MedResearcher-R1 SFT data mixes guided (masked-trajectory) and exploratory (question-only) trajectories at a 7:3 ratio to avoid over-reliance on guidance."
+  },
+  "claims/medresearcher-r1-sft-masks-tool-output-tokens-from-the-loss": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "SFT loss mask, agent tokens vs tool output tokens indicator m=0, loss masking observations in agent fine-tuning",
+   "title": "MedResearcher-R1's SFT loss counts only agent tokens and masks out tool output tokens."
+  },
   "claims/mistral-small-24b-reaches-the-highest-longhealth-task-1-accuracy-at-84-percent": {
    "type": "claim",
    "status": "disputed",
@@ -336,6 +372,12 @@
    "description": "REINFORCE vs PPO vs GRPO, policy optimization comparison, stability, search action count, Search-R1, deep research",
    "title": "In Search-R1 training, REINFORCE reaches better accuracy than PPO and GRPO with fewer search actions, while GRPO is the least stable of the three."
   },
+  "claims/removing-medical-tools-drops-medresearcher-r1-xbench-deepsearch-from-54-0-to-40-0": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "medical search tool ablation, FDA, PubMed, clinical trials retrieval; XBench-DeepSearch 54.0 to 40.0, MedBrowseComp 27.5 to 23.1",
+   "title": "Removing the medical tool set from MedResearcher-R1 lowers XBench-DeepSearch from 54.0 to 40.0."
+  },
   "claims/research-beats-iterative-rag-baselines-on-multi-hop-qa-by-about-15-points-on-average": {
    "type": "claim",
    "status": "proposed",
@@ -372,6 +414,12 @@
    "description": "ReSearch framework, reasoning with search, GRPO, no SFT, think/search/result tags, multi-hop RAG, Qwen2.5",
    "title": "ReSearch trains LLMs with GRPO to interleave text-based thinking and search queries in one reasoning chain, without any supervised data on reasoning steps."
   },
+  "claims/restricting-kisa-to-common-entities-drops-medbrowsecomp-from-27-5-to-23-0": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "KISA data ablation, rare entities vs common entities knowledge graph, MedBrowseComp 27.5 to 23.0, training data complexity for multi-hop reasoning",
+   "title": "Building KISA training questions from common instead of rare entities lowers MedBrowseComp accuracy from 27.5 to 23.0."
+  },
   "claims/retrieved-text-should-be-treated-as-data-only-in-grader-and-generator-prompts": {
    "type": "claim",
    "status": "proposed",
@@ -389,6 +437,12 @@
    "status": "proposed",
    "description": "base vs instruction-tuned initialization, RL from scratch, Qwen2.5 7B 32B, ReSearch, starting checkpoint",
    "title": "In ReSearch, RL training starting from instruction-tuned models gives higher performance than starting from base models, consistently across benchmarks and model sizes."
+  },
+  "claims/rl-only-training-without-sft-fails-on-medbrowsecomp-while-sft-only-reaches-25-5": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "SFT vs RL ablation, RL only no SFT 12.0/50 vs SFT only 25.5/50 on MedBrowseComp; sparse reward long-horizon medical reasoning; cold start",
+   "title": "In MedResearcher-R1 ablations, RL alone without SFT scores 12.0/50 on MedBrowseComp while SFT alone reaches 25.5/50, attributed to sparse rewards in long-horizon medical reasoning."
   },
   "claims/scideator-novelty-checking-retrieves-papers-reranks-them-and-classifies-novelty-against-the-most-relevant": {
    "type": "claim",
@@ -570,6 +624,12 @@
    "description": "in-context retrieval (ICR), LM decodes relevant document identifier from corpus placed in context, alternative to dense vector retrieval, BlockSearch",
    "title": "In-context retrieval"
   },
+  "concepts/knowledge-informed-trajectory-synthesis": {
+   "type": "concept",
+   "status": "active",
+   "description": "KISA, knowledge-informed trajectory synthesis, knowledge graph multi-hop QA generation from rare PubMed entities, longest path, masked trajectory guidance, agent SFT data",
+   "title": "Knowledge-Informed Trajectory Synthesis (KISA)"
+  },
   "concepts/longhealth": {
    "type": "concept",
    "status": "active",
@@ -587,6 +647,12 @@
    "status": "active",
    "description": "ReAct agent, LLM tool-calling in a loop, reason-act loop, max_steps budget, basic agent baseline",
    "title": "ReAct tool-calling agent loop"
+  },
+  "tensions/can-rl-without-sft-train-a-search-reasoning-agent": {
+   "type": "tension",
+   "status": "open",
+   "description": "RL from scratch without SFT works for search agents (ReSearch) vs RL only fails without SFT cold start (MedResearcher-R1)",
+   "title": "Can reinforcement learning without prior SFT train an effective search-and-reasoning agent?"
   },
   "tensions/does-instruct-initialization-beat-base-initialization-for-rl-with-search": {
    "type": "tension",
@@ -625,7 +691,7 @@
    "raw": "sources/raw/LongHealth - A Question Answering Benchmark with Long Clinical Documents.pdf"
   },
   "MedResearcher-R1": {
-   "ingested": false,
+   "ingested": true,
    "raw": "sources/raw/MedResearcher-R1.pdf"
   },
   "ReSearch Learning to Reason with Search for LLMs": {
@@ -1041,6 +1107,12 @@
    "note": "Agent tries a game, reflects on its performance, then builds a"
   },
   {
+   "from": "claims/cross-validation-across-sources-yields-34-percent-higher-success-than-self-verification",
+   "pred": "derived_from",
+   "to": "sources/MedResearcher-R1",
+   "note": "section 6.3"
+  },
+  {
    "from": "claims/deep-dxsearch-assistance-raised-physician-diagnostic-accuracy-from-45-6-to-69-1-percent-on-150-real-world-cases",
    "pred": "derived_from",
    "to": "sources/End-to-End Agentic RAG System Training for Traceable Diagnostic Reasoning",
@@ -1155,6 +1227,18 @@
    "note": "cost of the optimization run"
   },
   {
+   "from": "claims/kisa-difficulty-calibration-regenerates-questions-that-o3-or-gpt-4-answer-above-50-percent",
+   "pred": "derived_from",
+   "to": "sources/MedResearcher-R1",
+   "note": "section 4"
+  },
+  {
+   "from": "claims/kisa-difficulty-calibration-regenerates-questions-that-o3-or-gpt-4-answer-above-50-percent",
+   "pred": "relates_to",
+   "to": "concepts/knowledge-informed-trajectory-synthesis",
+   "note": "one stage of KISA"
+  },
+  {
    "from": "claims/large-and-evolving-tool-pools-with-complex-documentation-motivate-tool-retrieval",
    "pred": "derived_from",
    "to": "sources/LLMs and AI Agents for Research-2",
@@ -1237,6 +1321,54 @@
    "pred": "derived_from",
    "to": "sources/LLMs and AI Agents for Research-3",
    "note": "MARG: Multi-Agent Review Generation for Scientiﬁc Papers, 2024"
+  },
+  {
+   "from": "claims/masked-trajectory-guidance-hides-path-entities-behind-placeholders-so-o3-must-retrieve-them-with-tools",
+   "pred": "derived_from",
+   "to": "sources/MedResearcher-R1",
+   "note": "section 4"
+  },
+  {
+   "from": "claims/masked-trajectory-guidance-hides-path-entities-behind-placeholders-so-o3-must-retrieve-them-with-tools",
+   "pred": "derived_from",
+   "to": "sources/MedResearcher-R1",
+   "note": "It replaces them"
+  },
+  {
+   "from": "claims/masked-trajectory-guidance-hides-path-entities-behind-placeholders-so-o3-must-retrieve-them-with-tools",
+   "pred": "relates_to",
+   "to": "concepts/knowledge-informed-trajectory-synthesis",
+   "note": "final stage of KISA"
+  },
+  {
+   "from": "claims/medresearcher-r1-32b-scores-27-5-of-50-on-medbrowsecomp-above-o3-deepresearch",
+   "pred": "derived_from",
+   "to": "sources/MedResearcher-R1",
+   "note": "section 6.2, Table 1"
+  },
+  {
+   "from": "claims/medresearcher-r1-mixes-guided-and-exploratory-trajectories-at-a-7-to-3-ratio",
+   "pred": "derived_from",
+   "to": "sources/MedResearcher-R1",
+   "note": "section 4"
+  },
+  {
+   "from": "claims/medresearcher-r1-mixes-guided-and-exploratory-trajectories-at-a-7-to-3-ratio",
+   "pred": "derived_from",
+   "to": "sources/MedResearcher-R1",
+   "note": "This prevents over-reliance on trajectory guidance in case there are easier reasoning ways"
+  },
+  {
+   "from": "claims/medresearcher-r1-sft-masks-tool-output-tokens-from-the-loss",
+   "pred": "derived_from",
+   "to": "sources/MedResearcher-R1",
+   "note": "section 5.1; indicator m is 1 for agent tokens, 0 for tool output tokens"
+  },
+  {
+   "from": "claims/medresearcher-r1-sft-masks-tool-output-tokens-from-the-loss",
+   "pred": "relates_to",
+   "to": "claims/research-masks-retrieval-result-tokens-from-the-grpo-loss",
+   "note": "same masking of tool observations, here in SFT rather than GRPO"
   },
   {
    "from": "claims/mistral-small-24b-reaches-the-highest-longhealth-task-1-accuracy-at-84-percent",
@@ -1323,6 +1455,12 @@
    "note": "REINFORCE outperforms PPO while requiring fewer search"
   },
   {
+   "from": "claims/removing-medical-tools-drops-medresearcher-r1-xbench-deepsearch-from-54-0-to-40-0",
+   "pred": "derived_from",
+   "to": "sources/MedResearcher-R1",
+   "note": "section 7, Table 3"
+  },
+  {
    "from": "claims/research-beats-iterative-rag-baselines-on-multi-hop-qa-by-about-15-points-on-average",
    "pred": "derived_from",
    "to": "sources/ReSearch Learning to Reason with Search for LLMs",
@@ -1401,6 +1539,18 @@
    "note": "ReSearch targets the multi-step retrieval that single-step RAG lacks"
   },
   {
+   "from": "claims/restricting-kisa-to-common-entities-drops-medbrowsecomp-from-27-5-to-23-0",
+   "pred": "derived_from",
+   "to": "sources/MedResearcher-R1",
+   "note": "section 7"
+  },
+  {
+   "from": "claims/restricting-kisa-to-common-entities-drops-medbrowsecomp-from-27-5-to-23-0",
+   "pred": "relates_to",
+   "to": "concepts/knowledge-informed-trajectory-synthesis",
+   "note": "ablation of the rare-entity stage"
+  },
+  {
    "from": "claims/retrieved-text-should-be-treated-as-data-only-in-grader-and-generator-prompts",
    "pred": "derived_from",
    "to": "sources/build-a-custom-rag-agent-with-langgraph-docs-by-langchain",
@@ -1417,6 +1567,18 @@
    "pred": "derived_from",
    "to": "sources/ReSearch Learning to Reason with Search for LLMs",
    "note": "training from the instruction-tuned model can further improve the performance of"
+  },
+  {
+   "from": "claims/rl-only-training-without-sft-fails-on-medbrowsecomp-while-sft-only-reaches-25-5",
+   "pred": "derived_from",
+   "to": "sources/MedResearcher-R1",
+   "note": "section 7, Table 3"
+  },
+  {
+   "from": "claims/rl-only-training-without-sft-fails-on-medbrowsecomp-while-sft-only-reaches-25-5",
+   "pred": "relates_to",
+   "to": "claims/research-trains-llms-to-interleave-search-with-reasoning-via-grpo-without-supervised-reasoning-data",
+   "note": "ReSearch reports RL without SFT works on multi-hop QA; see tension"
   },
   {
    "from": "claims/scideator-novelty-checking-retrieves-papers-reranks-them-and-classifies-novelty-against-the-most-relevant",
@@ -1713,6 +1875,12 @@
    "note": "casting retrieval asconditionalgeneration, where the model directly decodes"
   },
   {
+   "from": "concepts/knowledge-informed-trajectory-synthesis",
+   "pred": "derived_from",
+   "to": "sources/MedResearcher-R1",
+   "note": "KISA consists of five stages (Figure 2):"
+  },
+  {
    "from": "concepts/longhealth",
    "pred": "derived_from",
    "to": "sources/LongHealth - A Question Answering Benchmark with Long Clinical Documents",
@@ -1741,6 +1909,18 @@
    "pred": "derived_from",
    "to": "sources/github-allenai-agent-baselines-·-github-20261103165019",
    "note": "a simple ReAct implementation that uses LLM tool-calling in a loop. It supports all [AstaBench tool options](https://github.com/allenai/asta-bench?tab=readme-ov-file#tools-and-utilities) and configurable `max_steps`."
+  },
+  {
+   "from": "tensions/can-rl-without-sft-train-a-search-reasoning-agent",
+   "pred": "contradicts",
+   "to": "claims/rl-only-training-without-sft-fails-on-medbrowsecomp-while-sft-only-reaches-25-5",
+   "note": "RL alone fails; likely difference: much longer-horizon, sparser-reward medical tasks and harder benchmark"
+  },
+  {
+   "from": "tensions/can-rl-without-sft-train-a-search-reasoning-agent",
+   "pred": "supports",
+   "to": "claims/research-trains-llms-to-interleave-search-with-reasoning-via-grpo-without-supervised-reasoning-data",
+   "note": "RL without SFT suffices (multi-hop QA benchmarks)"
   },
   {
    "from": "tensions/does-instruct-initialization-beat-base-initialization-for-rl-with-search",

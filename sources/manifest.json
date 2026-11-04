@@ -60,7 +60,8 @@
     "text": "sources/text/MedResearcher-R1.md",
     "sha256": "f9c6f1e942e2fb06083dcae24c7b583346c4359f2105f3d61753385b4cbab329",
     "added": "2026-11-04",
-    "ingested": false
+    "ingested": true,
+    "ingested_on": "2026-11-04"
   },
   "ReSearch Learning to Reason with Search for LLMs": {
     "raw": "sources/raw/ReSearch Learning to Reason with Search for LLMs.pdf",

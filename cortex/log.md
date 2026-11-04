@@ -73,3 +73,9 @@ Append-only. One line per operation.
 - 2026-11-04 12:24 | verify | claims/log-n-scaled-softmax-helps-in-context-retrieval-while-an-additive-length-aware-sink-barely-helps -> pass | Directly stated
 - 2026-11-04 12:24 | verify | claims/modified-blocksearch-beats-dense-retrieval-on-limit-at-million-token-scale -> pass | 13.5 vs 2.9 on LIMIT stated
 - 2026-11-04 12:24 | ingest | Can Language Models Actually Retrieve In-Context-Drowning in Documents at Million Token Scale | 8 claims, 0 updated, 0 mechanisms
+- 2026-11-04 12:25 | ingest | End-to-End Agentic RAG System Training for Traceable Diagnostic Reasoning | 5 claims, 0 updated, 0 mechanisms
+- 2026-11-04 12:25 | verify | claims/deep-dxsearch-assistance-raised-physician-diagnostic-accuracy-from-45-6-to-69-1-percent-on-150-real-world-cases -> pass | Abstract states 150 cases, 45.6% to 69.1%
+- 2026-11-04 12:25 | verify | claims/deep-dxsearch-outperforms-standard-rag-by-29-7-percent-in-distribution-and-9-7-percent-out-of-distribution -> pass | Source states 29.7% ID and 9.7% OOD margins over standard RAG
+- 2026-11-04 12:25 | verify | claims/existing-medical-rag-systems-perform-static-one-shot-retrieval-that-does-not-adapt-to-insufficient-evidence -> pass | Source states one-shot retrieval on initial query, failing to adapt to insufficient/irrelevant/conflicting evidence
+- 2026-11-04 12:25 | verify | claims/process-based-reward-co-optimizing-retrieval-and-reasoning-gives-13-7-percent-accuracy-gain-over-target-only-supervision -> pass | Ablations: process-based reward co-optimizing retrieval and reasoning yields 13.7% over target-only
+- 2026-11-04 12:25 | verify | claims/sft-improves-in-distribution-diagnosis-but-often-degrades-out-of-distribution-while-agentic-rl-generalizes -> pass | Discussion states SFT improves ID, often degrades OOD; agentic RL learns transferable policy

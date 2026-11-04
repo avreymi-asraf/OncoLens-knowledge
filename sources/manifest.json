@@ -12,7 +12,8 @@
     "text": "sources/text/End-to-End Agentic RAG System Training for Traceable Diagnostic Reasoning.md",
     "sha256": "2dc5104357d7c7e8c62f80cad19b1a47500214b3f83244a442ab55e4d4d0a979",
     "added": "2026-11-04",
-    "ingested": false
+    "ingested": true,
+    "ingested_on": "2026-11-04"
   },
   "How to Train Your Deep Research Agent": {
     "raw": "sources/raw/How to Train Your Deep Research Agent.pdf",

@@ -144,11 +144,29 @@
    "description": "BlockSearch 0.6B in-context retriever vs dense retriever, Recall@1 95.8 vs 95.5, MS MARCO 45k tokens, small corpus parity",
    "title": "BlockSearch matches a same-backbone dense retriever on small corpora, reaching 95.8% vs 95.5% Recall@1 on MS MARCO at about 45k tokens."
   },
+  "claims/deep-dxsearch-assistance-raised-physician-diagnostic-accuracy-from-45-6-to-69-1-percent-on-150-real-world-cases": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "Deep-DxSearch physician-in-the-loop study, clinician diagnostic accuracy assisted vs unassisted, 150 real cases, medical agentic RAG",
+   "title": "In a validation on 150 real-world cases, Deep-DxSearch assistance raised physicians' average diagnostic accuracy from 45.6% to 69.1%."
+  },
+  "claims/deep-dxsearch-outperforms-standard-rag-by-29-7-percent-in-distribution-and-9-7-percent-out-of-distribution": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "Deep-DxSearch agentic RL vs training-free standard RAG, diagnosis accuracy, in-distribution ID, out-of-distribution OOD margins",
+   "title": "Deep-DxSearch's agentic RL strategy surpassed standard RAG approaches by 29.7% on in-distribution and 9.7% on out-of-distribution diagnosis data."
+  },
   "claims/dvc-repro-does-not-rerun-a-stage-when-solver-or-scorer-code-changes-without-its-cmd-changing": {
    "type": "claim",
    "status": "proposed",
    "description": "dvc repro caching, stale eval results, force rerun, score_sqa --force --downstream, dvc.lock hash, SQA release runs",
    "title": "In the agent-baselines SQA dvc pipeline, a code change to a solver or scorer that leaves the stage cmd unchanged does not trigger a rerun, so the stage must be forced (e.g. with --force --downstream)."
+  },
+  "claims/existing-medical-rag-systems-perform-static-one-shot-retrieval-that-does-not-adapt-to-insufficient-evidence": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "medical RAG limitation, static heuristic one-shot retrieval, no adaptive re-query, irrelevant or conflicting evidence",
+   "title": "Existing medical RAG systems typically perform static one-shot retrieval on the initial query and fail to adapt when retrieved evidence is insufficient, irrelevant or conflicting."
   },
   "claims/f1-reward-training-collapses-through-answer-avoidance-and-underperforms-em": {
    "type": "claim",
@@ -203,6 +221,12 @@
    "status": "proposed",
    "description": "Optimized DSPy hop query generator with empty notes issues a sub-question for the missing bridge entity (author of Up Against It), query decomposition per hop.",
    "title": "With empty notes, the optimized hop query generator asks only for the first missing bridge entity of a multi-hop claim rather than querying the whole claim."
+  },
+  "claims/process-based-reward-co-optimizing-retrieval-and-reasoning-gives-13-7-percent-accuracy-gain-over-target-only-supervision": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "Deep-DxSearch ablation, process reward, soft verifiable reward for retrieval and reasoning vs outcome-only target reward, diagnosis accuracy",
+   "title": "In Deep-DxSearch ablations, a process-based reward that jointly optimizes retrieval and reasoning yields a 13.7% accuracy gain over target-only supervision."
   },
   "claims/reinforce-outperforms-ppo-and-grpo-for-search-r1-training-with-fewer-search-actions": {
    "type": "claim",
@@ -305,6 +329,12 @@
    "status": "proposed",
    "description": "outcome-based reward, exact match EM reward, no format reward, no neural reward model, rule-based, Search-R1",
    "title": "Search-R1 trains with a rule-based outcome reward equal to exact match of the final answer, without format rewards or a neural reward model."
+  },
+  "claims/sft-improves-in-distribution-diagnosis-but-often-degrades-out-of-distribution-while-agentic-rl-generalizes": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "supervised fine-tuning SFT vs reinforcement learning RL generalization, memorization, rare disease OOD cohort Xinhua-Rare, Deep-DxSearch",
+   "title": "For diagnosis, SFT improves in-distribution performance but often degrades on out-of-distribution cohorts, whereas agentic RL training learns a transferable policy."
   },
   "claims/slow-thinking-training-collapse-coincides-with-runaway-empty-think-tag-generation": {
    "type": "claim",
@@ -421,7 +451,7 @@
    "raw": "sources/raw/Can Language Models Actually Retrieve In-Context-Drowning in Documents at Million Token Scale.pdf"
   },
   "End-to-End Agentic RAG System Training for Traceable Diagnostic Reasoning": {
-   "ingested": false,
+   "ingested": true,
    "raw": "sources/raw/End-to-End Agentic RAG System Training for Traceable Diagnostic Reasoning.pdf"
   },
   "How to Train Your Deep Research Agent": {
@@ -831,6 +861,18 @@
    "note": "instance of in-context retrieval"
   },
   {
+   "from": "claims/deep-dxsearch-assistance-raised-physician-diagnostic-accuracy-from-45-6-to-69-1-percent-on-150-real-world-cases",
+   "pred": "derived_from",
+   "to": "sources/End-to-End Agentic RAG System Training for Traceable Diagnostic Reasoning",
+   "note": "a validation involving 150 real-world cases, Deep-DxSearch assistance elevates physicians’ average diagnostic"
+  },
+  {
+   "from": "claims/deep-dxsearch-outperforms-standard-rag-by-29-7-percent-in-distribution-and-9-7-percent-out-of-distribution",
+   "pred": "derived_from",
+   "to": "sources/End-to-End Agentic RAG System Training for Traceable Diagnostic Reasoning",
+   "note": "Specifically, our agentic strategy surpassed standard RAG approaches by margins of 29.7% (p<0.01) on"
+  },
+  {
    "from": "claims/dvc-repro-does-not-rerun-a-stage-when-solver-or-scorer-code-changes-without-its-cmd-changing",
    "pred": "derived_from",
    "to": "sources/github-allenai-agent-baselines-·-github-20261103165019",
@@ -841,6 +883,18 @@
    "pred": "derived_from",
    "to": "sources/github-allenai-agent-baselines-·-github-20261103165019",
    "note": "Any of the `dependencies` changed. (This is determined by comparing the hash with the hash stored in `dvc.lock`)"
+  },
+  {
+   "from": "claims/existing-medical-rag-systems-perform-static-one-shot-retrieval-that-does-not-adapt-to-insufficient-evidence",
+   "pred": "derived_from",
+   "to": "sources/End-to-End Agentic RAG System Training for Traceable Diagnostic Reasoning",
+   "note": "They typically perform a “one-shot”"
+  },
+  {
+   "from": "claims/existing-medical-rag-systems-perform-static-one-shot-retrieval-that-does-not-adapt-to-insufficient-evidence",
+   "pred": "relates_to",
+   "to": "claims/vanilla-rag-performs-only-one-retrieval-step-so-bad-retrieval-yields-bad-generation",
+   "note": "same one-shot retrieval limitation, stated for the medical domain"
   },
   {
    "from": "claims/f1-reward-training-collapses-through-answer-avoidance-and-underperforms-em",
@@ -937,6 +991,12 @@
    "pred": "derived_from",
    "to": "sources/multi-hop-rag-dspy",
    "note": "generated query in the inspected history, notes were N/A"
+  },
+  {
+   "from": "claims/process-based-reward-co-optimizing-retrieval-and-reasoning-gives-13-7-percent-accuracy-gain-over-target-only-supervision",
+   "pred": "derived_from",
+   "to": "sources/End-to-End Agentic RAG System Training for Traceable Diagnostic Reasoning",
+   "note": "policies—yielding a 13.7% (p<0.01) accuracy boost over target-only supervision."
   },
   {
    "from": "claims/reinforce-outperforms-ppo-and-grpo-for-search-r1-training-with-fewer-search-actions",
@@ -1117,6 +1177,12 @@
    "pred": "relates_to",
    "to": "claims/research-reward-is-answer-f1-with-a-0-1-floor-for-correct-format",
    "note": "ReSearch instead uses F1 plus a format floor"
+  },
+  {
+   "from": "claims/sft-improves-in-distribution-diagnosis-but-often-degrades-out-of-distribution-while-agentic-rl-generalizes",
+   "pred": "derived_from",
+   "to": "sources/End-to-End Agentic RAG System Training for Traceable Diagnostic Reasoning",
+   "note": "While SFT improves in-distribution performance, our results show it often degrades on out-of-distribution cohorts (e.g., Xinhua-Rare), suggesting a"
   },
   {
    "from": "claims/slow-thinking-training-collapse-coincides-with-runaway-empty-think-tag-generation",

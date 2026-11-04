@@ -92,11 +92,11 @@ One line per node: link, status, description. Read this first; then search, nav,
 
 ## questions (0)
 
-## sources (16, not yet ingested: 5)
+## sources (16, not yet ingested: 4)
 - [[sources/Can Language Models Actually Retrieve In-Context-Drowning in Documents at Million Token Scale]] ingested - sources/raw/Can Language Models Actually Retrieve In-Context-Drowning in Documents at Million Token Scale.pdf
 - [[sources/End-to-End Agentic RAG System Training for Traceable Diagnostic Reasoning]] ingested - sources/raw/End-to-End Agentic RAG System Training for Traceable Diagnostic Reasoning.pdf
 - [[sources/How to Train Your Deep Research Agent]] ingested - sources/raw/How to Train Your Deep Research Agent.pdf
-- [[sources/LLMs and AI Agents for Research-1]] NOT INGESTED - sources/raw/LLMs and AI Agents for Research-1.pdf
+- [[sources/LLMs and AI Agents for Research-1]] ingested - sources/raw/LLMs and AI Agents for Research-1.pdf
 - [[sources/LLMs and AI Agents for Research-2]] NOT INGESTED - sources/raw/LLMs and AI Agents for Research-2.pdf
 - [[sources/LLMs and AI Agents for Research-3]] NOT INGESTED - sources/raw/LLMs and AI Agents for Research-3.pdf
 - [[sources/LongHealth - A Question Answering Benchmark with Long Clinical Documents]] NOT INGESTED - sources/raw/LongHealth - A Question Answering Benchmark with Long Clinical Documents.pdf

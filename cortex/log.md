@@ -84,3 +84,4 @@ Append-only. One line per operation.
 - 2026-11-04 12:26 | verify | claims/llms-generate-scientific-directions-that-lack-novelty -> pass | Slide states author's SciMON experiments show LLM directions lack novelty/creativity
 - 2026-11-04 12:26 | verify | claims/over-one-million-biomedical-papers-are-published-every-year -> pass | Slide: >1M biomedical papers every year
 - 2026-11-04 12:26 | verify | claims/the-first-scientific-journal-appeared-in-1665 -> pass | Slides: until mid-17th c. self-published books and letters; 1665 first scientific journal
+- 2026-11-04 12:26 | ingest | LLMs and AI Agents for Research-1 | 5 claims, 0 updated, 0 mechanisms

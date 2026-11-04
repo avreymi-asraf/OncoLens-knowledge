@@ -52,7 +52,8 @@
     "text": "sources/text/LongHealth - A Question Answering Benchmark with Long Clinical Documents.md",
     "sha256": "80b668a3af3d7f622143eba77d5d030f6cc8818b80a42603ccd89e42b28019d4",
     "added": "2026-11-04",
-    "ingested": false
+    "ingested": true,
+    "ingested_on": "2026-11-04"
   },
   "MedResearcher-R1": {
     "raw": "sources/raw/MedResearcher-R1.pdf",

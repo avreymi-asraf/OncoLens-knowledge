@@ -101,3 +101,10 @@ Append-only. One line per operation.
 - 2026-11-04 12:28 | verify | claims/scimon-iterative-novelty-boosting-retrieves-related-work-and-updates-ideas-below-a-similarity-threshold -> partial | Loop stated, but SciMON not named in context; statement omits threshold condition
 - 2026-11-04 12:28 | verify | claims/scimon-novelty-boosting-gives-a-1-5x-to-2x-boost-over-gpt-4-idea-ratings -> partial | Boost and expert evals stated, but SciMON not named in context
 - 2026-11-04 12:28 | ingest | LLMs and AI Agents for Research-3 | 8 claims, 0 updated, 0 mechanisms
+- 2026-11-04 12:30 | verify | claims/identifying-missing-information-is-the-hardest-longhealth-task-for-all-models -> pass | Source: most challenging for all models; best 76%
+- 2026-11-04 12:30 | verify | claims/long-context-models-show-no-significant-longhealth-accuracy-loss-from-16k-to-32k-tokens -> pass | Five named models, no significant loss up to 32k
+- 2026-11-04 12:30 | verify | claims/longhealth-authors-hypothesize-training-makes-answering-seem-more-helpful-than-abstaining -> pass | Hypothesis stated verbatim
+- 2026-11-04 12:30 | verify | claims/mistral-small-24b-reaches-the-highest-longhealth-task-1-accuracy-at-84-percent -> fail | Quote location not found in source; context only shows Llama-4-Scout 81% following, 84% unverified
+- 2026-11-04 12:30 | verify | claims/mixing-in-other-patients-documents-sharply-lowers-accuracy-for-most-models-on-longhealth -> partial | 27% and only two improved supported; 93%/82% absolute figures not in context (only +9/+1 pp)
+- 2026-11-04 12:30 | verify | claims/most-models-lose-accuracy-on-longhealth-as-prompt-length-grows-from-4k-to-16k-tokens -> pass | Nine of 16k-capable models declined 4k->16k
+- 2026-11-04 12:30 | ingest | LongHealth - A Question Answering Benchmark with Long Clinical Documents | 6 claims, 0 updated, 0 mechanisms

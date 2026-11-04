@@ -210,6 +210,12 @@
    "description": "PPO vs GRPO, convergence speed, reward collapse, training stability, critic warm-up, Search-R1",
    "title": "In Search-R1 training, GRPO converges faster than PPO but can suffer reward collapse after many steps, while PPO stays stable and both reach comparable final reward."
   },
+  "claims/identifying-missing-information-is-the-hardest-longhealth-task-for-all-models": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "LongHealth Task 3 unanswerable questions, refuse to answer, hallucination, missing information, best 76% Mistral-Small, Mixtral drops 26 points",
+   "title": "Recognizing that the needed information is absent (LongHealth Task 3) is the hardest task for all tested models, with the best reaching only 76%."
+  },
   "claims/in-the-ai-geometry-proof-only-2-of-over-100-steps-come-from-the-llm": {
    "type": "claim",
    "status": "proposed",
@@ -264,17 +270,47 @@
    "description": "SSMax, scalable softmax, log N scaling of pre-softmax scores, attention sink, length-aware softmax, mitigation of attention dilution",
    "title": "Scaling pre-softmax scores with log N (SSMax) is effective against attention dilution, whereas an additive length-aware attention sink barely helps."
   },
+  "claims/long-context-models-show-no-significant-longhealth-accuracy-loss-from-16k-to-32k-tokens": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "LongHealth 32k tokens, Yi-34B-200k, Mistral-7B, longchat-32k, Mixtral, no significant accuracy loss beyond 16k context",
+   "title": "The five long-context models tested on LongHealth up to 32,000 tokens show no significant accuracy loss at the longer lengths."
+  },
+  "claims/longhealth-authors-hypothesize-training-makes-answering-seem-more-helpful-than-abstaining": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "hypothesis why LLMs fail to abstain, training rewards answering as helpful, hallucination instead of refusal, missing information, negation",
+   "title": "The LongHealth authors hypothesize that LLMs fail to flag missing information because training treats giving an answer as more helpful than abstaining."
+  },
   "claims/marg-uses-multiple-llm-agents-each-reviewing-different-aspects-of-a-paper": {
    "type": "claim",
    "status": "proposed",
    "description": "MARG multi-agent review generation, scientific paper review, critique and enhance ideas, multiple LLM agents, aspects",
    "title": "MARG (2024) generates reviews of scientific papers using multiple LLM agents, each focusing on reviewing different aspects."
   },
+  "claims/mistral-small-24b-reaches-the-highest-longhealth-task-1-accuracy-at-84-percent": {
+   "type": "claim",
+   "status": "disputed",
+   "description": "LongHealth Task 1 single-patient shuffled documents, Mistral-Small-24B-Instruct 84%, Llama-4-Scout 81%, Mixtral 76%, 16k tokens accuracy",
+   "title": "On LongHealth Task 1 (single-patient documents, 16k-token prompt), Mistral-Small-24B-Instruct-2501 is most accurate at 84%, followed by Llama-4-Scout-17B-16E-Instruct at 81%."
+  },
+  "claims/mixing-in-other-patients-documents-sharply-lowers-accuracy-for-most-models-on-longhealth": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "LongHealth Task 2 multi-patient distractor documents, gpt-3.5 drops to 27%, Mixtral 38%, only Mistral-Small 93% and Llama-4-Scout improve",
+   "title": "When documents from other patients are mixed in (LongHealth Task 2), most models lose much accuracy, e.g. gpt-3.5-turbo falls to 27%, while only Mistral-Small-24B (93%) and Llama-4-Scout (82%) improve."
+  },
   "claims/modified-blocksearch-beats-dense-retrieval-on-limit-at-million-token-scale": {
    "type": "claim",
    "status": "proposed",
    "description": "LIMIT benchmark, out-of-distribution lexical retrieval, in-context retrieval beats dense embeddings, Recall@1 13.5 vs 2.9",
    "title": "On the lexical LIMIT benchmark at a million-token corpus, modified BlockSearch reaches 13.5% Recall@1 versus 2.9% for the dense baseline."
+  },
+  "claims/most-models-lose-accuracy-on-longhealth-as-prompt-length-grows-from-4k-to-16k-tokens": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "LongHealth context length effect, accuracy decline 4000 to 16000 tokens, nine of 16k models, gpt-3.5 -5%, vicuna-7b -13%, Yi-6B outlier",
+   "title": "On LongHealth Task 1, nine of the 16k-capable models lose accuracy as the prompt grows from 4,000 to 16,000 tokens."
   },
   "claims/optimized-query-generator-decomposes-a-multi-hop-claim-by-asking-for-the-first-unknown-entity-when-notes-are-empty": {
    "type": "claim",
@@ -534,6 +570,12 @@
    "description": "in-context retrieval (ICR), LM decodes relevant document identifier from corpus placed in context, alternative to dense vector retrieval, BlockSearch",
    "title": "In-context retrieval"
   },
+  "concepts/longhealth": {
+   "type": "concept",
+   "status": "active",
+   "description": "LongHealth benchmark, long clinical document QA, 20 fictional patient cases, discharge notes, 400 multiple-choice questions, EHR",
+   "title": "LongHealth"
+  },
   "concepts/multi-hop-retrieval-with-note-accumulation": {
    "type": "concept",
    "status": "active",
@@ -579,7 +621,7 @@
    "raw": "sources/raw/LLMs and AI Agents for Research-3.pdf"
   },
   "LongHealth - A Question Answering Benchmark with Long Clinical Documents": {
-   "ingested": false,
+   "ingested": true,
    "raw": "sources/raw/LongHealth - A Question Answering Benchmark with Long Clinical Documents.pdf"
   },
   "MedResearcher-R1": {
@@ -1065,6 +1107,24 @@
    "note": "independent original-paper evidence for the \"GRPO least stable\" part only; REINFORCE was not tested"
   },
   {
+   "from": "claims/identifying-missing-information-is-the-hardest-longhealth-task-for-all-models",
+   "pred": "derived_from",
+   "to": "sources/LongHealth - A Question Answering Benchmark with Long Clinical Documents",
+   "note": "Section 3.3; continues \"most challenging for all models tested\""
+  },
+  {
+   "from": "claims/identifying-missing-information-is-the-hardest-longhealth-task-for-all-models",
+   "pred": "derived_from",
+   "to": "sources/LongHealth - A Question Answering Benchmark with Long Clinical Documents",
+   "note": "LLMs seem to be more likely to hallucinate answers rather than acknowledge"
+  },
+  {
+   "from": "claims/identifying-missing-information-is-the-hardest-longhealth-task-for-all-models",
+   "pred": "relates_to",
+   "to": "concepts/longhealth",
+   "note": "Task 3 of the benchmark"
+  },
+  {
    "from": "claims/in-the-ai-geometry-proof-only-2-of-over-100-steps-come-from-the-llm",
    "pred": "derived_from",
    "to": "sources/LLMs and AI Agents for Research-1",
@@ -1143,10 +1203,70 @@
    "note": "instance of in-context retrieval"
   },
   {
+   "from": "claims/long-context-models-show-no-significant-longhealth-accuracy-loss-from-16k-to-32k-tokens",
+   "pred": "derived_from",
+   "to": "sources/LongHealth - A Question Answering Benchmark with Long Clinical Documents",
+   "note": "Section 3.1, Fig. 3"
+  },
+  {
+   "from": "claims/longhealth-authors-hypothesize-training-makes-answering-seem-more-helpful-than-abstaining",
+   "pred": "derived_from",
+   "to": "sources/LongHealth - A Question Answering Benchmark with Long Clinical Documents",
+   "note": "Section 4"
+  },
+  {
+   "from": "claims/longhealth-authors-hypothesize-training-makes-answering-seem-more-helpful-than-abstaining",
+   "pred": "derived_from",
+   "to": "sources/LongHealth - A Question Answering Benchmark with Long Clinical Documents",
+   "note": "providing an answer is inherently perceived as more helpful than refraining from"
+  },
+  {
+   "from": "claims/longhealth-authors-hypothesize-training-makes-answering-seem-more-helpful-than-abstaining",
+   "pred": "relates_to",
+   "to": "claims/f1-reward-training-collapses-through-answer-avoidance-and-underperforms-em",
+   "note": "the reward design for answering vs abstaining shapes whether a model answers; there it pushes toward avoidance"
+  },
+  {
+   "from": "claims/longhealth-authors-hypothesize-training-makes-answering-seem-more-helpful-than-abstaining",
+   "pred": "relates_to",
+   "to": "claims/identifying-missing-information-is-the-hardest-longhealth-task-for-all-models",
+   "note": "proposed explanation for that result"
+  },
+  {
    "from": "claims/marg-uses-multiple-llm-agents-each-reviewing-different-aspects-of-a-paper",
    "pred": "derived_from",
    "to": "sources/LLMs and AI Agents for Research-3",
    "note": "MARG: Multi-Agent Review Generation for Scientiﬁc Papers, 2024"
+  },
+  {
+   "from": "claims/mistral-small-24b-reaches-the-highest-longhealth-task-1-accuracy-at-84-percent",
+   "pred": "derived_from",
+   "to": "sources/LongHealth - A Question Answering Benchmark with Long Clinical Documents",
+   "note": "Section 3.1, Table 2"
+  },
+  {
+   "from": "claims/mistral-small-24b-reaches-the-highest-longhealth-task-1-accuracy-at-84-percent",
+   "pred": "relates_to",
+   "to": "concepts/longhealth",
+   "note": "result on the benchmark"
+  },
+  {
+   "from": "claims/mixing-in-other-patients-documents-sharply-lowers-accuracy-for-most-models-on-longhealth",
+   "pred": "derived_from",
+   "to": "sources/LongHealth - A Question Answering Benchmark with Long Clinical Documents",
+   "note": "Section 3.2, Table 3"
+  },
+  {
+   "from": "claims/mixing-in-other-patients-documents-sharply-lowers-accuracy-for-most-models-on-longhealth",
+   "pred": "derived_from",
+   "to": "sources/LongHealth - A Question Answering Benchmark with Long Clinical Documents",
+   "note": "Only Mistral-Small-24B-Instruct-2501 and"
+  },
+  {
+   "from": "claims/mixing-in-other-patients-documents-sharply-lowers-accuracy-for-most-models-on-longhealth",
+   "pred": "relates_to",
+   "to": "concepts/longhealth",
+   "note": "Task 2 of the benchmark"
   },
   {
    "from": "claims/modified-blocksearch-beats-dense-retrieval-on-limit-at-million-token-scale",
@@ -1159,6 +1279,24 @@
    "pred": "relates_to",
    "to": "concepts/in-context-retrieval",
    "note": "instance of in-context retrieval"
+  },
+  {
+   "from": "claims/most-models-lose-accuracy-on-longhealth-as-prompt-length-grows-from-4k-to-16k-tokens",
+   "pred": "derived_from",
+   "to": "sources/LongHealth - A Question Answering Benchmark with Long Clinical Documents",
+   "note": "Section 3.1; the sentence continues \"ble models showed an accuracy decline\""
+  },
+  {
+   "from": "claims/most-models-lose-accuracy-on-longhealth-as-prompt-length-grows-from-4k-to-16k-tokens",
+   "pred": "derived_from",
+   "to": "sources/LongHealth - A Question Answering Benchmark with Long Clinical Documents",
+   "note": "Yi-6B-200  K remained the"
+  },
+  {
+   "from": "claims/most-models-lose-accuracy-on-longhealth-as-prompt-length-grows-from-4k-to-16k-tokens",
+   "pred": "relates_to",
+   "to": "claims/attention-dilution-drives-the-gold-document-attention-share-toward-zero-as-the-corpus-grows",
+   "note": "another source reporting accuracy loss as irrelevant in-context documents are added"
   },
   {
    "from": "claims/optimized-query-generator-decomposes-a-multi-hop-claim-by-asking-for-the-first-unknown-entity-when-notes-are-empty",
@@ -1573,6 +1711,18 @@
    "pred": "derived_from",
    "to": "sources/Can Language Models Actually Retrieve In-Context-Drowning in Documents at Million Token Scale",
    "note": "casting retrieval asconditionalgeneration, where the model directly decodes"
+  },
+  {
+   "from": "concepts/longhealth",
+   "pred": "derived_from",
+   "to": "sources/LongHealth - A Question Answering Benchmark with Long Clinical Documents",
+   "note": "We present the LongHealth benchmark, comprising 20 detailed"
+  },
+  {
+   "from": "concepts/longhealth",
+   "pred": "relates_to",
+   "to": "concepts/in-context-retrieval",
+   "note": "LongHealth tasks require finding patient facts inside a long in-context set of documents"
   },
   {
    "from": "concepts/multi-hop-retrieval-with-note-accumulation",

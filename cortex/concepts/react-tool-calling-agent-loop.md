@@ -11,3 +11,6 @@ An agent that repeatedly calls an LLM with tool-calling enabled, executes the ch
 ## Relations
 - derived_from::[[sources/github-allenai-agent-baselines-·-github-20261103165019]]
   > a simple ReAct implementation that uses LLM tool-calling in a loop. It supports all [AstaBench tool options](https://github.com/allenai/asta-bench?tab=readme-ov-file#tools-and-utilities) and configurable `max_steps`.
+- derived_from::[[sources/LLMs and AI Agents for Research-2]]
+  > The text generation then pauses, and the program attempts to execute the 
+  - lecture slides (ChemCrow, p.41) describe the same Thought/Action/Observation loop

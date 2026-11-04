@@ -85,3 +85,10 @@ Append-only. One line per operation.
 - 2026-11-04 12:26 | verify | claims/over-one-million-biomedical-papers-are-published-every-year -> pass | Slide: >1M biomedical papers every year
 - 2026-11-04 12:26 | verify | claims/the-first-scientific-journal-appeared-in-1665 -> pass | Slides: until mid-17th c. self-published books and letters; 1665 first scientific journal
 - 2026-11-04 12:26 | ingest | LLMs and AI Agents for Research-1 | 5 claims, 0 updated, 0 mechanisms
+- 2026-11-04 12:27 | verify | claims/a-tool-for-an-llm-agent-is-specified-by-a-textual-description-of-what-the-function-does-and-its-typed-arguments -> pass | Slide: a function; textual description + arguments, better with typings
+- 2026-11-04 12:27 | verify | claims/chemcrow-pauses-generation-after-an-action-request-executes-the-tool-and-returns-the-result-as-an-observation -> pass | Steps 4-5 state pause, execute, Observation, iterate to final answer (ChemCrow attribution not shown in context)
+- 2026-11-04 12:27 | verify | claims/clin-improves-on-repeated-task-attempts-by-writing-reflected-lessons-into-memory -> partial | Source states reflect + lessons memory; does not state performance improves with more attempts
+- 2026-11-04 12:27 | verify | claims/large-and-evolving-tool-pools-with-complex-documentation-motivate-tool-retrieval -> partial | Slide juxtaposes problems with 'Tool retrieval' but does not explicitly state causal motivation or 'rather than all in context'
+- 2026-11-04 12:27 | verify | claims/toolformer-learns-tool-use-by-self-supervised-fine-tuning-on-generated-api-calls -> pass | Slide: Toolformer, self-supervised fine tuning, 25K API calls per tool, 5 tools
+- 2026-11-04 12:27 | verify | claims/chemcrow-pauses-generation-after-an-action-request-executes-the-tool-and-returns-the-result-as-an-observation -> partial | Loop mechanics fully supported, but shown context never names ChemCrow
+- 2026-11-04 12:27 | ingest | LLMs and AI Agents for Research-2 | 5 claims, 1 updated, 0 mechanisms

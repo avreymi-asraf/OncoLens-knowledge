@@ -36,7 +36,8 @@
     "text": "sources/text/LLMs and AI Agents for Research-2.md",
     "sha256": "025ac719b57be7f64f033c843233ed94a04793586ba031a38bccad418cc8bb1d",
     "added": "2026-11-04",
-    "ingested": false
+    "ingested": true,
+    "ingested_on": "2026-11-04"
   },
   "LLMs and AI Agents for Research-3": {
     "raw": "sources/raw/LLMs and AI Agents for Research-3.pdf",

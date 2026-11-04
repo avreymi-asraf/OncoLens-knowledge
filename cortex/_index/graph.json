@@ -18,6 +18,12 @@
    "description": "DSPy teacher LM GPT-4o invoked few times for small student LM; teacher not strictly necessary, gives robustness to initial optimizer configuration.",
    "title": "A small model can typically teach itself tasks like multi-hop retrieval in DSPy, with a larger teacher serving mainly as insurance against a poor initial configuration."
   },
+  "claims/a-tool-for-an-llm-agent-is-specified-by-a-textual-description-of-what-the-function-does-and-its-typed-arguments": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "tool definition, function calling, function schema, tool description, typed arguments, JSON schema parameters",
+   "title": "A tool for an LLM agent is essentially a function, specified to the model by a textual description of what it does and its arguments, preferably with types."
+  },
   "claims/a-unified-tool-server-framework-reaches-task-specific-baseline-performance-across-six-agentic-rl-domains": {
    "type": "claim",
    "status": "proposed",
@@ -150,6 +156,18 @@
    "description": "BlockSearch 0.6B in-context retriever vs dense retriever, Recall@1 95.8 vs 95.5, MS MARCO 45k tokens, small corpus parity",
    "title": "BlockSearch matches a same-backbone dense retriever on small corpora, reaching 95.8% vs 95.5% Recall@1 on MS MARCO at about 45k tokens."
   },
+  "claims/chemcrow-pauses-generation-after-an-action-request-executes-the-tool-and-returns-the-result-as-an-observation": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "ChemCrow ReAct format, Thought Action Action Input Observation, generation pauses, tool execution, iterative loop until final answer",
+   "title": "In ChemCrow, after the LLM emits an Action and Action Input, text generation pauses, the program executes the requested tool, and the result is returned prepended by 'Observation' before the next Thought, iterating until a final answer."
+  },
+  "claims/clin-improves-on-repeated-task-attempts-by-writing-reflected-lessons-into-memory": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "CLIN, continual learning agent, reflection, memory of lessons, rapid task adaptation, self-improvement across trials",
+   "title": "CLIN agents reflect on each attempt at a task and store lessons in memory, so performance improves the more times the task is tried."
+  },
   "claims/deep-dxsearch-assistance-raised-physician-diagnostic-accuracy-from-45-6-to-69-1-percent-on-150-real-world-cases": {
    "type": "claim",
    "status": "proposed",
@@ -209,6 +227,12 @@
    "status": "proposed",
    "description": "MIPROv2 jointly optimizing the query-generation and note-appending prompts, GPT-4o teacher, Llama-3.1-8B, top5_recall 31% to 59%, about 35 minutes and 5 dollars.",
    "title": "Jointly optimizing the two prompts of a multi-hop retrieval program with MIPROv2 roughly doubles top-5 recall from about 31% to about 59%."
+  },
+  "claims/large-and-evolving-tool-pools-with-complex-documentation-motivate-tool-retrieval": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "tool retrieval, large tool pool, complex tool docs, evolving APIs, tool selection scaling",
+   "title": "Complex tool documentation and huge, constantly evolving tool pools motivate retrieving relevant tools rather than putting all of them in context."
   },
   "claims/length-aware-softmax-and-document-level-sparse-attention-raise-million-token-recall-from-0-2-to-20": {
    "type": "claim",
@@ -408,6 +432,12 @@
    "description": "tool call frequency collapse, reward design, initialization, agentic RL, visual reasoning",
    "title": "Models do not spontaneously develop effective tool use in RL without appropriate reward design, and tool action frequency can decay to zero within a few RL steps."
   },
+  "claims/toolformer-learns-tool-use-by-self-supervised-fine-tuning-on-generated-api-calls": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "Toolformer, self-supervised fine-tuning, synthetic API calls, learning to use tools, 25K calls per tool, 5 tools",
+   "title": "Toolformer learns tool use through self-supervised fine-tuning on generated API calls, roughly 25K per tool for 5 tools."
+  },
   "claims/using-the-user-question-as-the-similarity-reference-can-miss-answer-documents-written-in-affirmative-form": {
    "type": "claim",
    "status": "proposed",
@@ -493,7 +523,7 @@
    "raw": "sources/raw/LLMs and AI Agents for Research-1.pdf"
   },
   "LLMs and AI Agents for Research-2": {
-   "ingested": false,
+   "ingested": true,
    "raw": "sources/raw/LLMs and AI Agents for Research-2.pdf"
   },
   "LLMs and AI Agents for Research-3": {
@@ -577,6 +607,12 @@
    "pred": "derived_from",
    "to": "sources/multi-hop-rag-dspy",
    "note": "tutorial setup section"
+  },
+  {
+   "from": "claims/a-tool-for-an-llm-agent-is-specified-by-a-textual-description-of-what-the-function-does-and-its-typed-arguments",
+   "pred": "derived_from",
+   "to": "sources/LLMs and AI Agents for Research-2",
+   "note": "b. The function’s arguments (better if with typings)."
   },
   {
    "from": "claims/a-unified-tool-server-framework-reaches-task-specific-baseline-performance-across-six-agentic-rl-domains",
@@ -897,6 +933,24 @@
    "note": "instance of in-context retrieval"
   },
   {
+   "from": "claims/chemcrow-pauses-generation-after-an-action-request-executes-the-tool-and-returns-the-result-as-an-observation",
+   "pred": "derived_from",
+   "to": "sources/LLMs and AI Agents for Research-2",
+   "note": "The result is returned to the LLM"
+  },
+  {
+   "from": "claims/chemcrow-pauses-generation-after-an-action-request-executes-the-tool-and-returns-the-result-as-an-observation",
+   "pred": "relates_to",
+   "to": "concepts/react-tool-calling-agent-loop",
+   "note": "ChemCrow is an instance of the ReAct loop"
+  },
+  {
+   "from": "claims/clin-improves-on-repeated-task-attempts-by-writing-reflected-lessons-into-memory",
+   "pred": "derived_from",
+   "to": "sources/LLMs and AI Agents for Research-2",
+   "note": "Agent tries a game, reflects on its performance, then builds a"
+  },
+  {
    "from": "claims/deep-dxsearch-assistance-raised-physician-diagnostic-accuracy-from-45-6-to-69-1-percent-on-150-real-world-cases",
    "pred": "derived_from",
    "to": "sources/End-to-End Agentic RAG System Training for Traceable Diagnostic Reasoning",
@@ -991,6 +1045,12 @@
    "pred": "derived_from",
    "to": "sources/multi-hop-rag-dspy",
    "note": "cost of the optimization run"
+  },
+  {
+   "from": "claims/large-and-evolving-tool-pools-with-complex-documentation-motivate-tool-retrieval",
+   "pred": "derived_from",
+   "to": "sources/LLMs and AI Agents for Research-2",
+   "note": "Tool retrieval"
   },
   {
    "from": "claims/length-aware-softmax-and-document-level-sparse-attention-raise-million-token-recall-from-0-2-to-20",
@@ -1305,6 +1365,12 @@
    "note": "Section 4.2, Dynamics of Tool Usage"
   },
   {
+   "from": "claims/toolformer-learns-tool-use-by-self-supervised-fine-tuning-on-generated-api-calls",
+   "pred": "derived_from",
+   "to": "sources/LLMs and AI Agents for Research-2",
+   "note": "Generated 25K API calls for each tool (5 tools)"
+  },
+  {
    "from": "claims/using-the-user-question-as-the-similarity-reference-can-miss-answer-documents-written-in-affirmative-form",
    "pred": "derived_from",
    "to": "sources/agentic-rag-turbocharge-your-rag-with-query-reformulation-and-self-query",
@@ -1411,6 +1477,12 @@
    "pred": "derived_from",
    "to": "sources/multi-hop-rag-dspy",
    "note": "It will do this via two sub-modules: `generate_query` and `append_notes`."
+  },
+  {
+   "from": "concepts/react-tool-calling-agent-loop",
+   "pred": "derived_from",
+   "to": "sources/LLMs and AI Agents for Research-2",
+   "note": "lecture slides (ChemCrow, p.41) describe the same Thought/Action/Observation loop"
   },
   {
    "from": "concepts/react-tool-calling-agent-loop",

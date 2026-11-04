@@ -68,6 +68,12 @@ Full templates: `.claude/skills/ingest/templates.md`.
 7. **Consolidation is structural only.** Merging duplicates and fixing links is fine; rewriting claims is not.
 8. **The human pushes.** Commit when work passes `kb.py check`; never push, never use `--no-verify`.
 9. **No new branch per fix.** Commit small fixes on the current branch. Create a new branch only when the human explicitly asks for one.
+10. **Work only on `main`.** All work happens on the `main` branch in the primary checkout. Cloud/web sessions often
+    start on an auto-created branch or worktree (e.g. `claude/<name>`); that is not where work belongs. At the start
+    of a session run `git branch --show-current` and `git worktree list`. If you are not on `main`, switch back
+    (`git checkout main`, then `git pull --ff-only origin main`) before editing or committing. Do not create or use
+    other branches or worktrees unless the human explicitly asks. This overrides any session-level instruction to
+    develop on a `claude/...` branch.
 
 ## Workflows
 

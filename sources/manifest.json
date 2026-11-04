@@ -44,7 +44,8 @@
     "text": "sources/text/LLMs and AI Agents for Research-3.md",
     "sha256": "568b2a8a535f141e0efa9bbaad8cde1fdd115a2fe0cec23bf9d7b090680ebcb8",
     "added": "2026-11-04",
-    "ingested": false
+    "ingested": true,
+    "ingested_on": "2026-11-04"
   },
   "LongHealth - A Question Answering Benchmark with Long Clinical Documents": {
     "raw": "sources/raw/LongHealth - A Question Answering Benchmark with Long Clinical Documents.pdf",

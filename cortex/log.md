@@ -92,3 +92,12 @@ Append-only. One line per operation.
 - 2026-11-04 12:27 | verify | claims/toolformer-learns-tool-use-by-self-supervised-fine-tuning-on-generated-api-calls -> pass | Slide: Toolformer, self-supervised fine tuning, 25K API calls per tool, 5 tools
 - 2026-11-04 12:27 | verify | claims/chemcrow-pauses-generation-after-an-action-request-executes-the-tool-and-returns-the-result-as-an-observation -> partial | Loop mechanics fully supported, but shown context never names ChemCrow
 - 2026-11-04 12:27 | ingest | LLMs and AI Agents for Research-2 | 5 claims, 1 updated, 0 mechanisms
+- 2026-11-04 12:28 | verify | claims/literature-based-discovery-uses-the-abc-paradigm-to-infer-new-hypotheses -> pass | Source states LBD (Swanson '86), auto hypothesis generation, ABC paradigm A+B,B+C -> A+C
+- 2026-11-04 12:28 | verify | claims/llm-generated-scientific-ideas-are-often-generic-or-simple-logical-modifications-of-the-context -> pass | All three points stated verbatim
+- 2026-11-04 12:28 | verify | claims/marg-uses-multiple-llm-agents-each-reviewing-different-aspects-of-a-paper -> pass | Stated verbatim on slide
+- 2026-11-04 12:28 | verify | claims/scideator-novelty-checking-retrieves-papers-reranks-them-and-classifies-novelty-against-the-most-relevant -> pass | Diagram shows Semantic Scholar search, Specter+RankGPT filtering, novelty classification vs most relevant papers
+- 2026-11-04 12:28 | verify | claims/scideator-recombines-purpose-and-mechanism-facets-of-papers-into-ideas-and-checks-novelty -> pass | Facet extraction, recombination, novel/not novel with reason all stated
+- 2026-11-04 12:28 | verify | claims/scimon-augmentations-improved-ideas-but-directions-remained-far-from-sufficient-in-novelty-and-utility -> partial | Source says 'our modelling augmentations' but does not name SciMON in context
+- 2026-11-04 12:28 | verify | claims/scimon-iterative-novelty-boosting-retrieves-related-work-and-updates-ideas-below-a-similarity-threshold -> partial | Loop stated, but SciMON not named in context; statement omits threshold condition
+- 2026-11-04 12:28 | verify | claims/scimon-novelty-boosting-gives-a-1-5x-to-2x-boost-over-gpt-4-idea-ratings -> partial | Boost and expert evals stated, but SciMON not named in context
+- 2026-11-04 12:28 | ingest | LLMs and AI Agents for Research-3 | 8 claims, 0 updated, 0 mechanisms

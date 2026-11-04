@@ -240,6 +240,18 @@
    "description": "length-aware softmax plus document-level sparse attention routing, MS MARCO million-token Recall@1 0.2 to 20.0, dense baseline 20.2",
    "title": "Length-aware softmax scaling plus document-level sparse attention raise million-token Recall@1 on MS MARCO from 0.2 to 20.0, close to the dense baseline's 20.2."
   },
+  "claims/literature-based-discovery-uses-the-abc-paradigm-to-infer-new-hypotheses": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "Literature-based discovery LBD, Don Swanson 1986, ABC paradigm, A-B B-C infer A-C, hypothesis generation from literature",
+   "title": "Literature-based discovery (Swanson, 1986) generates new hypotheses from the literature via the ABC paradigm: if A relates to B and B relates to C, propose a link between A and C."
+  },
+  "claims/llm-generated-scientific-ideas-are-often-generic-or-simple-logical-modifications-of-the-context": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "LLM idea generation failure modes, generic suggestions, copied details, simple logical modification, buzz concepts, novelty boosting combinations",
+   "title": "LLM-generated scientific ideas are often generic suggestions woven with details copied from the context or simple logical modifications of it, and novelty boosting tends to add combinations of buzz concepts."
+  },
   "claims/llms-generate-scientific-directions-that-lack-novelty": {
    "type": "claim",
    "status": "proposed",
@@ -251,6 +263,12 @@
    "status": "proposed",
    "description": "SSMax, scalable softmax, log N scaling of pre-softmax scores, attention sink, length-aware softmax, mitigation of attention dilution",
    "title": "Scaling pre-softmax scores with log N (SSMax) is effective against attention dilution, whereas an additive length-aware attention sink barely helps."
+  },
+  "claims/marg-uses-multiple-llm-agents-each-reviewing-different-aspects-of-a-paper": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "MARG multi-agent review generation, scientific paper review, critique and enhance ideas, multiple LLM agents, aspects",
+   "title": "MARG (2024) generates reviews of scientific papers using multiple LLM agents, each focusing on reviewing different aspects."
   },
   "claims/modified-blocksearch-beats-dense-retrieval-on-limit-at-million-token-scale": {
    "type": "claim",
@@ -335,6 +353,36 @@
    "status": "proposed",
    "description": "base vs instruction-tuned initialization, RL from scratch, Qwen2.5 7B 32B, ReSearch, starting checkpoint",
    "title": "In ReSearch, RL training starting from instruction-tuned models gives higher performance than starting from base models, consistently across benchmarks and model sizes."
+  },
+  "claims/scideator-novelty-checking-retrieves-papers-reranks-them-and-classifies-novelty-against-the-most-relevant": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "Scideator novelty checker, Semantic Scholar search API, Specter embeddings, RankGPT reranking, top N papers, novelty classification and reasoning",
+   "title": "Scideator's novelty evaluation collects candidate papers via the Semantic Scholar search API, filters them with Specter embeddings and RankGPT re-ranking, and classifies the idea's novelty against the most relevant papers."
+  },
+  "claims/scideator-recombines-purpose-and-mechanism-facets-of-papers-into-ideas-and-checks-novelty": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "Scideator, human-LLM idea generation, paper facet recombination, purpose mechanism, analogous papers, novelty classification",
+   "title": "Scideator extracts purpose and mechanism facets from user-provided and analogous papers, recombines selected facets into ideas with one purpose and one mechanism, and classifies ideas as novel or not novel with a reason."
+  },
+  "claims/scimon-augmentations-improved-ideas-but-directions-remained-far-from-sufficient-in-novelty-and-utility": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "SciMON results, higher technical detail, less generic, perceived novelty utility, still insufficient novelty",
+   "title": "SciMON's modelling augmentations yielded more technically detailed, less generic ideas with higher perceived novelty and utility, but the directions were still judged far from sufficient in novelty and utility."
+  },
+  "claims/scimon-iterative-novelty-boosting-retrieves-related-work-and-updates-ideas-below-a-similarity-threshold": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "SciMON retrieve-compare-update, iterative novelty boosting at inference, similarity threshold, related work retrieval, novelty penalty",
+   "title": "SciMON boosts novelty at inference with a retrieve-compare-update loop that retrieves related work and instructs the model to update the idea in light of it and the initial problem."
+  },
+  "claims/scimon-novelty-boosting-gives-a-1-5x-to-2x-boost-over-gpt-4-idea-ratings": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "SciMON novelty boosting evaluation, human expert ratings, CS biomedical experts, 1.5x 2x vs GPT-4 ideas",
+   "title": "In human evaluations by CS and biomedical experts, SciMON novelty boosting gave a 1.5X-2X boost over GPT-4 idea ratings."
   },
   "claims/search-call-count-and-response-length-grow-during-research-rl-training": {
    "type": "claim",
@@ -527,7 +575,7 @@
    "raw": "sources/raw/LLMs and AI Agents for Research-2.pdf"
   },
   "LLMs and AI Agents for Research-3": {
-   "ingested": false,
+   "ingested": true,
    "raw": "sources/raw/LLMs and AI Agents for Research-3.pdf"
   },
   "LongHealth - A Question Answering Benchmark with Long Clinical Documents": {
@@ -1065,6 +1113,18 @@
    "note": "instance of in-context retrieval"
   },
   {
+   "from": "claims/literature-based-discovery-uses-the-abc-paradigm-to-infer-new-hypotheses",
+   "pred": "derived_from",
+   "to": "sources/LLMs and AI Agents for Research-3",
+   "note": "Literature-based discovery (LBD), Don Swanson ‘86"
+  },
+  {
+   "from": "claims/llm-generated-scientific-ideas-are-often-generic-or-simple-logical-modifications-of-the-context",
+   "pred": "derived_from",
+   "to": "sources/LLMs and AI Agents for Research-3",
+   "note": "Often generic suggestions, woven with details copied from context"
+  },
+  {
    "from": "claims/llms-generate-scientific-directions-that-lack-novelty",
    "pred": "derived_from",
    "to": "sources/LLMs and AI Agents for Research-1",
@@ -1081,6 +1141,12 @@
    "pred": "relates_to",
    "to": "concepts/in-context-retrieval",
    "note": "instance of in-context retrieval"
+  },
+  {
+   "from": "claims/marg-uses-multiple-llm-agents-each-reviewing-different-aspects-of-a-paper",
+   "pred": "derived_from",
+   "to": "sources/LLMs and AI Agents for Research-3",
+   "note": "MARG: Multi-Agent Review Generation for Scientiﬁc Papers, 2024"
   },
   {
    "from": "claims/modified-blocksearch-beats-dense-retrieval-on-limit-at-million-token-scale",
@@ -1213,6 +1279,42 @@
    "pred": "derived_from",
    "to": "sources/ReSearch Learning to Reason with Search for LLMs",
    "note": "training from the instruction-tuned model can further improve the performance of"
+  },
+  {
+   "from": "claims/scideator-novelty-checking-retrieves-papers-reranks-them-and-classifies-novelty-against-the-most-relevant",
+   "pred": "derived_from",
+   "to": "sources/LLMs and AI Agents for Research-3",
+   "note": "Papers Related to Input Paper"
+  },
+  {
+   "from": "claims/scideator-recombines-purpose-and-mechanism-facets-of-papers-into-ideas-and-checks-novelty",
+   "pred": "derived_from",
+   "to": "sources/LLMs and AI Agents for Research-3",
+   "note": "extracting facets (purpose,"
+  },
+  {
+   "from": "claims/scimon-augmentations-improved-ideas-but-directions-remained-far-from-sufficient-in-novelty-and-utility",
+   "pred": "derived_from",
+   "to": "sources/LLMs and AI Agents for Research-3",
+   "note": "Higher technical detail, less generic"
+  },
+  {
+   "from": "claims/scimon-augmentations-improved-ideas-but-directions-remained-far-from-sufficient-in-novelty-and-utility",
+   "pred": "supports",
+   "to": "claims/llms-generate-scientific-directions-that-lack-novelty",
+   "note": "same SciMON results: ideas remain insufficiently novel"
+  },
+  {
+   "from": "claims/scimon-iterative-novelty-boosting-retrieves-related-work-and-updates-ideas-below-a-similarity-threshold",
+   "pred": "derived_from",
+   "to": "sources/LLMs and AI Agents for Research-3",
+   "note": "Retrieve-Compare-Update"
+  },
+  {
+   "from": "claims/scimon-novelty-boosting-gives-a-1-5x-to-2x-boost-over-gpt-4-idea-ratings",
+   "pred": "derived_from",
+   "to": "sources/LLMs and AI Agents for Research-3",
+   "note": "1.5X - 2X boost vs. GPT-4 idea ratings"
   },
   {
    "from": "claims/search-call-count-and-response-length-grow-during-research-rl-training",

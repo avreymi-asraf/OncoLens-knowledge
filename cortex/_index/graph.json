@@ -42,6 +42,12 @@
    "description": "agentic RAG vs standard RAG evaluation, LLM judge, 86.9% vs 73.1%, no-knowledge-base baseline 36%, huggingface_doc_qa_eval",
    "title": "On an LLM-judged QA set over Hugging Face documentation, agentic RAG scored 86.9% versus 73.1% for standard RAG, and an LLM without the knowledge base scored 36%."
   },
+  "claims/ai-geometry-prover-relies-on-synthetic-proofs-and-a-symbolic-engine": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "AI olympiad geometry proof system, ~100 million synthetic proofs, symbolic logic deduction engine, LLM contribution limited, AlphaGeometry critique",
+   "title": "The highlighted AI geometry prover was trained on about 100 million synthetically generated proofs of a narrow kind and relies heavily on a decades-old non-LLM symbolic engine."
+  },
   "claims/an-unoptimized-two-module-multi-hop-program-on-llama-3-1-8b-reaches-only-31-percent-top5-recall-on-hover": {
    "type": "claim",
    "status": "proposed",
@@ -186,6 +192,12 @@
    "description": "PPO vs GRPO, convergence speed, reward collapse, training stability, critic warm-up, Search-R1",
    "title": "In Search-R1 training, GRPO converges faster than PPO but can suffer reward collapse after many steps, while PPO stays stable and both reach comparable final reward."
   },
+  "claims/in-the-ai-geometry-proof-only-2-of-over-100-steps-come-from-the-llm": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "AI proof vs human proof, >100 deductive steps, only 2 steps from LLM, rest from symbolic engine, elegance creativity",
+   "title": "In the AI-generated geometry proof shown, over 100 technical deductive steps were needed and only 2 came from the LLM, the rest from the symbolic engine, whereas the human proof is short."
+  },
   "claims/individual-attention-heads-locate-the-gold-document-more-often-than-the-model-decodes-it": {
    "type": "claim",
    "status": "proposed",
@@ -204,6 +216,12 @@
    "description": "length-aware softmax plus document-level sparse attention routing, MS MARCO million-token Recall@1 0.2 to 20.0, dense baseline 20.2",
    "title": "Length-aware softmax scaling plus document-level sparse attention raise million-token Recall@1 on MS MARCO from 0.2 to 20.0, close to the dense baseline's 20.2."
   },
+  "claims/llms-generate-scientific-directions-that-lack-novelty": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "LLM scientific idea generation, hypothesis generation, lack of novelty creativity, SciMON ACL 2024, Tom Hope experiments",
+   "title": "In the author's experiments on scientific idea generation (SciMON), LLMs generate research directions that lack novelty and creativity."
+  },
   "claims/log-n-scaled-softmax-helps-in-context-retrieval-while-an-additive-length-aware-sink-barely-helps": {
    "type": "claim",
    "status": "proposed",
@@ -221,6 +239,12 @@
    "status": "proposed",
    "description": "Optimized DSPy hop query generator with empty notes issues a sub-question for the missing bridge entity (author of Up Against It), query decomposition per hop.",
    "title": "With empty notes, the optimized hop query generator asks only for the first missing bridge entity of a multi-hop claim rather than querying the whole claim."
+  },
+  "claims/over-one-million-biomedical-papers-are-published-every-year": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "biomedical literature volume, publication rate, explosion of science, >1M papers per year",
+   "title": "More than one million biomedical papers are published every year."
   },
   "claims/process-based-reward-co-optimizing-retrieval-and-reasoning-gives-13-7-percent-accuracy-gain-over-target-only-supervision": {
    "type": "claim",
@@ -341,6 +365,12 @@
    "status": "proposed",
    "description": "Slow Thinking collapse, empty think blocks, reasoning length growth, credit assignment shortcut, PPO, Search-R1",
    "title": "Training collapse under the Slow Thinking template coincides with a surge of empty think blocks, whose count correlates positively with reward just before collapse."
+  },
+  "claims/the-first-scientific-journal-appeared-in-1665": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "history of scientific publishing, first scientific journal 1665, before journals self-published books and letters",
+   "title": "The first scientific journal appeared in 1665; until the mid-17th century science was communicated through self-published books and letters."
   },
   "claims/the-model-deciding-whether-to-call-the-retriever-makes-rag-agentic-rather-than-a-fixed-pipeline": {
    "type": "claim",
@@ -613,6 +643,12 @@
    "pred": "supports",
    "to": "claims/a-rag-agent-formulates-its-own-retrieval-query-and-re-retrieves-recovering-hyde-and-self-query-behaviour",
    "note": "reported gain of the agent setup over single-step RAG"
+  },
+  {
+   "from": "claims/ai-geometry-prover-relies-on-synthetic-proofs-and-a-symbolic-engine",
+   "pred": "derived_from",
+   "to": "sources/LLMs and AI Agents for Research-1",
+   "note": "Trained on ~100 million synthetically generated proofs"
   },
   {
    "from": "claims/an-unoptimized-two-module-multi-hop-program-on-llama-3-1-8b-reaches-only-31-percent-top5-recall-on-hover",
@@ -927,6 +963,12 @@
    "note": "independent original-paper evidence for the \"GRPO least stable\" part only; REINFORCE was not tested"
   },
   {
+   "from": "claims/in-the-ai-geometry-proof-only-2-of-over-100-steps-come-from-the-llm",
+   "pred": "derived_from",
+   "to": "sources/LLMs and AI Agents for Research-1",
+   "note": "only 2 steps"
+  },
+  {
    "from": "claims/individual-attention-heads-locate-the-gold-document-more-often-than-the-model-decodes-it",
    "pred": "derived_from",
    "to": "sources/Can Language Models Actually Retrieve In-Context-Drowning in Documents at Million Token Scale",
@@ -963,6 +1005,12 @@
    "note": "instance of in-context retrieval"
   },
   {
+   "from": "claims/llms-generate-scientific-directions-that-lack-novelty",
+   "pred": "derived_from",
+   "to": "sources/LLMs and AI Agents for Research-1",
+   "note": "LLMs generate directions that lack novelty/creativity"
+  },
+  {
    "from": "claims/log-n-scaled-softmax-helps-in-context-retrieval-while-an-additive-length-aware-sink-barely-helps",
    "pred": "derived_from",
    "to": "sources/Can Language Models Actually Retrieve In-Context-Drowning in Documents at Million Token Scale",
@@ -991,6 +1039,12 @@
    "pred": "derived_from",
    "to": "sources/multi-hop-rag-dspy",
    "note": "generated query in the inspected history, notes were N/A"
+  },
+  {
+   "from": "claims/over-one-million-biomedical-papers-are-published-every-year",
+   "pred": "derived_from",
+   "to": "sources/LLMs and AI Agents for Research-1",
+   "note": ">1M biomedical papers every year"
   },
   {
    "from": "claims/process-based-reward-co-optimizing-retrieval-and-reasoning-gives-13-7-percent-accuracy-gain-over-target-only-supervision",
@@ -1195,6 +1249,12 @@
    "pred": "derived_from",
    "to": "sources/How to Train Your Deep Research Agent",
    "note": "The collapsing run exhibits a moderate positive correlation of 0.4310, compared to a"
+  },
+  {
+   "from": "claims/the-first-scientific-journal-appeared-in-1665",
+   "pred": "derived_from",
+   "to": "sources/LLMs and AI Agents for Research-1",
+   "note": "ﬁrst scientiﬁc journal!"
   },
   {
    "from": "claims/the-model-deciding-whether-to-call-the-retriever-makes-rag-agentic-rather-than-a-fixed-pipeline",

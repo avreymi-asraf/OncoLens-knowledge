@@ -79,3 +79,8 @@ Append-only. One line per operation.
 - 2026-11-04 12:25 | verify | claims/existing-medical-rag-systems-perform-static-one-shot-retrieval-that-does-not-adapt-to-insufficient-evidence -> pass | Source states one-shot retrieval on initial query, failing to adapt to insufficient/irrelevant/conflicting evidence
 - 2026-11-04 12:25 | verify | claims/process-based-reward-co-optimizing-retrieval-and-reasoning-gives-13-7-percent-accuracy-gain-over-target-only-supervision -> pass | Ablations: process-based reward co-optimizing retrieval and reasoning yields 13.7% over target-only
 - 2026-11-04 12:25 | verify | claims/sft-improves-in-distribution-diagnosis-but-often-degrades-out-of-distribution-while-agentic-rl-generalizes -> pass | Discussion states SFT improves ID, often degrades OOD; agentic RL learns transferable policy
+- 2026-11-04 12:26 | verify | claims/ai-geometry-prover-relies-on-synthetic-proofs-and-a-symbolic-engine -> pass | Slide states ~100M narrow synthetic proofs and heavy reliance on decades-old non-LLM symbolic engine
+- 2026-11-04 12:26 | verify | claims/in-the-ai-geometry-proof-only-2-of-over-100-steps-come-from-the-llm -> pass | Slide: >100 deductive steps, only 2 from LLM, rest from symbolic engine; human proof short
+- 2026-11-04 12:26 | verify | claims/llms-generate-scientific-directions-that-lack-novelty -> pass | Slide states author's SciMON experiments show LLM directions lack novelty/creativity
+- 2026-11-04 12:26 | verify | claims/over-one-million-biomedical-papers-are-published-every-year -> pass | Slide: >1M biomedical papers every year
+- 2026-11-04 12:26 | verify | claims/the-first-scientific-journal-appeared-in-1665 -> pass | Slides: until mid-17th c. self-published books and letters; 1665 first scientific journal

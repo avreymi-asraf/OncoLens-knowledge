@@ -64,3 +64,12 @@ Append-only. One line per operation.
 - 2026-11-03 15:19 | verify | claims/astabench-max-samples-should-not-exceed-cpu-cores-to-avoid-to-thread-deadlocks -> pass | Rule of thumb plus deadlock rationale stated
 - 2026-11-03 15:19 | verify | claims/astabench-measures-solver-cost-as-well-as-accuracy-so-all-model-usage-must-be-logged -> partial | Cost/logging and automatic Inspect logging supported; record_model_usage_with_inspect not in context
 - 2026-11-03 15:19 | verify | claims/astabench-provides-over-2400-examples-across-11-benchmarks -> pass | Verbatim
+- 2026-11-04 12:24 | verify | claims/attention-dilution-drives-the-gold-document-attention-share-toward-zero-as-the-corpus-grows -> partial | Context gives 0.91->0.01 at L19 and attention dilution, but not the softmax-denominator mechanism
+- 2026-11-04 12:24 | verify | claims/blocksearch-adds-an-on-policy-auxiliary-loss-to-counter-exposure-bias-in-digit-code-decoding -> pass | Directly stated
+- 2026-11-04 12:24 | verify | claims/blocksearch-in-context-retrieval-collapses-near-million-token-corpora -> pass | Recall approaches zero near million tokens, far below dense baseline
+- 2026-11-04 12:24 | verify | claims/blocksearch-matches-a-same-backbone-dense-retriever-on-small-ms-marco-corpora -> pass | 95.8 vs 95.5 at ~45k tokens stated
+- 2026-11-04 12:24 | verify | claims/individual-attention-heads-locate-the-gold-document-more-often-than-the-model-decodes-it -> pass | Directly stated, signal degrades with N
+- 2026-11-04 12:24 | verify | claims/length-aware-softmax-and-document-level-sparse-attention-raise-million-token-recall-from-0-2-to-20 -> pass | 0.2 to 20.0 vs 20.2 stated
+- 2026-11-04 12:24 | verify | claims/log-n-scaled-softmax-helps-in-context-retrieval-while-an-additive-length-aware-sink-barely-helps -> pass | Directly stated
+- 2026-11-04 12:24 | verify | claims/modified-blocksearch-beats-dense-retrieval-on-limit-at-million-token-scale -> pass | 13.5 vs 2.9 on LIMIT stated
+- 2026-11-04 12:24 | ingest | Can Language Models Actually Retrieve In-Context-Drowning in Documents at Million Token Scale | 8 claims, 0 updated, 0 mechanisms

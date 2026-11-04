@@ -1,4 +1,19 @@
 {
+  "Can Language Models Actually Retrieve In-Context-Drowning in Documents at Million Token Scale": {
+    "raw": "sources/raw/Can Language Models Actually Retrieve In-Context-Drowning in Documents at Million Token Scale.pdf",
+    "text": "sources/text/Can Language Models Actually Retrieve In-Context-Drowning in Documents at Million Token Scale.md",
+    "sha256": "fedab48bdf23e244aa27497022b4e48ca60e80492477f0682932d6b602558eed",
+    "added": "2026-11-04",
+    "ingested": true,
+    "ingested_on": "2026-11-04"
+  },
+  "End-to-End Agentic RAG System Training for Traceable Diagnostic Reasoning": {
+    "raw": "sources/raw/End-to-End Agentic RAG System Training for Traceable Diagnostic Reasoning.pdf",
+    "text": "sources/text/End-to-End Agentic RAG System Training for Traceable Diagnostic Reasoning.md",
+    "sha256": "2dc5104357d7c7e8c62f80cad19b1a47500214b3f83244a442ab55e4d4d0a979",
+    "added": "2026-11-04",
+    "ingested": false
+  },
   "How to Train Your Deep Research Agent": {
     "raw": "sources/raw/How to Train Your Deep Research Agent.pdf",
     "text": "sources/text/How to Train Your Deep Research Agent.md",
@@ -6,6 +21,41 @@
     "added": "2026-11-03",
     "ingested": true,
     "ingested_on": "2026-11-03"
+  },
+  "LLMs and AI Agents for Research-1": {
+    "raw": "sources/raw/LLMs and AI Agents for Research-1.pdf",
+    "text": "sources/text/LLMs and AI Agents for Research-1.md",
+    "sha256": "06b608786d2f2f8fe9301ccb00672829d7511847d7ed03662e5f7feb9976e488",
+    "added": "2026-11-04",
+    "ingested": false
+  },
+  "LLMs and AI Agents for Research-2": {
+    "raw": "sources/raw/LLMs and AI Agents for Research-2.pdf",
+    "text": "sources/text/LLMs and AI Agents for Research-2.md",
+    "sha256": "025ac719b57be7f64f033c843233ed94a04793586ba031a38bccad418cc8bb1d",
+    "added": "2026-11-04",
+    "ingested": false
+  },
+  "LLMs and AI Agents for Research-3": {
+    "raw": "sources/raw/LLMs and AI Agents for Research-3.pdf",
+    "text": "sources/text/LLMs and AI Agents for Research-3.md",
+    "sha256": "568b2a8a535f141e0efa9bbaad8cde1fdd115a2fe0cec23bf9d7b090680ebcb8",
+    "added": "2026-11-04",
+    "ingested": false
+  },
+  "LongHealth - A Question Answering Benchmark with Long Clinical Documents": {
+    "raw": "sources/raw/LongHealth - A Question Answering Benchmark with Long Clinical Documents.pdf",
+    "text": "sources/text/LongHealth - A Question Answering Benchmark with Long Clinical Documents.md",
+    "sha256": "80b668a3af3d7f622143eba77d5d030f6cc8818b80a42603ccd89e42b28019d4",
+    "added": "2026-11-04",
+    "ingested": false
+  },
+  "MedResearcher-R1": {
+    "raw": "sources/raw/MedResearcher-R1.pdf",
+    "text": "sources/text/MedResearcher-R1.md",
+    "sha256": "f9c6f1e942e2fb06083dcae24c7b583346c4359f2105f3d61753385b4cbab329",
+    "added": "2026-11-04",
+    "ingested": false
   },
   "ReSearch Learning to Reason with Search for LLMs": {
     "raw": "sources/raw/ReSearch Learning to Reason with Search for LLMs.pdf",

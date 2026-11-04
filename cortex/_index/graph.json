@@ -120,6 +120,30 @@
    "description": "async rollout, synchronous batch, tool call latency, GPU idle bubbles, speedup, VerlTool agentic RL",
    "title": "Letting each trajectory call the tool server independently (asynchronous rollout) instead of batch-synchronously speeds up rollouts by about 1.2x to 2x depending on the task."
   },
+  "claims/attention-dilution-drives-the-gold-document-attention-share-toward-zero-as-the-corpus-grows": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "attention dilution, softmax dilution, softmax denominator, gold document attention mass 0.91 to 0.01, layer 19, long context retrieval failure",
+   "title": "As the in-context corpus grows, irrelevant documents dominate the softmax denominator and the gold document's share of attention output collapses (0.91 to 0.01 at layer 19)."
+  },
+  "claims/blocksearch-adds-an-on-policy-auxiliary-loss-to-counter-exposure-bias-in-digit-code-decoding": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "on-policy auxiliary loss, exposure bias, teacher forcing, rolled-out digit prefixes, document identifier codes, BlockSearch training",
+   "title": "BlockSearch adds an on-policy auxiliary loss over the model's own rolled-out identifier-digit prefixes because teacher forcing alone causes exposure bias."
+  },
+  "claims/blocksearch-in-context-retrieval-collapses-near-million-token-corpora": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "BlockSearch length generalization failure, recall near zero at million-token context, worse than dense retrieval, extrapolation collapse",
+   "title": "Without attention modifications, BlockSearch recall approaches zero near million-token corpora, far below a simple dense retrieval baseline."
+  },
+  "claims/blocksearch-matches-a-same-backbone-dense-retriever-on-small-ms-marco-corpora": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "BlockSearch 0.6B in-context retriever vs dense retriever, Recall@1 95.8 vs 95.5, MS MARCO 45k tokens, small corpus parity",
+   "title": "BlockSearch matches a same-backbone dense retriever on small corpora, reaching 95.8% vs 95.5% Recall@1 on MS MARCO at about 45k tokens."
+  },
   "claims/dvc-repro-does-not-rerun-a-stage-when-solver-or-scorer-code-changes-without-its-cmd-changing": {
    "type": "claim",
    "status": "proposed",
@@ -144,11 +168,35 @@
    "description": "PPO vs GRPO, convergence speed, reward collapse, training stability, critic warm-up, Search-R1",
    "title": "In Search-R1 training, GRPO converges faster than PPO but can suffer reward collapse after many steps, while PPO stays stable and both reach comparable final reward."
   },
+  "claims/individual-attention-heads-locate-the-gold-document-more-often-than-the-model-decodes-it": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "retrieval heads, per-head gold document ranking, attention heads vs decoded answer, latent retrieval signal, degrades with corpus size",
+   "title": "Individual attention heads rank the gold document first more often than the model decodes it, though this signal also weakens as corpus size grows."
+  },
   "claims/joint-prompt-optimization-with-miprov2-roughly-doubles-multi-hop-retrieval-recall-from-31-to-59-percent": {
    "type": "claim",
    "status": "proposed",
    "description": "MIPROv2 jointly optimizing the query-generation and note-appending prompts, GPT-4o teacher, Llama-3.1-8B, top5_recall 31% to 59%, about 35 minutes and 5 dollars.",
    "title": "Jointly optimizing the two prompts of a multi-hop retrieval program with MIPROv2 roughly doubles top-5 recall from about 31% to about 59%."
+  },
+  "claims/length-aware-softmax-and-document-level-sparse-attention-raise-million-token-recall-from-0-2-to-20": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "length-aware softmax plus document-level sparse attention routing, MS MARCO million-token Recall@1 0.2 to 20.0, dense baseline 20.2",
+   "title": "Length-aware softmax scaling plus document-level sparse attention raise million-token Recall@1 on MS MARCO from 0.2 to 20.0, close to the dense baseline's 20.2."
+  },
+  "claims/log-n-scaled-softmax-helps-in-context-retrieval-while-an-additive-length-aware-sink-barely-helps": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "SSMax, scalable softmax, log N scaling of pre-softmax scores, attention sink, length-aware softmax, mitigation of attention dilution",
+   "title": "Scaling pre-softmax scores with log N (SSMax) is effective against attention dilution, whereas an additive length-aware attention sink barely helps."
+  },
+  "claims/modified-blocksearch-beats-dense-retrieval-on-limit-at-million-token-scale": {
+   "type": "claim",
+   "status": "proposed",
+   "description": "LIMIT benchmark, out-of-distribution lexical retrieval, in-context retrieval beats dense embeddings, Recall@1 13.5 vs 2.9",
+   "title": "On the lexical LIMIT benchmark at a million-token corpus, modified BlockSearch reaches 13.5% Recall@1 versus 2.9% for the dense baseline."
   },
   "claims/optimized-query-generator-decomposes-a-multi-hop-claim-by-asking-for-the-first-unknown-entity-when-notes-are-empty": {
    "type": "claim",
@@ -342,6 +390,12 @@
    "description": "code agent, CodeAgent, code actions, agent writes Python instead of JSON tool calls, smolagents, sandboxed execution",
    "title": "Code-action agent"
   },
+  "concepts/in-context-retrieval": {
+   "type": "concept",
+   "status": "active",
+   "description": "in-context retrieval (ICR), LM decodes relevant document identifier from corpus placed in context, alternative to dense vector retrieval, BlockSearch",
+   "title": "In-context retrieval"
+  },
   "concepts/multi-hop-retrieval-with-note-accumulation": {
    "type": "concept",
    "status": "active",
@@ -362,9 +416,37 @@
   }
  },
  "sources": {
+  "Can Language Models Actually Retrieve In-Context-Drowning in Documents at Million Token Scale": {
+   "ingested": true,
+   "raw": "sources/raw/Can Language Models Actually Retrieve In-Context-Drowning in Documents at Million Token Scale.pdf"
+  },
+  "End-to-End Agentic RAG System Training for Traceable Diagnostic Reasoning": {
+   "ingested": false,
+   "raw": "sources/raw/End-to-End Agentic RAG System Training for Traceable Diagnostic Reasoning.pdf"
+  },
   "How to Train Your Deep Research Agent": {
    "ingested": true,
    "raw": "sources/raw/How to Train Your Deep Research Agent.pdf"
+  },
+  "LLMs and AI Agents for Research-1": {
+   "ingested": false,
+   "raw": "sources/raw/LLMs and AI Agents for Research-1.pdf"
+  },
+  "LLMs and AI Agents for Research-2": {
+   "ingested": false,
+   "raw": "sources/raw/LLMs and AI Agents for Research-2.pdf"
+  },
+  "LLMs and AI Agents for Research-3": {
+   "ingested": false,
+   "raw": "sources/raw/LLMs and AI Agents for Research-3.pdf"
+  },
+  "LongHealth - A Question Answering Benchmark with Long Clinical Documents": {
+   "ingested": false,
+   "raw": "sources/raw/LongHealth - A Question Answering Benchmark with Long Clinical Documents.pdf"
+  },
+  "MedResearcher-R1": {
+   "ingested": false,
+   "raw": "sources/raw/MedResearcher-R1.pdf"
   },
   "ReSearch Learning to Reason with Search for LLMs": {
    "ingested": true,
@@ -701,6 +783,54 @@
    "note": "Table 2: Math-TIR, SQL, DeepSearch on 8 H100 GPUs"
   },
   {
+   "from": "claims/attention-dilution-drives-the-gold-document-attention-share-toward-zero-as-the-corpus-grows",
+   "pred": "derived_from",
+   "to": "sources/Can Language Models Actually Retrieve In-Context-Drowning in Documents at Million Token Scale",
+   "note": "of the attention output falls from 0.91 to 0.01 as the corpus grows, while the output’s overall"
+  },
+  {
+   "from": "claims/attention-dilution-drives-the-gold-document-attention-share-toward-zero-as-the-corpus-grows",
+   "pred": "relates_to",
+   "to": "concepts/in-context-retrieval",
+   "note": "instance of in-context retrieval"
+  },
+  {
+   "from": "claims/blocksearch-adds-an-on-policy-auxiliary-loss-to-counter-exposure-bias-in-digit-code-decoding",
+   "pred": "derived_from",
+   "to": "sources/Can Language Models Actually Retrieve In-Context-Drowning in Documents at Million Token Scale",
+   "note": "bias issue: at inference, each digit conditions on the model’s own potentially incorrect prefix,"
+  },
+  {
+   "from": "claims/blocksearch-adds-an-on-policy-auxiliary-loss-to-counter-exposure-bias-in-digit-code-decoding",
+   "pred": "relates_to",
+   "to": "concepts/in-context-retrieval",
+   "note": "instance of in-context retrieval"
+  },
+  {
+   "from": "claims/blocksearch-in-context-retrieval-collapses-near-million-token-corpora",
+   "pred": "derived_from",
+   "to": "sources/Can Language Models Actually Retrieve In-Context-Drowning in Documents at Million Token Scale",
+   "note": "near million-token contexts, remaining far below even a simple dense retrieval baseline. We trace"
+  },
+  {
+   "from": "claims/blocksearch-in-context-retrieval-collapses-near-million-token-corpora",
+   "pred": "relates_to",
+   "to": "concepts/in-context-retrieval",
+   "note": "instance of in-context retrieval"
+  },
+  {
+   "from": "claims/blocksearch-matches-a-same-backbone-dense-retriever-on-small-ms-marco-corpora",
+   "pred": "derived_from",
+   "to": "sources/Can Language Models Actually Retrieve In-Context-Drowning in Documents at Million Token Scale",
+   "note": "(95.8% vs. 95.5% Recall@1 on MS MARCO at ∼45k tokens), and maintains non-trivial accuracy"
+  },
+  {
+   "from": "claims/blocksearch-matches-a-same-backbone-dense-retriever-on-small-ms-marco-corpora",
+   "pred": "relates_to",
+   "to": "concepts/in-context-retrieval",
+   "note": "instance of in-context retrieval"
+  },
+  {
    "from": "claims/dvc-repro-does-not-rerun-a-stage-when-solver-or-scorer-code-changes-without-its-cmd-changing",
    "pred": "derived_from",
    "to": "sources/github-allenai-agent-baselines-·-github-20261103165019",
@@ -743,6 +873,18 @@
    "note": "independent original-paper evidence for the \"GRPO least stable\" part only; REINFORCE was not tested"
   },
   {
+   "from": "claims/individual-attention-heads-locate-the-gold-document-more-often-than-the-model-decodes-it",
+   "pred": "derived_from",
+   "to": "sources/Can Language Models Actually Retrieve In-Context-Drowning in Documents at Million Token Scale",
+   "note": "Individual heads still rank the gold document first more often than the model decodes it at every"
+  },
+  {
+   "from": "claims/individual-attention-heads-locate-the-gold-document-more-often-than-the-model-decodes-it",
+   "pred": "relates_to",
+   "to": "concepts/in-context-retrieval",
+   "note": "instance of in-context retrieval"
+  },
+  {
    "from": "claims/joint-prompt-optimization-with-miprov2-roughly-doubles-multi-hop-retrieval-recall-from-31-to-59-percent",
    "pred": "derived_from",
    "to": "sources/multi-hop-rag-dspy",
@@ -753,6 +895,42 @@
    "pred": "derived_from",
    "to": "sources/multi-hop-rag-dspy",
    "note": "cost of the optimization run"
+  },
+  {
+   "from": "claims/length-aware-softmax-and-document-level-sparse-attention-raise-million-token-recall-from-0-2-to-20",
+   "pred": "derived_from",
+   "to": "sources/Can Language Models Actually Retrieve In-Context-Drowning in Documents at Million Token Scale",
+   "note": "token Recall@1 on MS MARCO from0.2to20.0, close to the dense baseline’s20.2."
+  },
+  {
+   "from": "claims/length-aware-softmax-and-document-level-sparse-attention-raise-million-token-recall-from-0-2-to-20",
+   "pred": "relates_to",
+   "to": "concepts/in-context-retrieval",
+   "note": "instance of in-context retrieval"
+  },
+  {
+   "from": "claims/log-n-scaled-softmax-helps-in-context-retrieval-while-an-additive-length-aware-sink-barely-helps",
+   "pred": "derived_from",
+   "to": "sources/Can Language Models Actually Retrieve In-Context-Drowning in Documents at Million Token Scale",
+   "note": "corpus grows; scaling pre-softmax scores withlogN (SSMax) is effective, whereas"
+  },
+  {
+   "from": "claims/log-n-scaled-softmax-helps-in-context-retrieval-while-an-additive-length-aware-sink-barely-helps",
+   "pred": "relates_to",
+   "to": "concepts/in-context-retrieval",
+   "note": "instance of in-context retrieval"
+  },
+  {
+   "from": "claims/modified-blocksearch-beats-dense-retrieval-on-limit-at-million-token-scale",
+   "pred": "derived_from",
+   "to": "sources/Can Language Models Actually Retrieve In-Context-Drowning in Documents at Million Token Scale",
+   "note": "transfer out of distribution: at a million-token corpus, Recall@1 reaches 13.5%"
+  },
+  {
+   "from": "claims/modified-blocksearch-beats-dense-retrieval-on-limit-at-million-token-scale",
+   "pred": "relates_to",
+   "to": "concepts/in-context-retrieval",
+   "note": "instance of in-context retrieval"
   },
   {
    "from": "claims/optimized-query-generator-decomposes-a-multi-hop-claim-by-asking-for-the-first-unknown-entity-when-notes-are-empty",
@@ -1095,6 +1273,12 @@
    "pred": "relates_to",
    "to": "claims/a-rag-agent-formulates-its-own-retrieval-query-and-re-retrieves-recovering-hyde-and-self-query-behaviour",
    "note": "both use smolagents; that claim uses the JSON ToolCallingAgent, this concept is the CodeAgent alternative"
+  },
+  {
+   "from": "concepts/in-context-retrieval",
+   "pred": "derived_from",
+   "to": "sources/Can Language Models Actually Retrieve In-Context-Drowning in Documents at Million Token Scale",
+   "note": "casting retrieval asconditionalgeneration, where the model directly decodes"
   },
   {
    "from": "concepts/multi-hop-retrieval-with-note-accumulation",

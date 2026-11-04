@@ -2,6 +2,7 @@
 name: consolidate
 description: Structural maintenance of cortex/ - merge near-duplicates, split catch-all mechanisms, fix links. Never rewrites claims.
 disable-model-invocation: true
+context: fork
 allowed-tools: Bash(uv run *)
 ---
 ## Current state (generated)

@@ -2,7 +2,6 @@
 name: ingest
 description: Compile the next not-yet-ingested source (or the one named) from sources/ into cortex/ nodes, verify it, and commit.
 argument-hint: "[source-id]"
-disable-model-invocation: true
 context: fork
 agent: ingestor
 allowed-tools: Bash(uv run *)

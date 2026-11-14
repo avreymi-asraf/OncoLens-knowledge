@@ -1,0 +1,33 @@
+{
+  "version": 2,
+  "skills": {
+    "audit-agent-context": {
+      "source": "avreymi-asraf/agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/audit-agent-context/SKILL.md",
+      "computedHash": "0bdab01df24ef088954f92c6e1c3f123c3b122b404ef8a47dae203baf7f9607f",
+      "installMode": "copy"
+    },
+    "cortex": {
+      "source": "avreymi-asraf/agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/cortex/SKILL.md",
+      "computedHash": "9eb5b7850d6ddb8bfa764d16855a5993782286a64671aa503709a745c992dba8",
+      "installMode": "copy"
+    },
+    "grow-autonomy": {
+      "source": "avreymi-asraf/agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/grow-autonomy/SKILL.md",
+      "computedHash": "5d7463dfe6c323bf0db8b16c3805ab7170f36fb1058f87744165d3b756137af8",
+      "installMode": "copy"
+    },
+    "pdf-to-markdown-mcp": {
+      "source": "avreymi-asraf/agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/pdf-to-markdown-mcp/SKILL.md",
+      "computedHash": "43ea660647d6c3f212f0291a0862ff14c9ba4447883bca40efd0d70e1aafbf2a",
+      "installMode": "copy"
+    }
+  }
+}
